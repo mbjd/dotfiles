@@ -12,6 +12,10 @@ set backspace=indent,eol,start
 set showcmd                 " Show the command being typed at the bottom
 set autochdir               " working directory = location of opened file
 set scrolloff=5
+set autoread
+set tabstop=4
+
+" Increment/decrement numbers with +/-
 nnoremap - <C-x>
 nnoremap + <C-a>
 
@@ -19,6 +23,10 @@ set number
 set relativenumber
 set ruler
 set cursorline
+
+set guioptions=gmiM
+set linespace=4
+set guifont=Input\ Mono:h15
 
 " leader = ,
 let mapleader=","
@@ -132,5 +140,4 @@ highlight NonText ctermfg=239 guifg=#4e4e4e
 highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
 " Pathogen plugin manager
-" execute pathogen#infect()
-" :all pathogen#helptags()
+execute pathogen#infect()
