@@ -1,0 +1,14 @@
+# Vim editing mode
+set editing-mode vi
+
+# Don't care about case when tab-completing
+set completion-ignore-case on
+
+# Smarter autocmpletion
+set skip-completed-text on
+
+# Only show matching commands on up/down
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+set visible-stats on
