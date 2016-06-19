@@ -11,8 +11,8 @@ I only tested it on OS X, and some functionality won't work on other systems
 
 ### Installation
 
-First, make sure you have the following installed (it will work without these
-but you wouldn't configure anything):
+First, make sure you have the following installed (If you only have a subset,
+it should work too):
 
 - tmux
 - fish
