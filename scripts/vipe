@@ -1,0 +1,5 @@
+#!/bin/bash
+# Run vim as a command with normal mode input given as $1
+
+trap "exit" EXIT
+vim - -u NONE -es "+%normal $*" '+%print' '+:qa!' | tail -n +2

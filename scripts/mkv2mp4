@@ -1,0 +1,5 @@
+#!/bin/bash
+# Convert mkv to mp4
+
+name=$1
+ffmpeg -i $name -vcodec copy -acodec copy ${name%.mkv}".mp4"

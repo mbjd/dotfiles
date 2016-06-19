@@ -1,0 +1,4 @@
+#!/bin/bash
+
+query="$@"
+open "https://www.google.ch/search?q=$query"

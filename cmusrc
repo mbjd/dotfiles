@@ -1,0 +1,12 @@
+# Cmus config file
+
+# Click around and stuff
+set mouse=true
+
+# Run that script every time the status changes
+# It will put the current song in the tmux status bar
+set status_display_program=~/scripts/cmus-status.sh
+
+# Add all iTunes music at each start
+add ~/Music/iTunes/iTunes Media/Music
+
