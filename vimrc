@@ -49,6 +49,10 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>Q :q!<CR>
 
+" Easier folding
+nnoremap <leader>c zf%
+nnoremap <leader>a za
+
 " Easier tab handling
 nnoremap <leader>t :tabe<CR>
 
@@ -86,6 +90,9 @@ nnoremap <silent> <Space> :nohlsearch<CR>
 " " Some syntax options
 " autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " let g:tex_flavor='latex'
+
+" Textwidth of half a terminal window for prose heavy files
+autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown set textwidth=79
 
 " " Don't conceal anything, not even in .tex files
 " filetype plugin on

@@ -4,7 +4,7 @@ function fish_prompt
 	set_color normal
 end
 
-set PATH ~/scripts/ ~/scripts/colorscripts $PATH
+setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 
 alias clr "clear"
 alias ls "ls -F"
@@ -20,8 +20,8 @@ alias vi vim
 alias v vim
 alias vimrc "vi ~/.vimrc"
 alias :q "exit"
-set EDITOR vim
 alias mvim "open -a MacVim"
+setenv EDITOR vim
 
 # Trash cmus's stderr so that message won't clog up the UI
 alias cmus "cmus ^ /dev/null"
