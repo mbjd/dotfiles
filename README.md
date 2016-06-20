@@ -1,9 +1,9 @@
 # dotfiles
 
-These are some config files for tmux, fish, bash, vim, cmus, and python. If you
-run the `install.sh` script, the files are symlinked to the location assumed by
-the respective programs that their programs can find them (the originals are
-left where you cloned this repo).
+These are some config files for tmux, fish, bash, vim, cmus, and python.
+Running the `install.sh` script creates symlinks to the configuration files
+where their respective programs expect to find them (the originals are left
+where you cloned this repo).
 
 I only tested it on OS X, and some functionality won't work on other systems
 (for example the python copy/paste functions, which use `pbcopy` and
@@ -22,7 +22,7 @@ it should work too):
 
 Then, execute the following commands:
 
-	https://github.com/mbjd/dotfiles.git
+	git clone https://github.com/mbjd/dotfiles.git
 	cd dotfiles
 	./install.sh
 
