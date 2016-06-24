@@ -16,7 +16,7 @@ u_end="\e[0m"
 if [ $# -gt 0 ]; then
 	tmux attach-session "$1" 2> /dev/null || tmux new -s "$1"
 else
-	o# If list-sessions returns 0 then there are some sessions already running
+	# If list-sessions returns 0 then there are some sessions already running
 	if tmux list-sessions > /dev/null 2> /dev/null; then
 		printf "Running tmux sessions:\n"
 		printf "$(tmux list-sessions -F ' - #S')\n"
