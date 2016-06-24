@@ -3,19 +3,25 @@
 # Easier interface for attaching to tmux sessions or creating them
 
 # Do nothing if the user is already in tmux
-[ "$TMUX" == "" ] || printf "You're in tmux dipshit\n"; exit 1;
+if [ -v "$TMUX" ]; then
+    printf "You're already in tmux!\n"
+    exit 1
+fi
+
+u_start="\e[4m"
+u_end="\e[0m"
 
 # If an argument was given, try attaching to that session, and create it
 # if it doesn't exist yet
-if [[ $1 ]]; then
+if [ $# -gt 0 ]; then
 	tmux attach-session "$1" 2> /dev/null || tmux new -s "$1"
 else
-	# If list-sessions returns 0 then there are some sessions already running
+	o# If list-sessions returns 0 then there are some sessions already running
 	if tmux list-sessions > /dev/null 2> /dev/null; then
 		printf "Running tmux sessions:\n"
 		printf "$(tmux list-sessions -F ' - #S')\n"
 
-		printf "[a]ttach, [c]reate, or [q]uit: "
+		printf "${u_start}a${u_end}ttach, ${u_start}c${u_end}reate, or ${u_start}q${u_end}uit: "
 		read -n 1 cmd
 		case $cmd in
 			"a")
