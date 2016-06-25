@@ -8,6 +8,7 @@ if [ "$TMUX" != "" ]; then
     exit 1
 fi
 
+# Control sequences for underlining
 u_start="\e[4m"
 u_end="\e[0m"
 

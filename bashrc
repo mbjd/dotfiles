@@ -53,7 +53,7 @@ alias vi="/Applications/MacVim.app/Contents/MacOS/vim"
 alias vim="/Applications/MacVim.app/Contents/MacOS/vim"
 
 alias mvim="open -a MacVim"
-export EDITOR="mvim"
+export EDITOR="vim"
 
 # open this file
 bashprof() {
