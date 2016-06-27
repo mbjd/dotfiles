@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Wrapper for ghci that colours the 'modules loaded' messages green or red
+#
+# Check all colors with:
+# #!/bin/bash
+# for i in $(seq 16); do
+#     tput setaf $i; echo "color $i";
+# done
+#
+# Heavily inspired by:
+# http://martijn.van.steenbergen.nl/journal/2010/02/27/colors-in-ghci/
+
+GREEN=$(tput setaf 2)
+RED=$(tput setaf 9)
+RESET=$(tput sgr0)
+
+/usr/local/bin/ghci "${@}" |
+  sed "s/^Failed, modules loaded:/${RED}&${RESET}/g;s/^Ok, modules loaded:/${GREEN}&${RESET}/g"
