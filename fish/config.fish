@@ -5,10 +5,8 @@ function fish_prompt
 end
 
 setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
-setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 setenv EDITOR vim
 setenv PAGER less
-setenv BROWSER open
 setenv XDG_CONFIG_HOME ~/.config
 setenv PYTHONSTARTUP ~/.pystartup.py
 
@@ -26,35 +24,47 @@ alias vi vim
 alias v vim
 alias vimrc "vi ~/.vimrc"
 alias :q "exit"
-alias mvim "open -a MacVim"
-
-alias copy pbcopy
-alias paste pbpaste
 
 # Trash cmus's stderr so that message won't clog up the UI
 alias cmus "cmus ^ /dev/null"
 
-# Preview a file or folder in Quicklook
-function ql
-	qlmanage -p "$1" ^ /dev/null > /dev/null &
+if [ (uname) = "Darwin" ]
+	# Preview a file or folder in Quicklook
+	function ql
+		qlmanage -p "$1" ^ /dev/null > /dev/null &
+	end
+
+	# cd to frontmost finder window
+	function cdf
+		cd (/usr/bin/osascript (echo '
+			tell application "Finder"
+				try
+					set currFolder to (folder of the front window as alias)
+				on error
+					set currFolder to (path to desktop folder as alias)
+				end try
+				POSIX path of currFolder
+			end tell' | psub))
+	end
+
+	alias copy pbcopy
+	alias paste pbpaste
+	alias mvim "open -a MacVim"
+	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
+
+else # just assume ubuntu here
+	alias copy 'xclip -i'
+	alias paste 'xclip -o'
+
+	alias tvim 'gvim --tab-remote'
+	alias mvim gvim
+
+	alias open 'xdg-open'
 end
 
 function fishrc
 	vim ~/.config/fish/config.fish
 	source ~/.config/fish/config.fish
-end
-
-# cd to frontmost finder window
-function cdf
-	cd (/usr/bin/osascript (echo '
-		tell application "Finder"
-			try
-				set currFolder to (folder of the front window as alias)
-			on error
-				set currFolder to (path to desktop folder as alias)
-			end try
-			POSIX path of currFolder
-		end tell' | psub))
 end
 
 function cpl
