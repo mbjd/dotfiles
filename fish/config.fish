@@ -28,6 +28,9 @@ alias vimrc "vi ~/.vimrc"
 alias :q "exit"
 alias mvim "open -a MacVim"
 
+alias copy pbcopy
+alias paste pbpaste
+
 # Trash cmus's stderr so that message won't clog up the UI
 alias cmus "cmus ^ /dev/null"
 
@@ -53,3 +56,9 @@ function cdf
 			POSIX path of currFolder
 		end tell' | psub))
 end
+
+function cpl
+	history | head -n 1 | copy
+end
+
+fish_vi_key_bindings
