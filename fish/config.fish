@@ -28,10 +28,10 @@ alias :q exit
 alias q exit
 alias :t type
 
-# Trash cmus's stderr so that message won't clog up the UI
-alias cmus "cmus ^ /dev/null"
-
 if [ (uname) = "Darwin" ]
+	alias copy pbcopy
+	alias paste pbpaste
+
 	# Preview a file or folder in Quicklook
 	function ql
 		qlmanage -p "$1" ^ /dev/null > /dev/null &
@@ -50,8 +50,9 @@ if [ (uname) = "Darwin" ]
 			end tell' | psub))
 	end
 
-	alias copy pbcopy
-	alias paste pbpaste
+	# Trash cmus's stderr so that message won't clog up the UI
+	alias cmus "cmus ^ /dev/null"
+
 	alias mvim "open -a MacVim"
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 else # just assume ubuntu here
