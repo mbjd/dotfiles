@@ -37,7 +37,11 @@ if [ "$(uname)" == "Darwin" ]; then
 	echo ' - Linking .bash_profile...'
 	ln -sf ~/.bashrc ~/.bash_profile
 	echo ' - Linking .pystartup.py...'
-	ln -sf "$(pwd)/pystartup.py" ~/.pystartup.py
+	ln -sf "$(pwd)/pystartup-mac.py" ~/.pystartup.py
+else
+	echo "Not Mac OS; assuming Linux"
+	echo ' - Linkiing .pystartup.py...'
+	ln -sf "$(pwd)/pystartup-linux.py" ~/.pystartup.py
 fi
 
 echo 'Done!'

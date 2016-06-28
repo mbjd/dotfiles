@@ -79,7 +79,6 @@ autocmd BufNewFile,BufReadPost *.tex set textwidth=98
 autocmd BufWritePre * :%s/\s\+$//e
 
 " SEARCH
-set hlsearch       " Highlight all search results
 set incsearch      " Search again at each new character
 set ignorecase     " case insensitive...
 set smartcase      " ...but only when the search term is lowercase

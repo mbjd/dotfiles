@@ -1,5 +1,8 @@
 #!/bin/bash
+#
 # Print human-readable file size
+# Only works if file names don't have spaces in them
+# (you deserve this bug if you do that)
+#
 
-wc -c < $1 | ~/dev/C/filesize-format
-
+ls -lah $1 | awk -F " " {'print $5'} | sed 's/,/./g'
