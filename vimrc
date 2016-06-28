@@ -21,13 +21,7 @@ nnoremap + <C-a>
 
 set number
 set numberwidth=4
-set relativenumber
 set ruler
-set cursorline
-
-set guioptions=gmiM
-set linespace=4
-set guifont=Input\ Mono:h15
 
 " leader = ,
 let mapleader=","
@@ -91,21 +85,39 @@ nnoremap <silent> <Space> :nohlsearch<CR>
 " let g:tex_flavor='latex'
 
 " Textwidth of half a terminal window for prose heavy files
-autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown set textwidth=79
+autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown set textwidth=75
 
 " " Don't conceal anything, not even in .tex files
 " filetype plugin on
 " set conceallevel=0
 " let g:tex_conceal = ""
 
-" " COLOR SCHEME
-syntax on
-set background=dark
+let os = substitute(system('uname'), "\n", "", "")
 
-let g:sierra_Twilight = 1
-" let g:sierra_Midnight = 1
-" let g:sierra_Pitch = 1
-colorscheme sierra
+if os == "Darwin"
+	" COLOR SCHEME
+	syntax on
+	set background=dark
+
+	let g:sierra_Twilight = 1
+	" let g:sierra_Midnight = 1
+	" let g:sierra_Pitch = 1
+	colorscheme sierra
+	set relativenumber
+	set cursorline
+
+	set guioptions=gmiM
+	set linespace=4
+	set guifont=Input\ Mono:h15
+
+elseif os == "Linux"
+	set guioptions=""
+	set linespace=4
+	set guifont=Input\ Mono:h15
+
+	set norelativenumber
+	set nocursorline
+endif
 
 " Highlight different kinds of whitespace with symbols
 set list
