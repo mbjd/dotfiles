@@ -60,6 +60,9 @@ else # just assume ubuntu here
 	alias mvim gvim
 
 	alias open 'xdg-open'
+
+	function fish_greeting
+	end
 end
 
 function fishrc
