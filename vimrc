@@ -92,9 +92,12 @@ autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown set textwidth=75
 " set conceallevel=0
 " let g:tex_conceal = ""
 
-let os = substitute(system('uname'), "\n", "", "")
+" Because if it's fish stuff won't work
+set shell=/bin/sh
 
-if os == "Darwin"
+let s:uname = substitute(system('uname'), "\n", "", "")
+
+if s:uname == "Darwin"
 	" COLOR SCHEME
 	syntax on
 	set background=dark
@@ -109,11 +112,9 @@ if os == "Darwin"
 	set guioptions=gmiM
 	set linespace=4
 	set guifont=Input\ Mono:h15
-
-elseif os == "Linux"
+elseif s:uname == "Linux"
 	set guioptions=""
 	set linespace=4
-	set guifont=Input\ Mono:h15
 
 	set norelativenumber
 	set nocursorline
@@ -127,15 +128,11 @@ set listchars=extends:…,precedes:…,tab:›\ ,nbsp:·
 highlight NonText ctermfg=239 guifg=#4e4e4e
 highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
-" Because vim assumes bash for interfacing with the shell
-if &shell =~# 'fish$'
-  set shell=/bin/bash
-endif
-
 " Get some plugins
 call plug#begin('~/.vim/plugged')
 
 Plug('tpope/vim-surround')
 Plug('tpope/vim-repeat')
+Plug('dag/vim-fish')
 
 call plug#end()
