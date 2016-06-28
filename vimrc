@@ -67,12 +67,12 @@ noremap <buffer> <silent> $ g$
 
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
-autocmd BufNewFile,BufReadPost *.tex set textwidth=98
 
 " Clear trailing whitespace before saving
 autocmd BufWritePre * :%s/\s\+$//e
 
 " SEARCH
+set hlsearch
 set incsearch      " Search again at each new character
 set ignorecase     " case insensitive...
 set smartcase      " ...but only when the search term is lowercase
@@ -113,8 +113,10 @@ if s:uname == "Darwin"
 	set linespace=4
 	set guifont=Input\ Mono:h15
 elseif s:uname == "Linux"
+	colorscheme elflord
+
 	set guioptions=""
-	set linespace=4
+	set linespace=1
 
 	set norelativenumber
 	set nocursorline

@@ -23,7 +23,10 @@ alias newest "ls -t | head -1"
 alias vi vim
 alias v vim
 alias vimrc "vi ~/.vimrc"
-alias :q "exit"
+alias :q exit
+
+alias q exit
+alias :t type
 
 # Trash cmus's stderr so that message won't clog up the UI
 alias cmus "cmus ^ /dev/null"
@@ -51,12 +54,11 @@ if [ (uname) = "Darwin" ]
 	alias paste pbpaste
 	alias mvim "open -a MacVim"
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
-
 else # just assume ubuntu here
 	alias copy 'xclip -i'
 	alias paste 'xclip -o'
 
-	alias tvim 'gvim --tab-remote'
+	alias tvim 'gvim --remote-tab'
 	alias mvim gvim
 
 	alias open 'xdg-open'
