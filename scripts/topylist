@@ -1,0 +1,5 @@
+#!/bin/sh
+# Converts newline-separated numbers (or strings in general)
+# to python and haskell compatible list literals
+
+tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
