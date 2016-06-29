@@ -138,5 +138,6 @@ call plug#begin('~/.vim/plugged')
 Plug('tpope/vim-surround')
 Plug('tpope/vim-repeat')
 Plug('dag/vim-fish')
+Plug('vim-scripts/netrw.vim')
 
 call plug#end()
