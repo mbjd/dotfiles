@@ -6,7 +6,9 @@ end
 
 setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 setenv EDITOR vim
+setenv GIT_EDITOR vim
 setenv PAGER less
+setenv LESS '-RSi'
 setenv XDG_CONFIG_HOME ~/.config
 setenv PYTHONSTARTUP ~/.pystartup.py
 
