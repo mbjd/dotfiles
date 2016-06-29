@@ -25,6 +25,7 @@ alias v vim
 alias vimrc "vi ~/.vimrc"
 alias :q exit
 
+alias unset 'set --erase'
 alias q exit
 alias :t type
 

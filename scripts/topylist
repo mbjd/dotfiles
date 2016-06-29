@@ -1,5 +1,11 @@
 #!/bin/sh
 # Converts newline-separated numbers (or strings in general)
 # to python and haskell compatible list literals
+# Use -s to enclose each line in "double quotes"
 
-tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+if test $1 = '-s'; then
+	# Escape double quotes, surround,     concatenate,  enclose in [...]
+	sed 's/"/\\"/g' | sed 's/.*/"\0"/g' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+else
+	tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+fi

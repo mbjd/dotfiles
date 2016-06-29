@@ -13,7 +13,8 @@ set scrolloff=5
 " set autoread
 set shiftwidth=4
 set tabstop=4
-" set directory^=$HOME/.vim/swp//
+set directory^=$HOME/.vim/swp//
+set backupdir=$HOME/.vim/backups//
 
 " Increment/decrement numbers with +/-
 nnoremap - <C-x>
@@ -47,8 +48,9 @@ nnoremap <leader>Q :q!<CR>
 nnoremap <leader>c zf%
 nnoremap <leader>a za
 
-" Easier tab handling
-nnoremap <leader>t :tabe<CR>
+nnoremap <leader>t :tabe<CR>:Explore<CR>
+
+nnoremap <leader>e :Explore<CR>
 
 " Reload this file
 nnoremap <leader>r :source ~/.vimrc<CR>
