@@ -29,6 +29,8 @@ alias unset 'set --erase'
 alias q exit
 alias :t type
 
+alias gitlog "git log --format=oneline --abbrev-commit --graph"
+
 if [ (uname) = "Darwin" ]
 	alias copy pbcopy
 	alias paste pbpaste
