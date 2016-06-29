@@ -8,7 +8,7 @@ setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 setenv EDITOR vim
 setenv GIT_EDITOR vim
 setenv PAGER less
-setenv LESS '-RSi'
+setenv LESS '-Ri'
 setenv XDG_CONFIG_HOME ~/.config
 setenv PYTHONSTARTUP ~/.pystartup.py
 
@@ -28,6 +28,7 @@ alias vimrc "vi ~/.vimrc"
 alias :q exit
 
 alias unset 'set --erase'
+alias st 'echo $status'
 alias q exit
 alias :t type
 
