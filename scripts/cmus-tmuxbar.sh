@@ -20,8 +20,8 @@
 # o_start='#[bg=blue]'
 # o_end='#[bg=default]'
 
-o_start='['
-o_end=']'
+o_start=''
+o_end=''
 
 # Convert the status to a play/pause sign (status is "playing" or "paused",
 # when it's "stopped" this function shouldn't be called)
