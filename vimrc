@@ -136,6 +136,7 @@ highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
 " Get some plugins
 filetype plugin on
+
 call plug#begin('~/.vim/plugged')
 
 Plug('tpope/vim-surround')
