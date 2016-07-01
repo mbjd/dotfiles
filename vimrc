@@ -122,6 +122,8 @@ elseif s:uname == "Linux"
 
 	set norelativenumber
 	set nocursorline
+
+	set expandtab
 endif
 
 " Highlight different kinds of whitespace with symbols
@@ -133,11 +135,13 @@ highlight NonText ctermfg=239 guifg=#4e4e4e
 highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
 " Get some plugins
+filetype plugin on
 call plug#begin('~/.vim/plugged')
 
 Plug('tpope/vim-surround')
 Plug('tpope/vim-repeat')
 Plug('dag/vim-fish')
 Plug('vim-scripts/netrw.vim')
+Plug('suan/vim-instant-markdown')
 
 call plug#end()
