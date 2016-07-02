@@ -9,8 +9,10 @@ if [ "$TMUX" != "" ]; then
 fi
 
 # Control sequences for underlining
-u_start="\e[4m"
-u_end="\e[0m"
+# u_start="\e[4m"
+# u_end="\e[0m"
+u_start=$(tput bold)
+u_end=$(tput sgr0)
 
 # If an argument was given, try attaching to that session, and create it
 # if it doesn't exist yet
