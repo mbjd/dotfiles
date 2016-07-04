@@ -10,6 +10,9 @@ cmusstatus=$(cmus-remote -Q)
 duration=$(echo "$cmusstatus" | grep duration | cut -d' ' -f2)
 position=$(echo "$cmusstatus" | grep position | cut -d' ' -f2)
 
+# Exit if both variables are empty, i.e. if cmus isn't running
+[[ -z "$duration" ]] && [[ -z "$position" ]] && exit 1
+
 # Calculate how many progress bar characters have passed
 past=$(printf "%d * %d / %d\n" $length $position $duration | bc -l | cut -d'.' -f1)
 
