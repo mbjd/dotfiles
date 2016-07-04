@@ -76,5 +76,6 @@ else # cmus is not running
 	output="${o_start} x ${o_end}"
 fi
 
+
 printf "$output"
 

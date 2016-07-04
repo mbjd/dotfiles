@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+percentage=$(cmus-percentage)
+
+# Default length is 100, but overridden by $1
+length=${1:-"100"}
+
+past=$(printf "%d * (%d / 100)\n" $length $percentage | bc -l | cut -d'.' -f1)
+future=$(printf "%d * ((100 - %d) / 100)\n" $length $percentage | bc -l | cut -d'.' -f1)
+
+echo -n '['
+yes '|' | tr -d '\n' | head -c $past
+yes '-' | tr -d '\n' | head -c $future
+echo -n ']'
