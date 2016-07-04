@@ -42,6 +42,10 @@ if cmus-remote -Q > /dev/null 2> /dev/null; then
 	artist=$(echo "$cmus_status" | grep 'tag artist' | tail -n 1 | cut -d' ' -f3-)
 	title=$(echo  "$cmus_status" | grep 'tag title'  | cut -d' ' -f3-)
 
+	if [[ -z "$artist" ]]; then
+		artist=$(echo "$cmus_status" | grep 'tag albumartist' | cut -d' ' -f3-)
+	fi
+
 	# if the song has a title tag, take that
 	if [ -n "$title" ]; then
 		output="${o_start}$(playpause $status) ${artist} - ${title}${o_end}"
