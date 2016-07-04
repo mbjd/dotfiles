@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-cmusstatus=$(cmus-remote -Q)
-
-duration=$(echo "$cmusstatus" | grep duration | cut -d' ' -f2)
-position=$(echo "$cmusstatus" | grep position | cut -d' ' -f2)
-
-printf "100 * %d / %d\n" $position $duration | bc | tr -d '\n'
-

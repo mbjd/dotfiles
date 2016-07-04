@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Little progress bar utility
+# $1 = characters covered by bar
+# $2 = total characters
+# $ progress 2 10
+# [==--------]
+# Please no non-numeric strings, negative numbers or $1 > $2
+
 past=$1
 total=$2
 future=$(($total - $past))
