@@ -6,9 +6,9 @@ percentage=$(cmus-percentage)
 length=${1:-"100"}
 
 past=$(printf "%d * (%d / 100)\n" $length $percentage | bc -l | cut -d'.' -f1)
-future=$(printf "%d * ((100 - %d) / 100)\n" $length $percentage | bc -l | cut -d'.' -f1)
 
-echo -n '['
-yes '|' | tr -d '\n' | head -c $past
-yes '-' | tr -d '\n' | head -c $future
-echo -n ']'
+# Set past to 0 if empty because bc writes '.25' instead of '0.25', so
+# we end up with an empty string when applying the above 'floor function'
+[[ -z "$past" ]] && past=0
+
+progress $past $length
