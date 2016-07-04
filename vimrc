@@ -82,6 +82,9 @@ set smartcase      " ...but only when the search term is lowercase
 " Clear search by pressing space
 nnoremap <silent> <Space> :nohlsearch<CR>
 
+" Make yank behave like delete and change
+nnoremap Y y$
+
 " " Some syntax options
 " autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " let g:tex_flavor='latex'
