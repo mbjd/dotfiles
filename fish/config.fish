@@ -1,6 +1,6 @@
 function fish_prompt
 	set_color -o
-	printf "%s ―――― " (prompt_pwd)
+	printf "\r%s ―――― " (prompt_pwd)
 	set_color normal
 end
 
