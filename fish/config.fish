@@ -6,38 +6,38 @@ end
 
 setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 setenv EDITOR vim
-setenv GIT_EDITOR vim
-# setenv PAGER less
 setenv LESS '-Ri'
 setenv XDG_CONFIG_HOME ~/.config
 setenv PYTHONSTARTUP ~/.pystartup.py
 
+alias las "ls -aSh"
+alias lal "ls -al"
 alias clr "clear"
 alias ls "ls -Fh"
-alias l "ls"
 alias ll "ls -l"
-alias lal "ls -al"
-alias las "ls -aSh"
+alias l "ls"
 
 alias newest "ls -t | head -1"
 
 # Vimisms
-alias vi vim
-alias v vim
 alias vimrc "vi ~/.vimrc"
 alias :q exit
+alias vi vim
+alias v vim
 
 alias unset 'set --erase'
 alias st 'echo $status'
-alias q exit
-alias :t type
+alias where 'which -a'
 alias back 'cd -'
+alias :t type
+alias q exit
 
 alias gitlog "git log --format=oneline --abbrev-commit --graph"
 
 if [ (uname) = "Darwin" ]
-	alias copy pbcopy
-	alias paste pbpaste
+
+	alias vi nvim
+	alias vim nvim
 
 	# Trash cmus's stderr so that message won't clog up the UI
 	alias cmus "cmus ^ /dev/null"
@@ -49,6 +49,9 @@ if [ (uname) = "Darwin" ]
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 	setenv GOPATH ~/dev/go
 	setenv PATH ~/dev/go/bin $PATH
+	setenv EDITOR nvim
+	setenv GIT_EDITOR nvim
+
 
 	alias ls 'ls -FGh'
 
@@ -71,9 +74,12 @@ if [ (uname) = "Darwin" ]
 	end
 
 else # just assume ubuntu here
-	alias copy 'xclip -i'
-	alias paste 'xclip -o'
+	alias pbcopy 'xclip -i'
+	alias pbpaste 'xclip -o'
 
+	setenv GIT_EDITOR vim
+
+	# Open in new gvim tab
 	alias tvim 'gvim --remote-tab'
 	alias mvim gvim
 
@@ -89,7 +95,7 @@ function fishrc
 end
 
 function cpl
-	history | head -n 1 | copy
+	history | head -n 1 | pbcopy
 end
 
 fish_vi_key_bindings
