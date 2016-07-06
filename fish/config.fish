@@ -31,6 +31,7 @@ alias unset 'set --erase'
 alias st 'echo $status'
 alias q exit
 alias :t type
+alias back 'cd -'
 
 alias gitlog "git log --format=oneline --abbrev-commit --graph"
 
