@@ -1,4 +1,7 @@
 function fish_prompt
+	# Read out the exit code if nonzero (errno from moreutils)
+	printf "\r"
+	errno $status
 	set_color -o
 	printf "\r%s ―――― " (prompt_pwd)
 	set_color normal
@@ -23,6 +26,7 @@ alias newest "ls -t | head -1"
 alias vimrc "vi ~/.vimrc"
 alias :q exit
 alias vi vim
+alias iv sl
 alias v vim
 
 alias unset 'set --erase'
@@ -72,6 +76,8 @@ if [ (uname) = "Darwin" ]
 				POSIX path of currFolder
 			end tell' | psub))
 	end
+
+	source ~/dev/misc/fishrc.fish
 
 else # just assume ubuntu here
 	alias pbcopy 'xclip -i'

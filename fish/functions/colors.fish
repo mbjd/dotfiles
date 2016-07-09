@@ -1,8 +1,8 @@
 function colors
-	set times 16
-
-	if test -n $argv[1]
+	if set -q argv[1]
 		set times $argv[1]
+	else
+		set times 16
 	end
 
 	for i in (seq 1 $times)

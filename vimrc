@@ -85,6 +85,11 @@ nnoremap <silent> <Space> :nohlsearch<CR>
 " Make yank behave like delete and change
 nnoremap Y y$
 
+" Use Q to execute default register
+nnoremap Q @q
+
+language en_US
+
 " " Some syntax options
 " autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " let g:tex_flavor='latex'
