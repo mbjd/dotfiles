@@ -34,6 +34,7 @@ alias st 'echo $status'
 alias where 'which -a'
 alias untar 'tar -xvf'
 alias back 'cd -'
+alias - 'cd -'
 alias :t type
 alias q exit
 

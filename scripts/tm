@@ -9,10 +9,10 @@ if [ "$TMUX" != "" ]; then
 fi
 
 # Control sequences for underlining
-# u_start="\e[4m"
-# u_end="\e[0m"
-u_start=$(tput bold)
-u_end=$(tput sgr0)
+# u="\e[4m"
+# no_u="\e[0m"
+u=$(tput bold)
+no_u=$(tput sgr0)
 
 # If an argument was given, try attaching to that session, and create it
 # if it doesn't exist yet
@@ -24,7 +24,7 @@ else
 		printf "Running tmux sessions:\n"
 		printf "$(tmux list-sessions -F ' - #S')\n"
 
-		printf "${u_start}a${u_end}ttach, ${u_start}c${u_end}reate, or ${u_start}q${u_end}uit: "
+		printf "${u}a${no_u}ttach, ${u}c${no_u}reate, or ${u}q${no_u}uit: "
 		read -n 1 cmd
 		case $cmd in
 			"a")
