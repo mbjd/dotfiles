@@ -1,5 +1,5 @@
 function st
-	set st $status
-	echo $st $argv;
-    return $st
+	set s $status
+	echo $s $argv;
+	return $s
 end

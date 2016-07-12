@@ -88,7 +88,7 @@ nnoremap Y y$
 " Use Q to execute default register
 nnoremap Q @q
 
-language en_US
+language en_US.UTF-8
 
 " " Some syntax options
 " autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
