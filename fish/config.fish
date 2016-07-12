@@ -1,7 +1,6 @@
 function fish_prompt
 	# Read out the exit code if nonzero (errno from moreutils)
 	printf "\r"
-	errno $status
 	set_color -o
 	printf "\r%s ―――― " (prompt_pwd)
 	set_color normal
@@ -29,9 +28,11 @@ alias vi vim
 alias iv sl
 alias v vim
 
+alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
 alias st 'echo $status'
 alias where 'which -a'
+alias untar 'tar -xvf'
 alias back 'cd -'
 alias :t type
 alias q exit
@@ -51,6 +52,7 @@ if [ (uname) = "Darwin" ]
 	alias hd 'hexdump -C'
 
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
+	setenv PATH /opt/gcc-6.1.0/bin $PATH
 	setenv GOPATH ~/dev/go
 	setenv PATH ~/dev/go/bin $PATH
 	setenv EDITOR nvim

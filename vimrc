@@ -103,7 +103,7 @@ autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown set textwidth=75
 " let g:tex_conceal = ""
 
 " Because if it's fish stuff won't work
-set shell=/bin/sh
+set shell=/bin/bash
 
 let s:uname = substitute(system('uname'), "\n", "", "")
 
