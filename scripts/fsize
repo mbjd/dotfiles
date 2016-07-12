@@ -1,8 +1,21 @@
 #!/bin/bash
+
 #
-# Print human-readable file size
-# Only works if file names don't have spaces in them
-# (you deserve this bug if you do that)
+# Print human-readable size of file or directory tree
 #
 
-ls -lah $1 | awk -F " " {'print $5'} | sed 's/,/./g'
+if test -L "$1"; then
+	file=$(readlink $(echo "$1" | tr -d '/'))
+else
+	file=$1
+fi
+
+# If it's a directory, print out the size of all its contents
+if test -d "$file"; then
+	du -ch "$file" | tail -n 1 | awk '{print $1}'
+fi
+
+# If it's a file, print its size
+if test -f "$file"; then
+	ls -lah "$file" | awk -F " " {'print $5'} | sed 's/,/./g'
+fi
