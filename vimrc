@@ -95,7 +95,7 @@ language en_US.UTF-8
 " let g:tex_flavor='latex'
 
 " Textwidth of half a terminal window for prose heavy files
-autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown set textwidth=75
+autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown,*.txt set textwidth=75
 
 " " Don't conceal anything, not even in .tex files
 " filetype plugin on

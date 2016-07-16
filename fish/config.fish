@@ -1,11 +1,3 @@
-function fish_prompt
-	# Read out the exit code if nonzero (errno from moreutils)
-	printf "\r"
-	set_color -o
-	printf "\r%s ―――― " (prompt_pwd)
-	set_color normal
-end
-
 setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 setenv EDITOR vim
 setenv LESS '-Ri'
@@ -23,22 +15,21 @@ alias newest "ls -t | head -1"
 
 # Vimisms
 alias vimrc "vi ~/.vimrc"
-alias :q exit
 alias vi vim
 alias iv sl
 alias v vim
 
+alias gitlog "git log --format=oneline --abbrev-commit --graph"
 alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
-alias st 'echo $status'
 alias where 'which -a'
 alias untar 'tar -xvf'
 alias back 'cd -'
 alias - 'cd -'
 alias :t type
+alias :q exit
 alias q exit
 
-alias gitlog "git log --format=oneline --abbrev-commit --graph"
 
 if [ (uname) = "Darwin" ]
 
@@ -51,6 +42,7 @@ if [ (uname) = "Darwin" ]
 	alias mvim "open -a MacVim"
 	alias finder 'open .'
 	alias hd 'hexdump -C'
+	alias vtop 'vtop --theme brew'
 
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 	setenv PATH /opt/gcc-6.1.0/bin $PATH
