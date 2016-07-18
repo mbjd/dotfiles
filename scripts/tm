@@ -5,6 +5,7 @@
 # Do nothing if the user is already in tmux
 if [ "$TMUX" != "" ]; then
     printf "You're already in tmux!\n"
+    # errno 1 = operation not permitted
     exit 1
 fi
 

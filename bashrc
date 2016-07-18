@@ -2,7 +2,7 @@
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
-export PYTHONSTARTUP="/Users/balduin/.pystartup.py"
+export PYTHONSTARTUP="~/.pystartup.py"
 
 # for soundcloud2000
 # https://soundcloud.com/you/apps/soundcloud2000-mbjd/edit
@@ -120,7 +120,7 @@ pp() {
 	fi
 }
 
-# Preview a file or folder in Quicklook
+# Preview a file or folder in Quicklook
 ql() {
 	qlmanage -p "$1" &> /dev/null &
 }

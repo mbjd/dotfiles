@@ -7,7 +7,7 @@ setenv PYTHONSTARTUP ~/.pystartup.py
 alias las "ls -aSh"
 alias lal "ls -al"
 alias clr "clear"
-alias ls "ls -Fh"
+alias ls "ls -Fh --color=auto"
 alias ll "ls -l"
 alias l "ls"
 
@@ -27,6 +27,7 @@ alias untar 'tar -xvf'
 alias back 'cd -'
 alias - 'cd -'
 alias :t type
+alias :h help
 alias :q exit
 alias q exit
 
@@ -52,7 +53,6 @@ if [ (uname) = "Darwin" ]
 	setenv EDITOR nvim
 	setenv GIT_EDITOR nvim
 
-
 	alias ls 'ls -FGh'
 
 	# Preview a file or folder in Quicklook
@@ -76,8 +76,8 @@ if [ (uname) = "Darwin" ]
 	source ~/dev/misc/fishrc.fish
 
 else # just assume ubuntu here
-	alias pbcopy 'xclip -i'
-	alias pbpaste 'xclip -o'
+	alias pbcopy 'xclip -selection clipboard -i'
+	alias pbpaste 'xclip -selection clipboard -o'
 
 	setenv GIT_EDITOR vim
 

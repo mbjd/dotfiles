@@ -4,6 +4,7 @@
 # Print human-readable size of file or directory tree
 #
 
+# If the file is a symlink, use the file it points to
 if test -L "$1"; then
 	file=$(readlink $(echo "$1" | tr -d '/'))
 else
@@ -17,5 +18,5 @@ fi
 
 # If it's a file, print its size
 if test -f "$file"; then
-	ls -lah "$file" | awk -F " " {'print $5'} | sed 's/,/./g'
+	ls -lah "$file" | awk -F " " '{print $5}' | sed 's/,/./g'
 fi
