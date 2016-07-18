@@ -2,7 +2,7 @@
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set keywordprg=ggl          " Pressing K googles the word under the cursor
-set clipboard=unnamed       " Yank/paste with system clipboard
+set clipboard=unnamedplus   " Yank/paste with system clipboard
 set lazyredraw              " Maybe these will make it faster?
 set ttyfast
 set wildmode=list:longest,full " Display all command options on <tab>
@@ -40,9 +40,10 @@ nnoremap <leader>m :w<CR>:make<CR>
 
 " Save/quit with leader instead of :
 nnoremap <leader>w :w<CR>
+nnoremap <leader>W :w!<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>x :x<CR>
 nnoremap <leader>Q :q!<CR>
+nnoremap <leader>x :x<CR>
 
 " Easier folding
 nnoremap <leader>c zf%

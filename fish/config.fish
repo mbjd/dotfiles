@@ -15,7 +15,7 @@ setenv PYTHONSTARTUP ~/.pystartup.py
 alias las "ls -aSh"
 alias lal "ls -al"
 alias clr "clear"
-alias ls "ls -Fh"
+alias ls "ls -Fh --color=auto"
 alias ll "ls -l"
 alias l "ls"
 
@@ -23,7 +23,6 @@ alias newest "ls -t | head -1"
 
 # Vimisms
 alias vimrc "vi ~/.vimrc"
-alias :q exit
 alias vi vim
 alias iv sl
 alias v vim
@@ -36,6 +35,8 @@ alias untar 'tar -xvf'
 alias back 'cd -'
 alias - 'cd -'
 alias :t type
+alias :h help
+alias :q exit
 alias q exit
 
 alias gitlog "git log --format=oneline --abbrev-commit --graph"
@@ -58,7 +59,6 @@ if [ (uname) = "Darwin" ]
 	setenv PATH ~/dev/go/bin $PATH
 	setenv EDITOR nvim
 	setenv GIT_EDITOR nvim
-
 
 	alias ls 'ls -FGh'
 
@@ -83,8 +83,8 @@ if [ (uname) = "Darwin" ]
 	source ~/dev/misc/fishrc.fish
 
 else # just assume ubuntu here
-	alias pbcopy 'xclip -i'
-	alias pbpaste 'xclip -o'
+	alias pbcopy 'xclip -selection clipboard -i'
+	alias pbpaste 'xclip -selection clipboard -o'
 
 	setenv GIT_EDITOR vim
 
