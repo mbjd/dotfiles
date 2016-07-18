@@ -1,2 +1,2 @@
 #!/bin/bash
-pmset -g batt | grep -o "\d*%"
+pmset -g batt | grep -o "\d*%" | tr -d '%'

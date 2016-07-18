@@ -40,6 +40,7 @@ if [ (uname) = "Darwin" ]
 	alias cmus "cmus ^ /dev/null"
 
 	alias mvim "open -a MacVim"
+	alias subl "open -a 'Sublime Text'"
 	alias finder 'open .'
 	alias hd 'hexdump -C'
 	alias vtop 'vtop --theme brew'
