@@ -4,7 +4,6 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set keywordprg=ggl          " Pressing K googles the word under the cursor
 set clipboard=unnamedplus   " Yank/paste with system clipboard
 set lazyredraw              " Maybe these will make it faster?
-set ttyfast
 set wildmode=list:longest,full " Display all command options on <tab>
 set backspace=indent,eol,start
 set showcmd                 " Show the command being typed at the bottom
@@ -15,6 +14,9 @@ set shiftwidth=4
 set tabstop=4
 set directory^=$HOME/.vim/swp//
 set backupdir=$HOME/.vim/backups//
+
+" Make crontab work
+autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 " Increment/decrement numbers with +/-
 nnoremap - <C-x>
@@ -122,7 +124,7 @@ if s:uname == "Darwin"
 
 	set guioptions=gmiM
 	set linespace=4
-	set guifont=Input\ Mono:h15
+	set guifont=Input\ Mono:h14
 elseif s:uname == "Linux"
 	colorscheme elflord
 

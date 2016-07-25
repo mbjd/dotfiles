@@ -31,7 +31,6 @@ alias :h help
 alias :q exit
 alias q exit
 
-
 if [ (uname) = "Darwin" ]
 
 	alias vi nvim
@@ -57,7 +56,7 @@ if [ (uname) = "Darwin" ]
 
 	# Preview a file or folder in Quicklook
 	function ql
-		qlmanage -p "$1" ^ /dev/null > /dev/null &
+		qlmanage -p "$1" ^ /dev/null > /dev/null
 	end
 
 	# cd to frontmost finder window

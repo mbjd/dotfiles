@@ -1,7 +1,9 @@
 function fish_greeting
+	clear
+	echo
 	echo
     centered_print '><(((°>'
 	echo
-	centered_print 'The friendly interactive shell'
     echo
+	# centered_print 'The friendly interactive shell'
 end

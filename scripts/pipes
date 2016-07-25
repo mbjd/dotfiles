@@ -105,6 +105,7 @@ cleanup() {
     ((NOCOLOR)) && echo -ne '\e[0m'
     exit 0
 }
+
 trap resize SIGWINCH
 trap cleanup HUP TERM
 trap 'break 2' INT
@@ -122,6 +123,7 @@ stty -echo
 tput smcup || FORCE_RESET=1
 tput civis
 tput clear
+
 # any key press exits the loop and this script
 while REPLY=; read -t 0.0$((1000/f)) -n 1; [[ -z $REPLY ]] ; do
     for (( i=1; i<=p; i++ )); do

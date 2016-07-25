@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 
-w3m "https://www.google.ch/search?q=$argv"
+open "https://www.google.ch/search?q=$argv"

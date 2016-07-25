@@ -7,10 +7,6 @@ set completion-ignore-case on
 # Smarter autocmpletion
 set skip-completed-text on
 
-# Only show matching commands on up/down
-"\e[B": history-search-forward
-"\e[A": history-search-backward
-
 set visible-stats on
 set completion-query-items 1
 set show-all-if-ambiguous on
