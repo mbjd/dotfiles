@@ -91,6 +91,9 @@ nnoremap Y y$
 " Use Q to execute default register
 nnoremap Q @q
 
+" Swap two characters like emacs
+nnoremap <C-T> Xp
+
 language en_US.UTF-8
 
 " " Some syntax options
