@@ -51,7 +51,7 @@ if cmus-remote -Q > /dev/null 2> /dev/null; then
 		output="${o_start}$(playpause $status) ${artist} - ${title}${o_end}"
 
 	# If there's no title, check if anything is playing, and if that's the case,
-	# display the file name in place of the title
+	# display the file name in place of the title
 	else
 		if [ $status = "stopped" ]; then
 			output="${o_start} - ${o_end}"

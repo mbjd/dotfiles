@@ -1,8 +1,14 @@
 setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
+
+# Remove duplicates from path (otherwise the above two entries would
+# be repeated over and over when sourcing this file several times)
+setenv PATH (echo $PATH | tr ' ' '\n' | sort | uniq)
+
 setenv EDITOR vim
 setenv LESS '-Ri'
 setenv XDG_CONFIG_HOME ~/.config
-setenv PYTHONSTARTUP ~/.pystartup.py
+setenv XDG_CONFIG      ~/.config
+setenv PYTHONSTARTUP   ~/.pystartup.py
 
 alias las "ls -aSh"
 alias lal "ls -al"
