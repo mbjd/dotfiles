@@ -9,6 +9,7 @@ setenv LESS '-Ri'
 setenv XDG_CONFIG_HOME ~/.config
 setenv XDG_CONFIG      ~/.config
 setenv PYTHONSTARTUP   ~/.pystartup.py
+setenv LANG 'en_US.UTF-8'
 
 alias las "ls -aSh"
 alias lal "ls -al"
