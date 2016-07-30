@@ -33,7 +33,7 @@ else
 				read session
 				tmux attach -t $session
 				;;
-			"c")
+			"c" | "n")
 				printf "\nCreate new session: "
 				read session
 				tmux new -s "$session"
