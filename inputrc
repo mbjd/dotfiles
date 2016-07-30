@@ -1,5 +1,5 @@
 # Vim editing mode
-set editing-mode vi
+# set editing-mode vi
 
 # Don't care about case when tab-completing
 set completion-ignore-case on
