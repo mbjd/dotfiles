@@ -11,10 +11,10 @@ setenv XDG_CONFIG      ~/.config
 setenv PYTHONSTARTUP   ~/.pystartup.py
 setenv LANG 'en_US.UTF-8'
 
+alias ls "ls -Fh --color=auto"
 alias las "ls -aSh"
 alias lal "ls -al"
 alias clr "clear"
-alias ls "ls -Fh --color=auto"
 alias ll "ls -l"
 alias l "ls"
 
@@ -30,13 +30,17 @@ alias gitlog "git log --format=oneline --abbrev-commit --graph"
 alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
 alias where 'which -a'
-alias untar 'tar -xvf'
 alias back 'cd -'
 alias - 'cd -'
 alias :t type
 alias :h help
 alias :q exit
 alias q exit
+
+alias music '~/Music/iTunes/iTunes Media/Music'
+alias docs 'cd ~/Documents'
+alias dl 'cd ~/Downloads'
+alias dev 'cd ~/dev'
 
 if [ (uname) = "Darwin" ]
 
@@ -51,6 +55,8 @@ if [ (uname) = "Darwin" ]
 	alias finder 'open .'
 	alias hd 'hexdump -C'
 	alias vtop 'vtop --theme brew'
+
+	alias dots 'cd ~/dotfiles'
 
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 	setenv PATH /opt/gcc-6.1.0/bin $PATH
@@ -82,8 +88,11 @@ if [ (uname) = "Darwin" ]
 	source ~/dev/misc/fishrc.fish
 
 else # just assume ubuntu here
+
 	alias pbcopy 'xclip -selection clipboard -i'
 	alias pbpaste 'xclip -selection clipboard -o'
+
+	alias dots 'cd ~/misc/dotfiles'
 
 	setenv GIT_EDITOR vim
 
@@ -94,6 +103,7 @@ else # just assume ubuntu here
 	alias open 'xdg-open'
 
 	function fish_greeting
+		return 0
 	end
 end
 
@@ -105,5 +115,3 @@ end
 function cpl
 	history | head -n 1 | pbcopy
 end
-
-fish_vi_key_bindings
