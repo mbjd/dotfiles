@@ -4,8 +4,10 @@
 # Use -s to enclose each line in "double quotes"
 
 if test "$1" = '-s'; then
-	# Escape double quotes, surround,     concatenate,  enclose in [...]
-	cat $@ | sed 's/"/\\"/g' | sed 's/\(.*\)/"\1"/g' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+	#        Remove empty lines         Escape double quotes                      Newline to commas
+	cat $@ | awk 'length > 0 {print}' | sed 's/"/\\"/g' | sed 's/\(.*\)/"\1"/g' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+	#                                                     Surround with double quotes           Surround with []
 else
-	cat $@ | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+	# Same as above except no quote escaping
+	cat $@ | awk 'length > 0 {print}' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
 fi
