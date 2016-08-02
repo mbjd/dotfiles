@@ -30,7 +30,8 @@ alias gitlog "git log --format=oneline --abbrev-commit --graph"
 alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
 alias where 'which -a'
-alias back 'cd -'
+alias mkae 'make'
+alias m 'make'
 alias - 'cd -'
 alias :t type
 alias :h help
