@@ -18,10 +18,6 @@ set backupdir=$HOME/.vim/backups//
 " Make crontab work
 autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
-" Increment/decrement numbers with +/-
-nnoremap - <C-x>
-nnoremap + <C-a>
-
 set number
 set numberwidth=4
 set ruler
@@ -70,6 +66,10 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> $ g$
 
+" Increment/decrement numbers with +/-
+nnoremap - <C-x>
+nnoremap + <C-a>
+
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
@@ -90,6 +90,9 @@ nnoremap Y y$
 
 " Use Q to execute default register
 nnoremap Q @q
+
+nnoremap J gT
+nnoremap K gt
 
 " Swap two characters like emacs
 nnoremap <C-T> Xp

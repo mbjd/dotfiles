@@ -55,6 +55,8 @@ if [ (uname) = "Darwin" ]
 	alias finder 'open .'
 	alias hd 'hexdump -C'
 	alias vtop 'vtop --theme brew'
+	alias md 'open -a MacDown'
+	alias typora 'open -a Typora'
 
 	alias dots 'cd ~/dotfiles'
 
