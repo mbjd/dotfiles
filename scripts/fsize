@@ -18,5 +18,5 @@ fi
 
 # If it's a file, print its size
 if test -f "$file"; then
-	ls -la "$file" | awk -F " " '{print $5}' | sed 's/,/./g'
+	ls -lah "$file" | awk -F " " '{print $5}' | sed 's/,/./g'
 fi

@@ -157,9 +157,10 @@ filetype plugin on
 call plug#begin('~/.vim/plugged')
 
 Plug('tpope/vim-surround')
+Plug('tpope/vim-fugitive')
 Plug('tpope/vim-repeat')
-Plug('dag/vim-fish')
-Plug('vim-scripts/netrw.vim')
 Plug('suan/vim-instant-markdown')
+Plug('vim-scripts/netrw.vim')
+Plug('dag/vim-fish')
 
 call plug#end()
