@@ -12,6 +12,6 @@ function fish_prompt
 	# Actual prompt
 	printf "\r"
 	set_color -o
-	printf "%s ―――― " (prompt_pwd)
+	printf "%s@%s:%s ―――― " (whoami) (hostname) (prompt_pwd)
 	set_color normal
 end

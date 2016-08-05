@@ -58,6 +58,8 @@ if [ (uname) = "Darwin" ]
 	alias vtop 'vtop --theme brew'
 	alias md 'open -a MacDown'
 	alias typora 'open -a Typora'
+	alias sha256sum 'shasum -a 256'
+	alias sha1sum 'shasum'
 
 	alias dots 'cd ~/dotfiles'
 
@@ -67,6 +69,7 @@ if [ (uname) = "Darwin" ]
 	setenv PATH ~/dev/go/bin $PATH
 	setenv EDITOR nvim
 	setenv GIT_EDITOR nvim
+	setenv BROWSER w3m
 
 	alias ls 'ls -FGh'
 
