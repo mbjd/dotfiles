@@ -5,7 +5,7 @@ setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 setenv PATH (echo $PATH | tr ' ' '\n' | sort | uniq)
 
 setenv EDITOR vim
-setenv LESS '-Ri'
+setenv LESS '-Ri -x4'
 setenv XDG_CONFIG_HOME ~/.config
 setenv XDG_CONFIG      ~/.config
 setenv PYTHONSTARTUP   ~/.pystartup.py
