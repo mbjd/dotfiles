@@ -1,8 +1,10 @@
 function up
 	if count $argv > /dev/null
+		set cdstr ''
 		for i in (seq $argv[1])
-			cd ..
+			set cdstr "$cdstr../"
 		end
+		cd $cdstr
 	else
 		cd ..
 	end
