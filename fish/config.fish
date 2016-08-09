@@ -4,6 +4,9 @@ setenv PATH ~/scripts/ ~/scripts/colorscripts $PATH
 # be repeated over and over when sourcing this file several times)
 setenv PATH (echo $PATH | tr ' ' '\n' | sort | uniq)
 
+# Set a tab width of 4
+tabs -4
+
 setenv EDITOR vim
 setenv LESS '-Ri -x4'
 setenv XDG_CONFIG_HOME ~/.config
@@ -51,22 +54,24 @@ if [ (uname) = "Darwin" ]
 	# Trash cmus's stderr so that message won't clog up the UI
 	alias cmus "cmus ^ /dev/null"
 
-	alias mvim "open -a MacVim"
 	alias subl "open -a 'Sublime Text'"
-	alias finder 'open .'
-	alias hd 'hexdump -C'
-	alias vtop 'vtop --theme brew'
-	alias md 'open -a MacDown'
-	alias typora 'open -a Typora'
 	alias sha256sum 'shasum -a 256'
+	alias vtop 'vtop --theme brew'
+	alias typora 'open -a Typora'
+	alias mvim "open -a MacVim"
+	alias md 'open -a MacDown'
+	alias top 'top -o cpu'
 	alias sha1sum 'shasum'
+	alias hd 'hexdump -C'
+	alias finder 'open .'
 
 	alias dots 'cd ~/dotfiles'
 
 	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 	setenv PATH /opt/gcc-6.1.0/bin $PATH
-	setenv GOPATH ~/dev/go
 	setenv PATH ~/dev/go/bin $PATH
+	setenv GOPATH ~/dev/go
+
 	setenv EDITOR nvim
 	setenv GIT_EDITOR nvim
 	setenv BROWSER w3m
