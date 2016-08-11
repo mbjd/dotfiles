@@ -160,7 +160,6 @@ Plug('tpope/vim-surround')
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-repeat')
 Plug('tpope/vim-commentary')
-Plug('suan/vim-instant-markdown')
 Plug('dag/vim-fish')
 
 call plug#end()
