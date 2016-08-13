@@ -62,6 +62,7 @@ if [ (uname) = "Darwin" ]
 	alias md 'open -a MacDown'
 	alias top 'top -o cpu'
 	alias sha1sum 'shasum'
+	alias rgrep 'grep -r'
 	alias hd 'hexdump -C'
 	alias finder 'open .'
 
