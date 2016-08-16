@@ -1,0 +1,3 @@
+#!/bin/sh
+# Get the times of all the commits          convert to seconds     convert to python list literal         pipe to python, import matplotlib                      read standard input                    make histogram           show
+git log | grep '^Date' | awk '{print $5}' | ~/dev/C/time-to-secs | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g' | python -c 'import matplotlib.pyplot as pl; import sys; data = eval(sys.stdin.readlines()[0]); pl.hist(data, bins=720); pl.show();'
