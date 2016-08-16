@@ -115,10 +115,6 @@ else # just assume ubuntu here
 	alias mvim gvim
 
 	alias open 'xdg-open'
-
-	function fish_greeting
-		return 0
-	end
 end
 
 function fishrc
