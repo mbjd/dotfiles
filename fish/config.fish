@@ -77,7 +77,7 @@ if [ (uname) = "Darwin" ]
 
 	setenv EDITOR nvim
 	setenv GIT_EDITOR nvim
-	setenv BROWSER w3m
+	setenv BROWSER 'open -a Google\ Chrome'
 
 	alias ls 'ls -FGh'
 
