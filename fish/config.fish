@@ -33,6 +33,7 @@ alias gitlog "git log --format=oneline --abbrev-commit --graph"
 alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
 alias where 'which -a'
+alias make 'make -j'
 alias mkae 'make'
 alias m 'make'
 alias - 'cd -'
@@ -60,6 +61,7 @@ if [ (uname) = "Darwin" ]
 	alias typora 'open -a Typora'
 	alias mvim "open -a MacVim"
 	alias md 'open -a MacDown'
+	alias objdump 'otool -tV'
 	alias top 'top -o cpu'
 	alias sha1sum 'shasum'
 	alias rgrep 'grep -r'
