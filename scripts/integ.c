@@ -15,7 +15,7 @@ main()
 		ret = sscanf(line, "%lf\n", &current);
 		if (ret != 1)
 		{
-			fprintf(stderr, "Could not convert '%s' to number\n", line);
+			fprintf(stderr, "integ: Could not convert '%s' to number\n", line);
 			continue;
 		}
 		sum += current;

@@ -16,7 +16,7 @@ main()
 		if (ret == 0)
 		{
 			// If that didn't happen, print an error message
-			fprintf(stderr, "Could not convert '%s' to number\n", line);
+			fprintf(stderr, "deriv: Could not convert '%s' to number\n", line);
 			continue;
 		}
 
