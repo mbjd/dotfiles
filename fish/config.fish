@@ -47,6 +47,14 @@ alias docs 'cd ~/Documents'
 alias dl 'cd ~/Downloads'
 alias dev 'cd ~/dev'
 
+alias u2 'up 2'
+alias u3 'up 3'
+alias u4 'up 4'
+alias u5 'up 5'
+alias u6 'up 6'
+alias u7 'up 7'
+alias u8 'up 8'
+
 if [ (uname) = "Darwin" ]
 
 	alias vi nvim
@@ -124,4 +132,8 @@ end
 
 function cpl
 	history | head -n 1 | pbcopy
+end
+
+function fish_greeting
+    return 0
 end
