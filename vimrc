@@ -1,32 +1,39 @@
 " General stuff
-set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set keywordprg=ggl          " Pressing K googles the word under the cursor
-set clipboard=unnamedplus   " Yank/paste with system clipboard
-set lazyredraw              " Maybe these will make it faster?
+set undofile                   " Save undo's after file closes
+set undodir=$HOME/.vim/undo    " where to save undo histories
+set keywordprg=ggl             " Pressing K googles the word under the cursor
+set clipboard=unnamed          " Yank/paste with system clipboard
+set lazyredraw                 " Maybe these will make it faster?
 set wildmode=list:longest,full " Display all command options on <tab>
 set backspace=indent,eol,start
-set showcmd                 " Show the command being typed at the bottom
+set showcmd                    " Show the command being typed at the bottom
 set scrolloff=5
-" set autochdir               " working directory = location of opened file
-" set autoread
-set shiftwidth=4
-set tabstop=4
+
+set shiftwidth=8
+set tabstop=8
+set softtabstop=8
+set noexpandtab
+set autoindent
+
 set directory^=$HOME/.vim/swp//
 set backupdir=$HOME/.vim/backups//
 
 " Make crontab work
 autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
+" Increment/decrement numbers with +/-
+nnoremap - <C-x>
+nnoremap + <C-a>
+
 set number
 set numberwidth=4
 set ruler
 
 " leader = ,
-let mapleader=","
+let mapleader=','
 
 " Rejustify paragraph without jumping to its end
-nnoremap <leader>f m`gqip``
+nnoremap <leader>f :set textwidth=75<CR>m`gqip``
 
 " Auto-indent file without moving cursor
 nnoremap <leader>i m`gg=G``
@@ -66,9 +73,7 @@ noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 noremap <buffer> <silent> $ g$
 
-" Increment/decrement numbers with +/-
-nnoremap - <C-x>
-nnoremap + <C-a>
+nnoremap gf <C-W>gf
 
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
@@ -157,9 +162,9 @@ filetype plugin on
 call plug#begin('~/.vim/plugged')
 
 Plug('tpope/vim-surround')
-Plug('tpope/vim-fugitive')
 Plug('tpope/vim-repeat')
-Plug('tpope/vim-commentary')
 Plug('dag/vim-fish')
+Plug('vim-scripts/netrw.vim')
+Plug('tpope/vim-commentary')
 
 call plug#end()
