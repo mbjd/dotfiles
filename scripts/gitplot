@@ -9,4 +9,4 @@ git log \
 	| awk -F: '{print 3600*$1 + 60*$2 + $3}' \
 	| tr '\n' ',' \
 	| sed 's/^/[/g;s/,$/]/g' \
-	| python -c 'import matplotlib.pyplot as pl; import sys; data = eval(sys.stdin.readlines()[0]); pl.hist(data, bins=720); pl.show();'
+	| python -c 'import matplotlib.pyplot as pl; import sys; data = eval(sys.stdin.readlines()[0]); pl.hist(data, bins=180); pl.show();'
