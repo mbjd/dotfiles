@@ -1,4 +1,0 @@
-#!/bin/bash
-# Random commit message
-
-curl -s "http://whatthecommit.com/index.txt"
