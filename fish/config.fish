@@ -14,7 +14,7 @@ setenv XDG_CONFIG      ~/.config
 setenv PYTHONSTARTUP   ~/.pystartup.py
 setenv LANG 'en_US.UTF-8'
 
-alias ls "ls -Fh --color=auto"
+alias ls "ls -F --color=auto"
 alias las "ls -aSh"
 alias lal "ls -al"
 alias clr "clear"
