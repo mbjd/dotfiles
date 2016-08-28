@@ -30,6 +30,7 @@ alias iv sl
 alias v vim
 
 alias gitlog "git log --format=oneline --abbrev-commit --graph"
+alias raw 'hexdump | sed \'s/^[[:xdigit:]]*//g\' | tr -d \' \n\''
 alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
 alias where 'which -a'
