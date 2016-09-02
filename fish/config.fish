@@ -69,6 +69,7 @@ if [ (uname) = "Darwin" ]
 	alias cmus "cmus ^ /dev/null"
 
 	alias subl "open -a 'Sublime Text'"
+	alias grep 'ggrep --color=always'
 	alias sha256sum 'shasum -a 256'
 	alias vtop 'vtop --theme brew'
 	alias typora 'open -a Typora'
@@ -88,9 +89,9 @@ if [ (uname) = "Darwin" ]
 	setenv PATH ~/dev/go/bin $PATH
 	setenv GOPATH ~/dev/go
 
-	setenv EDITOR nvim
-	setenv GIT_EDITOR nvim
 	setenv BROWSER 'open -a Google\ Chrome'
+	setenv GIT_EDITOR nvim
+	setenv EDITOR nvim
 
 	alias ls 'ls -FGh'
 
