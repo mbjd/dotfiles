@@ -29,8 +29,8 @@ alias vi vim
 alias iv sl
 alias v vim
 
+alias fancy-wget 'wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\''
 alias gitlog "git log --format=oneline --abbrev-commit --graph"
-alias raw 'hexdump | sed \'s/^[[:xdigit:]]*//g\' | tr -d \' \n\''
 alias clip 'pbpaste | vipe | pbcopy'
 alias unset 'set --erase'
 alias where 'which -a'
@@ -42,6 +42,10 @@ alias :t type
 alias :h help
 alias :q exit
 alias q exit
+
+function raw
+	cat $argv | hexdump | sed 's/^[[:xdigit:]]*//g' | tr -d ' \n'
+end
 
 alias music '~/Music/iTunes/iTunes Media/Music'
 alias docs 'cd ~/Documents'
