@@ -9,9 +9,9 @@ set backspace=indent,eol,start
 set showcmd                    " Show the command being typed at the bottom
 set scrolloff=5
 
-set shiftwidth=8
-set tabstop=8
-set softtabstop=8
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set noexpandtab
 set autoindent
 
