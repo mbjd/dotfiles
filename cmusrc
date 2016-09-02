@@ -4,3 +4,4 @@
 # It will put the current song in the tmux status bar
 set status_display_program=~/scripts/cmus-status.sh
 
+set scroll_offset=10
