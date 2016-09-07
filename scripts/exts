@@ -1,0 +1,13 @@
+#!/bin/bash
+# find file extensions in a directory
+
+if [[ "$1" = -r ]]; then
+	# Recursive flag given
+	depth=""
+	shift
+else
+	depth='-depth 1'
+fi
+
+find $1 -type f $depth | xargs basename | awk -F. 'NF > 1 && $1 {print $(NF); next;} {print "<none>"}' | sort | uniq -c | sort -rn
+

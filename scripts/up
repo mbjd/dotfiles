@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# replacement for cd ..
+# $ up -> cd ..
+# $ up 3 -> cd ../../..
+if [[ "$#" -lt 1 ]]; then
+	cd ..
+else
+	for ((i=0; i<$1; i++)); do
+		cd ..
+	done
+fi
+
