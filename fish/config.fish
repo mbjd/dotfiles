@@ -69,7 +69,7 @@ if [ (uname) = "Darwin" ]
 	alias cmus "cmus ^ /dev/null"
 
 	alias subl "open -a 'Sublime Text'"
-	alias grep 'ggrep --color=always'
+	alias grep 'ggrep --color=auto'
 	alias sha256sum 'shasum -a 256'
 	alias vtop 'vtop --theme brew'
 	alias typora 'open -a Typora'
@@ -81,6 +81,7 @@ if [ (uname) = "Darwin" ]
 	alias rgrep 'grep -r'
 	alias hd 'hexdump -C'
 	alias finder 'open .'
+	alias units 'gunits'
 
 	alias dots 'cd ~/dotfiles'
 
@@ -94,11 +95,6 @@ if [ (uname) = "Darwin" ]
 	setenv EDITOR nvim
 
 	alias ls 'ls -FGh'
-
-	# Preview a file or folder in Quicklook
-	function ql
-		qlmanage -p "$1" ^ /dev/null > /dev/null
-	end
 
 	# cd to frontmost finder window
 	function cdf
