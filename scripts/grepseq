@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# grep for a range of numbers
+# ===========================
+# not practical for large ranges since it generates a list
+# of numbers and then greps for a regex that matches each one
+
+start=$1
+step=$2
+end=$3
+
+shift 3
+
+ggrep -P $@ $(seq $start $step $end | tr '\n' '|' | sed 's/|$//g')
