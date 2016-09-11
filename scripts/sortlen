@@ -1,3 +1,4 @@
 #!/bin/bash
-cat $@ | sed 's/^[ \t]*//g' | awk '{printf("%d:%s\n", length, $0)}' | sort -n | cut -d':' -f2-
+
+env LC_ALL='C' cat $@ | sed 's/^[ \t]*//g' | awk '{printf("%d:%s\n", length, $0)}' | sort -n | cut -d':' -f2-
 
