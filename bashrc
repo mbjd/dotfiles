@@ -1,108 +1,136 @@
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
-export PYTHONSTARTUP="~/.pystartup.py"
-
-# for soundcloud2000
-# https://soundcloud.com/you/apps/soundcloud2000-mbjd/edit
-SC_CLIENT_ID="e8e61a3d2a112feb748ab28fcbdc5be4"
-
-RANGER_LOAD_DEFAULT_RC=FALSE
-
-XDG_CONFIG_HOME=$HOME/.config
-
-# for avrdude
+PATH=$PATH:~/bin
+PATH=$PATH:~/scripts
+PATH=$PATH:~/scripts/colorscripts
 PATH=$PATH:/usr/local/bin
+
+export PYTHONSTARTUP="~/.pystartup.py"
+export CLICOLOR=1
+export XDG_CONFIG_HOME=$HOME/.config
 
 # for go
 export GOPATH=~/dev/go
 PATH=$PATH:$GOPATH/bin
 
-# user specific bin directory
-PATH=$PATH:~/bin
-
 # Fancy coloured PS1
 bold=$(tput bold)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
-export PS1="\[$bold\]\w \$\[$reset\] "
+export PS1="\[$bold\]\u@\H:\w \$\[$reset\] "
 
 # Bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+# 	. $(brew --prefix)/etc/bash_completion
+# fi
+
+export PYTHONSTARTUP='~/.pystartup.py'
+export XDG_CONFIG_HOME='~/.config'
+export XDG_CONFIG='~/.config'
+export LANG='en_US.UTF-8'
+export LESS='-Ri -x4'
+export EDITOR='vim'
 
 # Basic aliases
-alias clr="clear"
 alias ls="ls -F"
 alias l="ls"
 alias ll="ls -l"
 alias la="ls -a"
 alias lal="ll -a"
 
-alias bashrc="bashprof"
-alias newest="ls -t | head -1"
+alias newest="command ls -t | head -1"
 
+alias desk='cd ~/Desktop'
+alias dl='cd ~/Downloads'
+alias docs='cd ~/Documents'
 
 # Vimisms
-alias :q="exit"
 alias vimrc="vim ~/.vimrc"
-alias v="/Applications/MacVim.app/Contents/MacOS/vim"
-alias vi="/Applications/MacVim.app/Contents/MacOS/vim"
-alias vim="/Applications/MacVim.app/Contents/MacOS/vim"
 
-alias mvim="open -a MacVim"
-export EDITOR="vim"
+alias fancy-wget="wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'"
+alias gitlog="git log --format=oneline --abbrev-commit --graph"
+alias -- '-'='cd - > /dev/null'
+alias where='which -a'
+alias make='make -j'
+alias mkae='make'
+alias :t='type'
+alias :h='help'
+alias :q='exit'
+alias m='make'
+alias q='exit'
+
+if [ $(uname) = 'Darwin' ]; then
+
+	alias dots='cd ~/dotfiles'
+	alias drive='cd ~/drive'
+	alias code='cd ~/code'
+	alias misc='cd ~/misc'
+	alias dev='cd ~/dev'
+
+	alias v='nvim'
+	alias vi='nvim'
+	alias vim='nvim'
+	alias mvim="open -a MacVim"
+
+	# Trash cmus's stderr so that the error message won't clog up the UI
+	alias cmus="cmus 2> /dev/null"
+
+	alias clip='pbpaste | vipe | pbcopy'
+	alias subl="open -a 'Sublime Text'"
+	alias grep='ggrep --color=auto'
+	alias sha256sum='shasum -a 256'
+	alias vtop='vtop --theme brew'
+	alias typora='open -a Typora'
+	alias mvim="open -a MacVim"
+	alias md='open -a MacDown'
+	alias objdump='otool -tV'
+	alias top='top -o cpu'
+	alias sha1sum='shasum'
+	alias rgrep='grep -r'
+	alias hd='hexdump -C'
+	alias finder='open .'
+	alias units='gunits'
+
+	export GIT_EDITOR=nvim
+	export BROWSER='open -a Google\ Chrome'
+
+	# cd to frontmost finder window
+	cdf() {
+		target=$(osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)')
+		if [ "$target" != "" ] ;
+		then
+			cd "$target";
+		else
+			echo 'No Finder window found' > /dev/stderr;
+		fi
+	}
+
+else # Hope this is ubuntu
+
+	alias pbcopy 'xclip -selection clipboard -i'
+	alias pbpaste 'xclip -selection clipboard -o'
+
+	alias dots 'cd ~/misc/dotfiles'
+
+	setenv GIT_EDITOR vim
+
+	# Open in new gvim tab
+	alias tvim 'gvim --remote-tab'
+	alias mvim gvim
+
+	alias open 'xdg-open'
+fi
 
 # open this file
-bashprof() {
+bashrc() {
 	vi ~/.bash_profile
 	source ~/.bash_profile
-}
-
-export CLICOLOR=1
-
-# cd to frontmost finder window
-cdf () {
-	currFolderPath=$( /usr/bin/osascript <<EOT
-		tell application "Finder"
-			try
-				set currFolder to (folder of the front window as alias)
-			on error
-				set currFolder to (path to desktop folder as alias)
-			end try
-			POSIX path of currFolder
-		end tell
-EOT
-	)
-	cd "$currFolderPath"
 }
 
 cl () {
 	cdf
 	ls
-}
-
-# Extract all kinds of archives
-extract () {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2) tar xjf $1 ;;
-			*.tar.gz) tar xzf $1 ;;
-			*.bz2) bunzip2 $1 ;;
-			*.rar) rar x $1 ;;
-			*.gz) gunzip $1 ;;
-			*.tar) tar xf $1 ;;
-			*.tbz2) tar xjf $1 ;;
-			*.tgz) tar xzf $1 ;;
-			*.zip) unzip $1 ;;
-			*.z) uncompress $1 ;;
-			*) echo "'$1' cannot be extracted via extract ()" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
 }
 
 # Read before executing pasted code
@@ -131,9 +159,6 @@ weather() {
 }
 
 
-# Redirect cmus's stderr to a file so the message won't clog up the UI
-alias cmus="cmus 2> /dev/null"
-
 # Use youtube-dl to get the audio track of a youtube video / playlist or sc song
 youtube-mp3() {
 	youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" $1
@@ -148,18 +173,6 @@ mkv2mp4() {
 	name=$1
 	ffmpeg -i $name -vcodec copy -acodec copy ${name%.mkv}".mp4"
 }
-
-# Print human-readable file size
-fsize() {
-	wc -c < $1 | ~/dev/C/filesize-format
-}
-
-# added by Anaconda3 2.5.0 installer
-export PATH="/Users/balduin/anaconda/bin:$PATH"
-
-alias desk='cd ~/Desktop'
-alias dl='cd ~/Downloads'
-alias docs='cd ~/Documents'
 
 # replacement for cd ..
 # $ up -> cd ..
@@ -176,6 +189,14 @@ up () {
 	fi
 }
 
+alias u2='up 2'
+alias u3='up 3'
+alias u4='up 4'
+alias u5='up 5'
+alias u6='up 6'
+alias u7='up 7'
+alias u8='up 8'
+
 randcommit() {
 	curl -s "http://whatthecommit.com/index.txt"
 }
@@ -189,10 +210,7 @@ clock() {
 	done
 }
 
-# Execute a vim normal command given in command line argument
-function vimpipe() {
-    vim - -u NONE -es "+%normal $*" '+%print' '+:qa!' | tail -n +2
-}
+# Colourful man pages
 man() {
 	if [ "$TERM" = 'linux' ]; then
 		env \
@@ -216,3 +234,6 @@ man() {
 					/usr/bin/man "$@"
 	fi
 }
+
+# Only unique entries in case this file is sourced several times
+export PATH=$(echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':')
