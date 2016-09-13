@@ -8,7 +8,9 @@ PATH=$PATH:/usr/local/bin
 
 export PYTHONSTARTUP="~/.pystartup.py"
 export CLICOLOR=1
-export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG="$HOME/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_RUNTIME_DIR="$HOME/.config"
 
 # for go
 export GOPATH=~/dev/go
@@ -25,9 +27,6 @@ export PS1="\[$bold\]\u@\H:\w \$\[$reset\] "
 # 	. $(brew --prefix)/etc/bash_completion
 # fi
 
-export PYTHONSTARTUP='~/.pystartup.py'
-export XDG_CONFIG_HOME='~/.config'
-export XDG_CONFIG='~/.config'
 export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
 export EDITOR='vim'
@@ -49,6 +48,7 @@ alias docs='cd ~/Documents'
 alias vimrc="vim ~/.vimrc"
 
 alias fancy-wget="wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'"
+alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
 alias gitlog="git log --format=oneline --abbrev-commit --graph"
 alias -- '-'='cd - > /dev/null'
 alias where='which -a'
@@ -106,6 +106,10 @@ if [ $(uname) = 'Darwin' ]; then
 		fi
 	}
 
+	log () {
+		cat ~/misc/log.csv | awk -F',' '{print $1 "," $3}' | pyplot2d
+	}
+
 else # Hope this is ubuntu
 
 	alias pbcopy 'xclip -selection clipboard -i'
@@ -121,6 +125,11 @@ else # Hope this is ubuntu
 
 	alias open 'xdg-open'
 fi
+
+rand()
+{
+	awk -v min="$1" -v max="$2" "BEGIN{srand($(gdate +%s%N)); print int(min+rand()*(max-min+1))}"
+}
 
 # open this file
 bashrc() {
