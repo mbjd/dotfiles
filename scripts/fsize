@@ -21,10 +21,13 @@ for i in $@; do
 	# If it's a directory, print out the size of all its contents
 	if test -d "$file"; then
 		gdu -sb $options "$file" | cut -f1
-	fi
+	else
 
-	# If it's a file, print its size
-	if test -f "$file"; then
-		ls -la $options "$file" | awk -F " " '{print $5}' | sed 's/,/./g'
+		# If it's a file, print its size
+		if test -f "$file"; then
+			ls -la $options "$file" | awk -F " " '{print $5}' | sed 's/,/./g'
+		else
+			echo fsize: "$file" is not a file or directory 1>&2
+		fi
 	fi
 done
