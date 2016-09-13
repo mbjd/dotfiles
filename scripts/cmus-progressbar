@@ -21,4 +21,4 @@ past=$(printf "%d * %d / %d\n" $length $position $duration | bc -l | cut -d'.' -
 # when applying the above 'floor function'
 [[ -z "$past" ]] && past=0
 
-progress $past $length
+exec progress $past $length
