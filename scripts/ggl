@@ -1,3 +1,4 @@
-#!/usr/bin/env fish
+#!/bin/bash
 
-open "https://www.google.ch/search?q=$argv"
+str="$@"
+open "https://www.google.ch/search?q=$str"
