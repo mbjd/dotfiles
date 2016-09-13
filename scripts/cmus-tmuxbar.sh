@@ -48,13 +48,13 @@ if cmus-remote -Q > /dev/null 2> /dev/null; then
 
 	# if the song has a title tag, take that
 	if [ -n "$title" ]; then
-		output="${o_start}$(playpause $status) ${artist} - ${title}${o_end}"
+		output="$(playpause $status) ${artist} - ${title}"
 
 	# If there's no title, check if anything is playing, and if that's the case,
 	# display the file name in place of the title
 	else
 		if [ $status = "stopped" ]; then
-			output="${o_start} - ${o_end}"
+			output=" - "
 		# if status is paused or playing, display the song
 		elif [ -n "$status" ]; then
 			# Take file name as titl
@@ -69,7 +69,7 @@ if cmus-remote -Q > /dev/null 2> /dev/null; then
 			fi
 
 			# include play/pause sign and start/end strings
-			output="${o_start}$(playpause $status) ${output}${o_end}"
+			output="$(playpause $status) ${output}"
 
 		# If there's no file name either, nothing is playing
 		else
@@ -81,5 +81,5 @@ else # cmus is not running
 fi
 
 
-printf "$output"
+printf "${o_start}$output${o_end}"
 
