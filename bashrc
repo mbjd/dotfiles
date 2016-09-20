@@ -11,6 +11,11 @@ export CLICOLOR=1
 export XDG_CONFIG="$HOME/.config"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_RUNTIME_DIR="$HOME/.config"
+export HISTCONTROL=ignoredups
+
+# Infinite history
+HISTSIZE=''
+HISTFILESIZE=''
 
 # for go
 export GOPATH=~/dev/go
@@ -107,7 +112,7 @@ if [ $(uname) = 'Darwin' ]; then
 	}
 
 	log () {
-		cat ~/misc/log.csv | awk -F',' '{print $1 "," $3}' | pyplot2d
+		< ~/misc/log.csv awk -F',' '{print $1 "," $3}' | pyplot2d
 	}
 
 else # Hope this is ubuntu
