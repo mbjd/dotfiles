@@ -9,5 +9,5 @@ else
 	depth='-depth 1'
 fi
 
-find $1 -type f $depth | xargs basename | awk -F. 'NF > 1 && $1 {print $(NF); next;} {print "<none>"}' | sort | uniq -c | sort -rn
+find "$1" -type f $depth -print0 | xargs -0 -n32 -P32 basename | awk -F. 'NF > 1 && $1 {print $(NF); next;} {print "<none>"}' | sort | uniq -c | sort -rn
 
