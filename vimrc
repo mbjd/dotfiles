@@ -126,8 +126,8 @@ if s:uname == "Darwin"
 	syntax on
 	set background=dark
 
-	let g:sierra_Twilight = 1
-	" let g:sierra_Midnight = 1
+	" let g:sierra_Twilight = 1
+	let g:sierra_Midnight = 1
 	" let g:sierra_Pitch = 1
 	colorscheme sierra
 	set relativenumber
