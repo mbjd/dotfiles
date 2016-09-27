@@ -39,7 +39,7 @@ else
 				tmux new -s "$session"
 				;;
 			*)
-				printf "\n"
+				printf "\n???\n"
 				;;
 		esac
 
