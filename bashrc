@@ -112,7 +112,7 @@ if [ $(uname) = 'Darwin' ]; then
 	}
 
 	log () {
-		< ~/misc/log.csv awk -F',' '{print $1 "," $3}' | pyplot2d
+		< ~/misc/log.csv python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
 	}
 
 else # Hope this is ubuntu
