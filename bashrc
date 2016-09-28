@@ -6,7 +6,7 @@ PATH=$PATH:~/scripts
 PATH=$PATH:~/scripts/colorscripts
 PATH=$PATH:/usr/local/bin
 
-# export PYTHONSTARTUP="~/.pystartup.py"
+export PYTHONSTARTUP="$HOME/.pystartup.py"
 export CLICOLOR=1
 export XDG_CONFIG="$HOME/.config"
 export XDG_CONFIG_HOME="$HOME/.config"
