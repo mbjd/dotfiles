@@ -19,7 +19,7 @@ for i in $@; do
 	fi
 
 	# If it's a directory, print out the size of all its contents
-	if [ -d "$file" ] || [ -f file ]; then
+	if [ -d "$file" ] || [ -f "$file" ]; then
 		gdu -sb $options "$file" | cut -f1
 	else
 		echo fsize: "$file" is not a file or directory 1>&2
