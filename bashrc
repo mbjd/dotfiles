@@ -1,9 +1,9 @@
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-PATH=$PATH:~/bin
-PATH=$PATH:~/scripts
-PATH=$PATH:~/scripts/colorscripts
+PATH=$PATH:"$HOME/bin"
+PATH=$PATH:"$HOME/scripts"
+PATH=$PATH:"$HOME/scripts/colorscripts"
 PATH=$PATH:/usr/local/bin
 
 export PYTHONSTARTUP="$HOME/.pystartup.py"
@@ -18,7 +18,7 @@ HISTSIZE=''
 HISTFILESIZE=''
 
 # for go
-export GOPATH=~/dev/go
+export GOPATH="$HOME/dev/go"
 PATH=$PATH:$GOPATH/bin
 
 # Fancy coloured PS1
@@ -37,7 +37,7 @@ export LESS='-Ri -x4'
 export EDITOR='vim'
 
 # Basic aliases
-alias ls="ls -F"
+alias ls="gls -F --color=auto --time-style=long-iso"
 alias l="ls"
 alias ll="ls -l"
 alias la="ls -a"
@@ -113,6 +113,10 @@ if [ $(uname) = 'Darwin' ]; then
 
 	log () {
 		< ~/misc/log.csv python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
+	}
+
+	trash () {
+		mv "$@" ~/.Trash;
 	}
 
 else # Hope this is ubuntu
