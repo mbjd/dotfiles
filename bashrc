@@ -67,7 +67,7 @@ alias q='exit'
 
 if [ $(uname) = 'Darwin' ]; then
 
-	alias dots='cd ~/dotfiles'
+	alias dots='cd ~/config'
 	alias drive='cd ~/drive'
 	alias code='cd ~/code'
 	alias misc='cd ~/misc'

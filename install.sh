@@ -4,7 +4,7 @@
 # Not guaranteed to work or anything, only tested on OS X
 # Dependencies: fish, vim, tmux, cmus
 
-if [ "${PWD##*/}" != "dotfiles" ]; then
+if [ "${PWD##*/}" != "config" ]; then
 	echo "Script must be executed in parent directory of dotfiles repo"
 	exit 1
 fi
