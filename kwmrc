@@ -1,0 +1,136 @@
+// vim: set filetype=c
+// Inspired by:
+// https://raw.githubusercontent.com/koekeishiya/kwm/master/examples/kwmrc
+
+// Set default values for screen padding
+// top bottom left right
+kwmc config padding 20 20 20 20
+
+// Set default values for container gaps
+kwmc config gap 15 15
+
+// Open terminal
+kwmc bindsym ctrl+cmd-return exec open -a Terminal ~
+
+// Default tiling mode for Kwm (bsp | monocle | float)
+kwmc config tiling bsp
+
+kwmc config hotkeys on
+
+kwmc config float-non-resizable on
+kwmc config center-on-float on
+kwmc config standby-on-float on
+kwmc config lock-to-container on
+
+kwmc config focus-follows-mouse on
+kwmc config mouse-follows-focus on
+
+kwmc config mouse-drag mod shift+ctrl
+kwmc config mouse-drag on
+
+kwmc config cycle-focus off
+
+kwmc config split-ratio 0.5
+kwmc config spawn left
+
+/* The following command creates a rule that
+   captures an application to the given screen,
+   if the screen exists.
+
+   kwmc rule owner="iTunes" properties={display="1"} */
+
+// Enable border for focused window
+kwmc config border focused on
+kwmc config border focused size 2
+kwmc config border focused color 0xFFBBBBBB
+kwmc config border focused radius 6
+
+// Enable border for marked window
+kwmc config border marked on
+kwmc config border marked size 2
+kwmc config border marked color 0xFFE24041
+kwmc config border marked radius 6
+
+// Enable the prefix mode
+kwmc mode prefix prefix on
+kwmc mode prefix timeout 0.75
+kwmc mode prefix restore default
+kwmc mode prefix color 0xFF55EE55
+
+/*  Default Keybinds */
+// Activate prefix mode
+kwmc bindsym ctrl-k mode activate prefix
+
+// Set Space Tiling Mode To BSP
+kwmc bindsym cmd+ctrl-a space -t bsp
+
+// Set Space Tiling Mode To Monocle
+kwmc bindsym cmd+ctrl-s space -t monocle
+
+// Set Space Tiling Mode To Floating
+kwmc bindsym cmd+ctrl-d space -t float
+
+// Rotate Window-Tree By 90degrees (Clockwise)
+kwmc bindsym cmd+ctrl-r tree rotate 90
+
+// Modify Container
+kwmc bindsym prefix-s window -c split-mode toggle
+kwmc bindsym prefix-< window -c type toggle
+
+kwmc bindsym prefix-h window -c expand 0.05 west
+kwmc bindsym prefix-j window -c expand 0.05 south
+kwmc bindsym prefix-k window -c expand 0.05 north
+kwmc bindsym prefix-l window -c expand 0.05 east
+
+kwmc bindsym prefix+shift-h window -c reduce 0.05 west
+kwmc bindsym prefix+shift-j window -c reduce 0.05 south
+kwmc bindsym prefix+shift-k window -c reduce 0.05 north
+kwmc bindsym prefix+shift-l window -c reduce 0.05 east
+
+// Set Temporary Window Container
+kwmc bindsym prefix-f window -z fullscreen
+kwmc bindsym prefix-p window -z parent
+kwmc bindsym prefix-w window -t focused
+
+// Mark Window
+kwmc bindsym cmd+ctrl-m window -mk focused
+// kwmc bindsym cmd+ctrl-h window -mk west wrap
+// kwmc bindsym cmd+ctrl-l window -mk east wrap
+// kwmc bindsym cmd+ctrl-j window -mk south wrap
+// kwmc bindsym cmd+ctrl-k window -mk north wrap
+
+// Give Focus To Window
+kwmc bindsym cmd+ctrl-h window -f west
+kwmc bindsym cmd+ctrl-l window -f east
+kwmc bindsym cmd+ctrl-j window -f south
+kwmc bindsym cmd+ctrl-k window -f north
+
+kwmc bindsym cmd+ctrl-n window -fm prev
+kwmc bindsym cmd+ctrl-m window -fm next
+
+// Give Focus To Screen
+// kwmc bindsym cmd+alt-1 display -f 0
+// kwmc bindsym cmd+alt-2 display -f 1
+// kwmc bindsym cmd+alt-3 display -f 2
+
+// Swap Focused Window
+kwmc bindsym ctrl+alt-h window -s west
+kwmc bindsym ctrl+alt-j window -s south
+kwmc bindsym ctrl+alt-k window -s north
+kwmc bindsym ctrl+alt-l window -s east
+kwmc bindsym ctrl+alt-m window -s mark
+
+// Detach Marked Window And Reinsert At Focused Window
+kwmc bindsym cmd+ctrl-e window -m mark
+
+// Pseudo containers
+kwmc bindsym cmd+ctrl+alt-p tree -pseudo create
+kwmc bindsym cmd+ctrl+alt-o tree -pseudo destroy
+kwmc bindsym ctrl+alt-p window -s prev
+kwmc bindsym ctrl+alt-n window -s next
+
+// Detach Focused Window And Reinsert In Direction
+kwmc bindsym ctrl+shift-k window -m north
+kwmc bindsym ctrl+shift-l window -m east
+kwmc bindsym ctrl+shift-j window -m south
+kwmc bindsym ctrl+shift-h window -m west

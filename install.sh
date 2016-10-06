@@ -12,6 +12,9 @@ fi
 echo 'Linking .bashrc...'
 ln -sf "$(pwd)/bashrc" ~/.bashrc
 
+echo 'linking .kwm/kwmrc'
+ln -sf "$(pwd)/kwmrc" ~/.kwm/kwmrc
+
 echo 'Linking .tmux.conf...'
 ln -sf "$(pwd)/tmux.conf" ~/.tmux.conf
 

@@ -122,6 +122,16 @@ if [ $(uname) = 'Darwin' ]; then
 		mv "$@" ~/.Trash;
 	}
 
+	restart_kwm () {
+		brew services stop kwm
+		brew services start kwm
+	}
+
+	kwmrc () {
+		$EDITOR ~/.kwm/kwmrc
+		kwmc config reload
+	}
+
 else # Hope this is ubuntu
 
 	alias pbcopy 'xclip -selection clipboard -i'
