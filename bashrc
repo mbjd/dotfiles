@@ -52,7 +52,6 @@ alias docs='cd ~/Documents'
 # Vimisms
 alias vimrc="vim ~/.vimrc"
 
-alias fancy-wget="wget -r -l inf -np -nH -k -c -N -w1 --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'"
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
 alias gitlog="git log --format=oneline --abbrev-commit --graph"
 alias -- '-'='cd - > /dev/null'
@@ -72,6 +71,7 @@ if [ $(uname) = 'Darwin' ]; then
 	alias code='cd ~/code'
 	alias misc='cd ~/misc'
 	alias dev='cd ~/dev'
+	alias eth='cd ~/eth'
 
 	alias v='nvim'
 	alias vi='nvim'
@@ -96,6 +96,9 @@ if [ $(uname) = 'Darwin' ]; then
 	alias hd='hexdump -C'
 	alias finder='open .'
 	alias units='gunits'
+	alias p='pbpaste'
+	alias c='pbcopy'
+	alias o='open'
 
 	export GIT_EDITOR=nvim
 	export BROWSER='open -a Google\ Chrome'
@@ -126,7 +129,7 @@ else # Hope this is ubuntu
 
 	alias dots 'cd ~/misc/dotfiles'
 
-	setenv GIT_EDITOR vim
+	export GIT_EDITOR=vim
 
 	# Open in new gvim tab
 	alias tvim 'gvim --remote-tab'
