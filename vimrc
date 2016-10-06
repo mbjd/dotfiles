@@ -168,3 +168,5 @@ Plug('vim-scripts/netrw.vim')
 Plug('tpope/vim-commentary')
 
 call plug#end()
+
+autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
