@@ -20,7 +20,7 @@ fi
 # Convert 'to' to a newline
 n='\
 '
-result=$(echo "$@" | sed "s/ to /$n/g" | gunits | grep -i '*' | cut -d'*' -f2 | tr -d ' ')
+result=$(echo "$@" | sed "s/ to /$n/g" | units | grep -i '*' | cut -d'*' -f2 | tr -d ' ')
 if [ $(echo $result | wc -c) -eq 1 ]; then
 	echo 'Error'
 else
