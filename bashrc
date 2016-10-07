@@ -78,11 +78,10 @@ if [ $(uname) = 'Darwin' ]; then
 	alias vim='nvim'
 	alias mvim="open -a MacVim"
 
-	# Trash cmus's stderr so that the error message won't clog up the UI
-	alias cmus="cmus 2> /dev/null"
-
+	alias qt="open -a 'QuickTime Player'"
 	alias clip='pbpaste | vipe | pbcopy'
 	alias subl="open -a 'Sublime Text'"
+	alias units='/usr/local/bin/units'
 	alias grep='ggrep --color=auto'
 	alias sha256sum='shasum -a 256'
 	alias vtop='vtop --theme brew'
@@ -90,15 +89,18 @@ if [ $(uname) = 'Darwin' ]; then
 	alias mvim="open -a MacVim"
 	alias md='open -a MacDown'
 	alias objdump='otool -tV'
+	alias vlc='open -a VLC'
 	alias top='top -o cpu'
 	alias sha1sum='shasum'
 	alias rgrep='grep -r'
 	alias hd='hexdump -C'
 	alias finder='open .'
-	alias units='gunits'
 	alias p='pbpaste'
 	alias c='pbcopy'
 	alias o='open'
+
+	# Trash cmus's stderr so that the error message won't clog up the UI
+	alias cmus="cmus 2> /dev/null"
 
 	export GIT_EDITOR=nvim
 	export BROWSER='open -a Google\ Chrome'
@@ -268,3 +270,12 @@ man() {
 
 # Only unique entries in case this file is sourced several times
 export PATH=$(echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':')
+
+# Start the terminal at the bottom of the window
+clear_to_bottom () {
+	for i in $(seq $(tput lines)); do echo; done;
+}
+
+clear_to_bottom
+
+bind -x '"\C-l": clear; clear_to_bottom'
