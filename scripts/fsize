@@ -10,7 +10,7 @@ if [[ $1 == -* ]]; then
 	shift
 fi
 
-for i in $@; do
+for i in "$@"; do
 	# If the file is a symlink, use the file it points to
 	if test -L "$i"; then
 		file=$(readlink $(echo "$i" | tr -d '/'))
