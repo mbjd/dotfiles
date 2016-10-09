@@ -273,7 +273,10 @@ export PATH=$(echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':')
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {
-	for i in $(seq $(tput lines)); do echo; done;
+	for i in $(seq 1 $(tput lines));
+	do
+		echo;
+	done
 }
 
 clear_to_bottom
