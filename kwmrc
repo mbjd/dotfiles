@@ -57,9 +57,10 @@ kwmc mode prefix timeout 0.75
 kwmc mode prefix restore default
 kwmc mode prefix color 0xFF55EE55
 
-/*  Default Keybinds */
 // Activate prefix mode
 kwmc bindsym ctrl-k mode activate prefix
+// Pass through prefix when writing prefix in prefix mode
+kwmc bindsym prefix-ctrl-k write ctrl-k
 
 // Set Space Tiling Mode To BSP
 kwmc bindsym cmd+ctrl-a space -t bsp
