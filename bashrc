@@ -125,8 +125,7 @@ if [ $(uname) = 'Darwin' ]; then
 	}
 
 	restart_kwm () {
-		brew services stop kwm
-		brew services start kwm
+		brew services restart kwm
 	}
 
 	kwmrc () {
@@ -157,7 +156,7 @@ rand()
 
 # open this file
 bashrc() {
-	vi ~/.bash_profile
+	$EDITOR ~/.bash_profile
 	source ~/.bash_profile
 }
 
@@ -273,10 +272,7 @@ export PATH=$(echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':')
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {
-	for i in $(seq 1 $(tput lines));
-	do
-		echo;
-	done
+	yes '' | head -$(tput lines)
 }
 
 clear_to_bottom
