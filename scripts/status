@@ -1,0 +1,4 @@
+#!/bin/bash
+
+(batt; printf '%% - '; osx-cpu-temp; printf '°C - '; date '+%a %C%y-%m-%d %R') | tr -d '\n'
+echo
