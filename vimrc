@@ -134,8 +134,10 @@ if s:uname == "Darwin"
 	set cursorline
 
 	set guioptions=gmiM
-	set linespace=2
-	set guifont=Input\ Mono:h14
+	set linespace=3
+	set guifont=Input\ Mono:h13
+
+	set mouse=
 elseif s:uname == "Linux"
 	colorscheme elflord
 
