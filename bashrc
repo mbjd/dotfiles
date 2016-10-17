@@ -1,10 +1,9 @@
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-PATH=$PATH:"$HOME/bin"
-PATH=$PATH:"$HOME/scripts"
-PATH=$PATH:"$HOME/scripts/colorscripts"
-PATH=$PATH:/usr/local/bin
+PATH="$PATH:$HOME/bin"
+PATH="$PATH:$HOME/scripts"
+PATH="$PATH:$HOME/scripts/colorscripts"
+PATH="$PATH:/usr/local/bin"
 
 export PYTHONSTARTUP="$HOME/.pystartup.py"
 export CLICOLOR=1
@@ -12,6 +11,7 @@ export XDG_CONFIG="$HOME/.config"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_RUNTIME_DIR="$HOME/.config"
 export HISTCONTROL=ignoredups
+export PROMPT_COMMAND=
 
 # Infinite history
 HISTSIZE=''
@@ -79,6 +79,7 @@ if [ $(uname) = 'Darwin' ]; then
 	alias mvim="open -a MacVim"
 
 	alias qt="open -a 'QuickTime Player'"
+	alias prefs="open -a 'System Preferences'"
 	alias clip='pbpaste | vipe | pbcopy'
 	alias subl="open -a 'Sublime Text'"
 	alias units='/usr/local/bin/units'
@@ -161,8 +162,7 @@ bashrc() {
 }
 
 cl () {
-	cdf
-	ls
+	cdf && ls
 }
 
 # Read before executing pasted code
@@ -275,6 +275,8 @@ clear_to_bottom () {
 	yes '' | head -$(tput lines)
 }
 
-clear_to_bottom
+# So that the whole terminal is cleared even when the window manager
+# immediately enlarges it
+yes '' | head -55
 
 bind -x '"\C-l": clear; clear_to_bottom'
