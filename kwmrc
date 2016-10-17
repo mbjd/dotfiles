@@ -1,4 +1,3 @@
-// vim: set filetype=c
 // Inspired by:
 // https://raw.githubusercontent.com/koekeishiya/kwm/master/examples/kwmrc
 
@@ -42,7 +41,7 @@ kwmc config spawn left
 // Enable border for focused window
 kwmc config border focused on
 kwmc config border focused size 2
-kwmc config border focused color 0xFFBBBBBB
+kwmc config border focused color 0xFFDDDDDD
 kwmc config border focused radius 6
 
 // Enable border for marked window
@@ -53,7 +52,7 @@ kwmc config border marked radius 6
 
 // Enable the prefix mode
 kwmc mode prefix prefix on
-kwmc mode prefix timeout 0.75
+kwmc mode prefix timeout 0.5
 kwmc mode prefix restore default
 kwmc mode prefix color 0xFF55EE55
 
@@ -135,3 +134,13 @@ kwmc bindsym ctrl+shift-k window -m north
 kwmc bindsym ctrl+shift-l window -m east
 kwmc bindsym ctrl+shift-j window -m south
 kwmc bindsym ctrl+shift-h window -m west
+
+// That stuff doesn't seem to work
+// // Media keys
+// kwmc bindsym f7 sys cmus-remote --prev
+// kwmc bindsym f8 sys cmus-remote --pause
+// kwmc bindsym f9 sys cmus-remote --next
+//
+// // Launchpad on f4
+// kwmc bindsym f4 sys open -a Launchpad
+
