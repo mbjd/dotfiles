@@ -1,8 +1,0 @@
-#!/bin/bash
-
-width=$(tput cols)
-textlen=$(echo $@ | wc -c)
-spaces=$(echo "0.5 * ($width - $textlen)" | bc | sed 's/\..*//g')
-
-printf '%*s' $spaces
-echo "$@"
