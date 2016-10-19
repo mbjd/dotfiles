@@ -85,7 +85,6 @@ if [ (uname) = "Darwin" ]
 
 	alias dots 'cd ~/dotfiles'
 
-	setenv PATH /Library/Frameworks/Python.framework/Versions/3.5/bin $PATH
 	setenv PATH /opt/gcc-6.1.0/bin $PATH
 	setenv PATH ~/dev/go/bin $PATH
 	setenv GOPATH ~/dev/go
