@@ -267,6 +267,8 @@ man() {
 	fi
 }
 
+source /Users/balduin/code/distro/install/bin/torch-activate
+
 # Only unique entries in case this file is sourced several times
 export PATH=$(echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':')
 
