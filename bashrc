@@ -117,6 +117,10 @@ if [ $(uname) = 'Darwin' ]; then
 		fi
 	}
 
+	cdp() {
+		cd $(pbpaste)
+	}
+
 	log () {
 		< ~/misc/log.csv python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
 	}
@@ -190,8 +194,6 @@ weather() {
 	curl "wttr.in/${1-Zurich}"
 }
 
-
-# Use youtube-dl to get the audio track of a youtube video / playlist or sc song
 youtube-mp3() {
 	youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" $1
 }
