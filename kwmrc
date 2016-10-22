@@ -10,6 +10,7 @@ kwmc config gap 15 15
 
 // Open terminal
 kwmc bindsym ctrl+cmd-return exec open -a Terminal ~
+kwmc bindsym ctrl+cmd-f exec open $HOME
 
 // Default tiling mode for Kwm (bsp | monocle | float)
 kwmc config tiling bsp
