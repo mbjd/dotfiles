@@ -64,7 +64,7 @@ alias :q='exit'
 alias m='make'
 alias q='exit'
 
-if [ $(uname) = 'Darwin' ]; then
+if [ "$(uname)" = 'Darwin' ]; then
 
 	alias dots='cd ~/config'
 	alias drive='cd ~/drive'
@@ -99,6 +99,7 @@ if [ $(uname) = 'Darwin' ]; then
 	alias p='pbpaste'
 	alias c='pbcopy'
 	alias o='open'
+	alias du='gdu'
 
 	# Trash cmus's stderr so that the error message won't clog up the UI
 	alias cmus="cmus 2> /dev/null"
@@ -122,7 +123,7 @@ if [ $(uname) = 'Darwin' ]; then
 	}
 
 	log () {
-		< ~/misc/log.csv python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
+		< ~/misc/log.csv python3 -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
 	}
 
 	trash () {
@@ -271,8 +272,14 @@ man() {
 
 source /Users/balduin/code/distro/install/bin/torch-activate
 
-# Only unique entries in case this file is sourced several times
-export PATH=$(echo $PATH | tr ':' '\n' | sort | uniq | tr '\n' ':')
+# Clean paths
+PATH="$PATH:/Library/TeX/texbin:/Users/balduin/.vimpkg/bin:/Users/balduin/bin:/Users/balduin/code/distro/install/bin:/Users/balduin/dev/go/bin:/Users/balduin/scripts:/Users/balduin/scripts/colorscripts:/bin:/opt/X11/bin:/opt/gcc-6.1.0/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin"
+# export PATH=$(echo "$PATH" | tr ':' '\n' | awk 'length > 0 {print}' | sort | uniq | tr '\n' ':')
+
+
+# cudnn path
+export DYLD_LIBRARY_PATH='/usr/local/cuda/lib':$DYLD_LIBRARY_PATH
+# export DYLD_LIBRARY_PATH=$(echo $DYLD_LIBRARY_PATH | tr ':' '\n' | awk 'length > 0 {print}' | sort | uniq | tr '\n' ':')
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {
