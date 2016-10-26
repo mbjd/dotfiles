@@ -7,11 +7,11 @@
 # [==--------]
 # Please no non-numeric strings, negative numbers or $1 > $2
 
-past=$1
-total=$2
+past="$1"
+total="$2"
 future=$(($total - $past))
 
 echo -n '['
-test $past -gt 0 && yes '=' | tr -d '\n' | head -c $past
-test $future -gt 0 && yes '-' | tr -d '\n' | head -c $future
+test "$past" -gt 0 && yes '=' | tr -d '\n' | head -c $past
+test "$future" -gt 0 && yes '-' | tr -d '\n' | head -c $future
 echo -n '] '
