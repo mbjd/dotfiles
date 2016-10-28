@@ -37,7 +37,7 @@ export LESS='-Ri -x4'
 export EDITOR='vim'
 
 # Basic aliases
-alias ls="gls -F --color=auto --time-style=long-iso"
+alias ls="ls -F --color=auto --time-style=long-iso"
 alias l="ls"
 alias ll="ls -l"
 alias la="ls -a"
@@ -139,20 +139,14 @@ if [ "$(uname)" = 'Darwin' ]; then
 		kwmc config reload
 	}
 
-else # Hope this is ubuntu
+else # Hope this is linux
 
-	alias pbcopy 'xclip -selection clipboard -i'
-	alias pbpaste 'xclip -selection clipboard -o'
+    alias vi=vim
 
-	alias dots 'cd ~/misc/dotfiles'
+	alias c='xclip -selection clipboard -i'
+	alias p='xclip -selection clipboard -o'
 
 	export GIT_EDITOR=vim
-
-	# Open in new gvim tab
-	alias tvim 'gvim --remote-tab'
-	alias mvim gvim
-
-	alias open 'xdg-open'
 fi
 
 rand()
@@ -162,8 +156,8 @@ rand()
 
 # open this file
 bashrc() {
-	$EDITOR ~/.bash_profile
-	source ~/.bash_profile
+	$EDITOR ~/.bashrc
+	source ~/.bashrc
 }
 
 cl () {
@@ -270,16 +264,7 @@ man() {
 	fi
 }
 
-source /Users/balduin/code/distro/install/bin/torch-activate
-
-# Clean paths
-PATH="$PATH:/Library/TeX/texbin:/Users/balduin/.vimpkg/bin:/Users/balduin/bin:/Users/balduin/code/distro/install/bin:/Users/balduin/dev/go/bin:/Users/balduin/scripts:/Users/balduin/scripts/colorscripts:/bin:/opt/X11/bin:/opt/gcc-6.1.0/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin"
-# export PATH=$(echo "$PATH" | tr ':' '\n' | awk 'length > 0 {print}' | sort | uniq | tr '\n' ':')
-
-
-# cudnn path
-export DYLD_LIBRARY_PATH='/usr/local/cuda/lib':$DYLD_LIBRARY_PATH
-# export DYLD_LIBRARY_PATH=$(echo $DYLD_LIBRARY_PATH | tr ':' '\n' | awk 'length > 0 {print}' | sort | uniq | tr '\n' ':')
+export PATH=$(echo "$PATH" | tr ':' '\n' | awk 'length > 0 {print}' | sort | uniq | tr '\n' ':')
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {

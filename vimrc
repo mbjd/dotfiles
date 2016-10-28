@@ -8,6 +8,7 @@ set wildmode=list:longest,full " Display all command options on <tab>
 set backspace=indent,eol,start
 set showcmd                    " Show the command being typed at the bottom
 set scrolloff=5
+syntax on
 
 set shiftwidth=4
 set tabstop=4
@@ -159,16 +160,16 @@ highlight NonText ctermfg=239 guifg=#4e4e4e
 highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
 " Get some plugins
-filetype plugin on
-
-call plug#begin('~/.vim/plugged')
-
-Plug('tpope/vim-surround')
-Plug('tpope/vim-repeat')
-Plug('dag/vim-fish')
-Plug('vim-scripts/netrw.vim')
-Plug('tpope/vim-commentary')
-
-call plug#end()
+" filetype plugin on
+"
+" call plug#begin('~/.vim/plugged')
+"
+" Plug('tpope/vim-surround')
+" Plug('tpope/vim-repeat')
+" Plug('dag/vim-fish')
+" Plug('vim-scripts/netrw.vim')
+" Plug('tpope/vim-commentary')
+"
+" call plug#end()
 
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
