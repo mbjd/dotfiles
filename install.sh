@@ -12,9 +12,6 @@ fi
 echo 'Linking .bashrc...'
 ln -sf "$(pwd)/bashrc" ~/.bashrc
 
-echo 'linking .kwm/kwmrc'
-ln -sf "$(pwd)/kwmrc" ~/.kwm/kwmrc
-
 echo 'Linking .tmux.conf...'
 ln -sf "$(pwd)/tmux.conf" ~/.tmux.conf
 
@@ -37,8 +34,13 @@ ln -sf "$(pwd)/scripts" ~
 
 if [ "$(uname)" == "Darwin" ]; then
 	echo "Detected Mac OS"
+
+	echo 'linking .kwm/kwmrc'
+	ln -sf "$(pwd)/kwmrc" ~/.kwm/kwmrc
+
 	echo ' - Linking .bash_profile...'
 	ln -sf ~/.bashrc ~/.bash_profile
+
 	echo ' - Linking .pystartup.py...'
 	ln -sf "$(pwd)/pystartup-mac.py" ~/.pystartup.py
 else
