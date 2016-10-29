@@ -27,11 +27,6 @@ blue=$(tput setaf 4)
 reset=$(tput sgr0)
 export PS1="\[$bold\]\u@\H:\w \$\[$reset\] "
 
-# Bash completion
-# if [ -f $(brew --prefix)/etc/bash_completion ]; then
-# 	. $(brew --prefix)/etc/bash_completion
-# fi
-
 export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
 export EDITOR='vim'
@@ -45,9 +40,9 @@ alias lal="ll -a"
 
 alias newest="command ls -t | head -1"
 
-alias desk='cd ~/Desktop'
-alias dl='cd ~/Downloads'
-alias docs='cd ~/Documents'
+alias desk='cd ~/desktop'
+alias dl='cd ~/downloads'
+alias docs='cd ~/documents'
 
 # Vimisms
 alias vimrc="vim ~/.vimrc"
@@ -100,6 +95,11 @@ if [ "$(uname)" = 'Darwin' ]; then
 	alias c='pbcopy'
 	alias o='open'
 	alias du='gdu'
+
+	# Bash completion
+	# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	# 	. $(brew --prefix)/etc/bash_completion
+	# fi
 
 	# Trash cmus's stderr so that the error message won't clog up the UI
 	alias cmus="cmus 2> /dev/null"
