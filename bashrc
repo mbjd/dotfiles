@@ -139,6 +139,11 @@ if [ "$(uname)" = 'Darwin' ]; then
 		kwmc config reload
 	}
 
+	# Preview a file or folder in Quicklook
+	ql() {
+		qlmanage -p "$1" &> /dev/null &
+	}
+
 else # Hope this is linux
 
     alias vi=vim
@@ -146,7 +151,11 @@ else # Hope this is linux
 	alias c='xclip -selection clipboard -i'
 	alias p='xclip -selection clipboard -o'
 
+    alias o='xdg-open'
+
 	export GIT_EDITOR=vim
+
+    alias feh='feh --auto-zoom --scale-down'
 fi
 
 rand()
@@ -177,11 +186,6 @@ pp() {
 	if [[ "$execute" == "y" ]]; then
 		eval "$script"
 	fi
-}
-
-# Preview a file or folder in Quicklook
-ql() {
-	qlmanage -p "$1" &> /dev/null &
 }
 
 # Display weather information ($1 = city)
@@ -276,3 +280,6 @@ clear_to_bottom () {
 yes '' | head -55
 
 bind -x '"\C-l": clear; clear_to_bottom'
+
+# TODO find a better way to do this
+xset r rate 200 50

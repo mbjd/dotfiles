@@ -1,2 +1,11 @@
 #!/bin/bash
-pmset -g batt | grep -o "\d*%" | tr -d '%'
+if [ $(uname) = "Darwin" ]; then
+    pmset -g batt | grep -o "\d*%" | tr -d '%'
+else
+    full=$(cat /sys/class/power_supply/BAT0/charge_full)
+    now=$(cat /sys/class/power_supply/BAT0/charge_now)
+    (
+        echo scale=2
+        echo 100 \* $now / $full
+    ) | bc
+fi

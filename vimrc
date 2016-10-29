@@ -3,11 +3,13 @@ set undofile                   " Save undo's after file closes
 set undodir=$HOME/.vim/undo    " where to save undo histories
 set keywordprg=ggl             " Pressing K googles the word under the cursor
 set clipboard=unnamed          " Yank/paste with system clipboard
+set clipboard=unnamedplus
 set lazyredraw                 " Maybe these will make it faster?
 set wildmode=list:longest,full " Display all command options on <tab>
 set backspace=indent,eol,start
 set showcmd                    " Show the command being typed at the bottom
 set scrolloff=5
+set relativenumber number
 syntax on
 
 set shiftwidth=4
@@ -21,6 +23,7 @@ set backupdir=$HOME/.vim/backups//
 
 " Make crontab work
 autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
+autocmd BufEnter /tmp/crontab.* setl backupcopy=yes
 
 " Increment/decrement numbers with +/-
 nnoremap - <C-x>
@@ -131,7 +134,6 @@ if s:uname == "Darwin"
 	let g:sierra_Midnight = 1
 	" let g:sierra_Pitch = 1
 	colorscheme sierra
-	set relativenumber
 	set cursorline
 
 	set guioptions=gmiM
@@ -140,13 +142,16 @@ if s:uname == "Darwin"
 
 	set mouse=
 elseif s:uname == "Linux"
-	colorscheme elflord
+
+	" let g:sierra_Twilight = 1
+	let g:sierra_Midnight = 1
+	" let g:sierra_Pitch = 1
+	" colorscheme sierra
 
 	set guioptions=""
 	set linespace=1
-
-	set norelativenumber
 	set nocursorline
+    set guifont=DejaVu\ Sans\ Mono\ Bold\ 12
 
 	set expandtab
 endif
