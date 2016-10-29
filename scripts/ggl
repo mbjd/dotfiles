@@ -1,4 +1,4 @@
 #!/bin/bash
 
 str="$@"
-open "https://www.google.ch/search?q=$str"
+chromium "https://www.google.ch/search?q=$str" > /dev/null &
