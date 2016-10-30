@@ -22,7 +22,7 @@ export GOPATH="$HOME/dev/go"
 PATH=$PATH:$GOPATH/bin
 
 # Fancy coloured PS1
-bold=$(tput bold)
+bold=$(tput setaf 1; tput bold)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
 export PS1="\[$bold\]\u@\H:\w \$\[$reset\] "

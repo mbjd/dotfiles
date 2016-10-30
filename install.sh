@@ -25,10 +25,10 @@ echo 'Setting up cmus config file...'
 mkdir -p ~/.config/cmus
 ln -sf "$(pwd)/cmusrc" ~/.config/cmus/rc
 
-echo 'Setting up fish config file...'
-mkdir -p ~/.config/fish
-ln -sf "$(pwd)/fish/config.fish" ~/.config/fish/config.fish
-ln -sf "$(pwd)/fish/functions" ~/.config/fish/
+# echo 'Setting up fish config file...'
+# mkdir -p ~/.config/fish
+# ln -sf "$(pwd)/fish/config.fish" ~/.config/fish/config.fish
+# ln -sf "$(pwd)/fish/functions" ~/.config/fish/
 
 ln -sf "$(pwd)/scripts" ~
 
