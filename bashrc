@@ -98,7 +98,7 @@ if [ "$(uname)" = 'Darwin' ]; then
 
 	# Bash completion
 	# if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	# 	. $(brew --prefix)/etc/bash_completion
+	#	. $(brew --prefix)/etc/bash_completion
 	# fi
 
 	# Trash cmus's stderr so that the error message won't clog up the UI
@@ -156,7 +156,26 @@ else # Hope this is linux
 	export GIT_EDITOR=vim
 
     alias feh='feh --auto-zoom --scale-down'
+
+    alias dl='cd ~/dl'
+
+    trash ()
+    {
+        mv "$@" /home/balduin/.local/share/Trash
+    }
+
+	alias i3conf='vim ~/.config/i3/config'
 fi
+
+reset_permissions()
+{
+    echo chown -R balduin:users "$1"
+    chown -R balduin:users "$1"
+    echo find \"$1\" -type d -exec chmod 755 '{} \;'
+    find "$1" -type d -exec chmod 755 {} \;
+    echo find \"$1\" -type f -exec chmod 644 '{} \;'
+    find "$1" -type f -exec chmod 644 {} \;
+}
 
 rand()
 {
@@ -272,7 +291,7 @@ export PATH=$(echo "$PATH" | tr ':' '\n' | awk 'length > 0 {print}' | sort | uni
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {
-	yes '' | head -$(tput lines)
+	yes '' | head -$(($(tput lines) + 2))
 }
 
 # So that the whole terminal is cleared even when the window manager
