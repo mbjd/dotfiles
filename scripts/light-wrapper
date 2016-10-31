@@ -1,10 +1,10 @@
 #!/bin/bash
 
-factor='1.1'
+factor='1.2'
 
 case $1 in
 	up)
-		light -S $(echo $(light) '*' $factor | bc -l)
+		light -S $(echo $(light) '*' $factor '+0.01' | bc -l)
 		light
 		;;
 	down)
