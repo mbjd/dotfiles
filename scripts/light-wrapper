@@ -1,0 +1,18 @@
+#!/bin/bash
+
+factor='1.1'
+
+case $1 in
+	up)
+		light -S $(echo $(light) '*' $factor | bc -l)
+		light
+		;;
+	down)
+		light -S $(echo $(light) '/' $factor | bc -l)
+		light
+		;;
+	*)
+		echo invalid command > /dev/stderr
+		exit 1
+		;;
+esac
