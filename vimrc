@@ -18,7 +18,7 @@ set softtabstop=4
 set noexpandtab
 set autoindent
 
-set directory^=$HOME/.vim/swp//
+set directory=$HOME/.vim/swp//
 set backupdir=$HOME/.vim/backups//
 
 " Make crontab work
@@ -142,7 +142,6 @@ if s:uname == "Darwin"
 
 	set mouse=
 elseif s:uname == "Linux"
-
 	" let g:sierra_Twilight = 1
 	let g:sierra_Midnight = 1
 	" let g:sierra_Pitch = 1
@@ -150,8 +149,9 @@ elseif s:uname == "Linux"
 
 	set guioptions=""
 	set linespace=1
-	set nocursorline
-    set guifont=DejaVu\ Sans\ Mono\ Bold\ 12
+	set cursorline
+	set guifont=DejaVu\ Sans\ Mono\ Bold\ 12
+	colorscheme sierra
 endif
 
 " Highlight different kinds of whitespace with symbols
