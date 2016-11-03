@@ -51,21 +51,8 @@ else
 	echo " - Linking i3config"
 	ln -s $(pwd)/i3config ~/.config/i3/config
 
-	echo " - Setting up st..."
-	if [ -d ~/code/st ]; then
-		ln -sf $(pwd)/st-config.h ~/code/st/config.h
-		echo "   - st config.h linked, now compile & install"
-	else
-		echo "   - ~/code/st doesn't exist, skipping st's config.h" > /dev/stderr
-	fi
-
-    echo " - Downloading input mono font..."
-
-    # curl 'http://input.fontbureau.com/build/?fontSelection=whole&a=ss&g=ss&i=serif&l=serif&zero=0&asterisk=0&braces=0&preset=default&line-height=1.2&accept=I+do&email=' > input-mono.zip
-    # unzip input-mono.zip -d inputmono > /dev/null
-    # echo " - Installing input mono font, please give password"
-    # sudo cp -r inputmono/Input_Fonts /usr/share/fonts
-    # rm -r input-mono.zip inputmono
+	echo " - Linking .xbindkeysrc..."
+	ln -s $(pwd)/xbindkeysrc ~/.xbindkeysrc
 fi
 
 echo 'Done!'

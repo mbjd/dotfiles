@@ -1,0 +1,21 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+# Volume control
+# TODO find out why this won't work when
+# run from a keybinding
+"amixer set Master 2dB+ on"
+	XF86AudioRaiseVolume
+"amixer set Master 2dB- on"
+	XF86AudioLowerVolume
+
+# Brightness control
+"/home/balduin/scripts/light-wrapper up"
+	XF86MonBrightnessUp
+"/home/balduin/scripts/light-wrapper down"
+	XF86MonBrightnessDown
+
+# Keyboard backlight toggle
+"/home/balduin/scripts/toggle-kbdlight.sh"
+	XF86KbdBrightnessDown
