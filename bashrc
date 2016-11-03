@@ -155,7 +155,7 @@ else # Hope this is linux
 
 	export GIT_EDITOR=vim
 
-    alias feh='feh --auto-zoom --scale-down'
+    alias feh='feh --auto-zoom --scale-down -B black'
 
     alias dl='cd ~/dl'
 
@@ -291,11 +291,11 @@ export PATH=$(echo "$PATH" | tr ':' '\n' | awk 'length > 0 {print}' | sort | uni
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {
-	yes '' | head -$(($(tput lines) + 2))
+	yes '' | head -$(tput lines)
 }
 
 # So that the whole terminal is cleared even when the window manager
 # immediately enlarges it
-# yes '' | head -55
+clear_to_bottom
 
-# bind -x '"\C-l": clear; clear_to_bottom'
+bind -x '"\C-l": clear; clear_to_bottom'
