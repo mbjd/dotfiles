@@ -19,3 +19,6 @@
 # Keyboard backlight toggle
 "/home/balduin/scripts/toggle-kbdlight.sh"
 	XF86KbdBrightnessDown
+
+"/home/balduin/scripts/lock.sh"
+	XF86LaunchA
