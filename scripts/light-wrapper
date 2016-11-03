@@ -12,7 +12,7 @@ case $1 in
 		light
 		;;
 	*)
-		echo invalid command > /dev/stderr
+		echo light-wrapper: invalid command > /dev/stderr
 		exit 1
 		;;
 esac
