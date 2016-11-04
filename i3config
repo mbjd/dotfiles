@@ -36,10 +36,6 @@ exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
 # bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 # bindsym XF86AudioMute exec amixer -q set Master toggle
 
-# Lock screen
-# bindsym $mod+shift+x exec i3lock -i /home/balduin/pics/i3-lock.png
-bindsym $mod+shift+x exec /home/balduin/scripts/lock.sh
-
 # cmus media keys
 # bindsym XF86AudioPlay exec cmus-remote --pause
 # bindsym XF86AudioNext exec cmus-remote --next
@@ -130,7 +126,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -148,16 +144,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # i3-gaps
-gaps inner 5
-gaps outer 5
+gaps inner 14
+gaps outer 8
 
 # Disable title bar
 for_window [class="^.*"] border pixel 1
 
 #                        border  bg      text    indicator
-client.focused           #DDDDDD #DDDDDD #00FF00 #FFFFFF
-client.focused_inactive  #888888 #888888 #00FF00 #111111
-client.unfocused         #333333 #333333 #00FF00 #111111
+client.focused           #DDDDDD #DDDDDD #00FF00 #00FF00
+client.focused_inactive  #888888 #888888 #00FF00 #888888
+client.unfocused         #333333 #333333 #00FF00 #888888
 client.urgent            #FF0000 #111111 #00FF00 #FF0000
 
 # i3blocks bar
