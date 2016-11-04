@@ -142,16 +142,14 @@ if s:uname == "Darwin"
 
 	set mouse=
 elseif s:uname == "Linux"
-	" let g:sierra_Twilight = 1
-	let g:sierra_Midnight = 1
-	" let g:sierra_Pitch = 1
-	" colorscheme sierra
+
+	" https://github.com/roosta/vim-srcery
+	colorscheme srcery
 
 	set guioptions=""
 	set linespace=1
 	set cursorline
 	set guifont=DejaVu\ Sans\ Mono\ Bold\ 12
-	colorscheme sierra
 endif
 
 " Highlight different kinds of whitespace with symbols
