@@ -163,16 +163,16 @@ highlight NonText ctermfg=239 guifg=#4e4e4e
 highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
 " Get some plugins
-" filetype plugin on
-"
-" call plug#begin('~/.vim/plugged')
-"
-" Plug('tpope/vim-surround')
-" Plug('tpope/vim-repeat')
-" Plug('dag/vim-fish')
-" Plug('vim-scripts/netrw.vim')
-" Plug('tpope/vim-commentary')
-"
-" call plug#end()
+filetype plugin on
+
+call plug#begin('~/.vim/plugged')
+
+Plug('tpope/vim-surround')
+Plug('tpope/vim-repeat')
+Plug('dag/vim-fish')
+Plug('vim-scripts/netrw.vim')
+Plug('tpope/vim-commentary')
+
+call plug#end()
 
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
