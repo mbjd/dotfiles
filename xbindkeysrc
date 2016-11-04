@@ -20,5 +20,6 @@
 "/home/balduin/scripts/toggle-kbdlight.sh"
 	XF86KbdBrightnessDown
 
+# Lock the screen with i3lock
 "/home/balduin/scripts/lock.sh"
 	XF86LaunchA
