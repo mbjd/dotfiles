@@ -165,6 +165,10 @@ else # Hope this is linux
     }
 
 	alias i3conf='vim ~/.config/i3/config'
+
+	log () {
+		< ~/misc/log python3 -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
+	}
 fi
 
 reset_permissions()
