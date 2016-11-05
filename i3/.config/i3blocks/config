@@ -43,14 +43,15 @@ label=♪
 instance=Master
 interval=once
 signal=10
+# ^ This signal is sent by ~/scripts/volume-wrapper
 
 # Brightness indicator
-# Signal 12 is sent in ~/scripts/light-wrapper
 [brightness]
 label=☀
 command=/usr/bin/light
 interval=once
 signal=12
+# ^ This signal is sent by ~/scripts/light-wrapper
 
 # Memory usage
 [memory]

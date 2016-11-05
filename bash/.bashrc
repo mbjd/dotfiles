@@ -302,4 +302,4 @@ clear_to_bottom () {
 # immediately enlarges it
 clear_to_bottom
 
-bind -x '"\C-l": clear; clear_to_bottom'
+bind -x '"\C-l": clear_to_bottom'
