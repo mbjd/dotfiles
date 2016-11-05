@@ -2,7 +2,8 @@ scripts/scripts/deriv
 scripts/scripts/integ
 st/code/st/st/*
 
-ncmpcpp/.mpdcron.pid
+ncmpcpp/.mpdcron/mpdcron.pid
+
 ncmpcpp/.mpd/mpd.pid
 ncmpcpp/.mpd/mpd.db
 ncmpcpp/.mpd/mpd.log
