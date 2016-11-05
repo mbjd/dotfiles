@@ -1,0 +1,29 @@
+#######################
+# sxhkd configuration #
+#######################
+
+# Volume control
+XF86Audio{Raise,Lower}Volume
+	amixer -q set Master {2dB+,2dB-} unmute
+
+# Music player control
+XF86AudioPlay
+	mpc toggle
+XF86AudioNext
+	mpc next
+XF86AudioPrev
+	mpc prev
+
+# Brightness control
+XF86MonBrightnessUp
+	/home/balduin/scripts/light-wrapper up
+XF86MonBrightnessDown
+	/home/balduin/scripts/light-wrapper down
+
+# Keyboard backlight toggle
+XF86KbdBrightnessDown
+	/home/balduin/scripts/toggle-kbdlight.sh
+
+# Lock the screen with i3lock
+XF86LaunchA
+	slock

@@ -15,9 +15,11 @@ base:
 mac: base
 	$(STOW) cmus fish
 
+# alternatively:
+# $(STOW) i3 linux ncmpcpp st xbindkeys
 .PHONY: linux
 linux: base
-	$(STOW) i3 linux ncmpcpp st
+	$(STOW) i3 linux ncmpcpp st sxhkd
 
 .PHONY: unstow
 unstow:

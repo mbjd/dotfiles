@@ -9,9 +9,9 @@
 # 	XF86AudioRaiseVolume
 # "amixer sset Master,0 2db- on"
 # 	XF86AudioLowerVolume
-"mpc volume +3"
+"amixer -q set Master 2dB+"
 	XF86AudioRaiseVolume
-"mpc volume -3"
+"amixer -q set Master 2dB-"
 	XF86AudioLowerVolume
 
 # Music player control
