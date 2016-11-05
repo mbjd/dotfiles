@@ -19,12 +19,16 @@ set $up k
 # Initialisation stuff
 exec_always xbindkeys
 exec_always xset r rate 200 65
-exec_always killall xcape
-exec_always xcape -e '#66=Escape'
-exec_always mpdcron --kill
-exec_always mpdcron
 exec_always setxkbmap -option 'caps:ctrl_modifier'
 exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
+
+exec_always killall xcape
+exec_always xcape -e '#66=Escape'
+
+exec_always mpdcron --kill
+exec_always mpdcron
+
+exec_always killall autocutsel
 exec_always autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
 
 # --- This is done in ~/.xbindkeysrc for now ---
