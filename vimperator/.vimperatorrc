@@ -1,0 +1,27 @@
+set hintchars=hjklasdfgqwertuiopxcmn
+
+noremap J gT
+noremap K gt
+
+nnoremap j 2j
+nnoremap k 2k
+
+bmark https://reddit.com/r/%s -keyword=r
+
+hi NonText color: #808080; min-height: 16px; padding-left: 2px;
+
+highlight InfoMsg -append font-size:15px;
+highlight ErrorMsg -append font-size:15px;
+highlight Question -append font-size:15px;
+
+hi HintElem opacity:1;
+
+hi Hint font-size:13px; font-weight:bold; text-transform:uppercase;
+hi Hint -append color:black; background-color:yellow; border-color:black;
+hi Hint -append border-width:1px; border-style:solit;
+hi Hint -append padding:1px 4px 1px 4px
+
+ignorekeys add drive.google.com
+ignorekeys add mail.google.com
+ignorekeys add youtube.com
+ignorekeys add osm.org

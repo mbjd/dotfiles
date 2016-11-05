@@ -13,6 +13,7 @@ base:
 	$(STOW) scripts
 	$(STOW) tmux
 	$(STOW) vim
+	$(STOW) vimperator
 
 .PHONY: mac
 mac: base
