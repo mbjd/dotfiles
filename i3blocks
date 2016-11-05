@@ -17,8 +17,10 @@
 # separator
 # separator_block_width
 # short_text
-# signal
+# signal (*)
 # urgent
+
+# (*): Trigger with pkill -RTMIN+$signal i3blocks
 
 # Global properties
 #
@@ -28,25 +30,29 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=20
 markup=none
 
+# ncmpcpp
+[music]
+command=/home/balduin/scripts/mpd-status.sh
+interval=60 # so it disappears if mpd is stopped
+signal=11
+# ^ This signal is sent by ~/.mpdcron/hooks/player
+
 # Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
 [volume]
 label=♪
 instance=Master
 interval=once
 signal=10
 
+# Brightness indicator
+# Signal 12 is sent in ~/scripts/light-wrapper
 [brightness]
 label=☀
-command=/usr/bin/light | cut -d. -f1 | sed 's/$/%/g'
+command=/usr/bin/light
+interval=once
 signal=12
 
 # Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
 interval=30
@@ -57,18 +63,12 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
-color=#00FF00
+color=#519F50
 interval=10
-separator=false
 
-[wifi]
-#instance=wlp3s0
-interval=10
-separator=false
-
-[bandwidth]
-#instance=eth0
-interval=2
+# OpenVPN support
+[openvpn]
+interval=20
 
 # CPU usage
 #
@@ -80,44 +80,19 @@ interval=10
 min_width=CPU:
 #separator=false
 
-#[load_average]
-#interval=10
-
 # Battery indicator
-#
-# The battery instance defaults to 0.
 [battery]
 label=BAT
 #instance=1
-interval=30
+interval=60
 
 
 # Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
 [temperature]
 label=TEMP
-interval=10
+interval=60
 
-# Date Time
-#
+# Date & Time
 [time]
 command=date '+%Y-%m-%d %H:%M'
-interval=10
-
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-[brightness]
-label=☀
-command=/usr/bin/light | cut -d. -f1 | sed 's/$/%/g'
-signal=15
-
-# OpenVPN support
-#
-# Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
+interval=20

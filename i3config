@@ -19,9 +19,13 @@ set $up k
 # Initialisation stuff
 exec_always xbindkeys
 exec_always xset r rate 200 65
+exec_always killall xcape
 exec_always xcape -e '#66=Escape'
+exec_always mpdcron --kill
+exec_always mpdcron
 exec_always setxkbmap -option 'caps:ctrl_modifier'
 exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
+exec_always autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
 
 # --- This is done in ~/.xbindkeysrc for now ---
 # Brightness keys
@@ -144,16 +148,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # i3-gaps
-gaps inner 14
+gaps inner 8
 gaps outer 8
 
 # Disable title bar
 for_window [class="^.*"] border pixel 1
 
 #                        border  bg      text    indicator
-client.focused           #DDDDDD #DDDDDD #00FF00 #00FF00
-client.focused_inactive  #888888 #888888 #00FF00 #888888
-client.unfocused         #333333 #333333 #00FF00 #888888
+client.focused           #CCCCCC #CCCCCC #00FF00 #519F50
+client.focused_inactive  #333333 #333333 #00FF00 #333333
+client.unfocused         #333333 #333333 #00FF00 #333333
 client.urgent            #FF0000 #111111 #00FF00 #FF0000
 
 # i3blocks bar

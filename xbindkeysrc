@@ -5,10 +5,22 @@
 # Volume control
 # TODO find out why this won't work when
 # run from a keybinding
-"amixer set Master 2dB+ on"
+# "amixer sset Master,0 2db+ on"
+# 	XF86AudioRaiseVolume
+# "amixer sset Master,0 2db- on"
+# 	XF86AudioLowerVolume
+"mpc volume +3"
 	XF86AudioRaiseVolume
-"amixer set Master 2dB- on"
+"mpc volume -3"
 	XF86AudioLowerVolume
+
+# Music player control
+"mpc toggle"
+	XF86AudioPlay
+"mpc next"
+	XF86AudioNext
+"mpc prev"
+	XF86AudioPrev
 
 # Brightness control
 "/home/balduin/scripts/light-wrapper up"
