@@ -10,20 +10,20 @@ if [ "${PWD##*/}" != "config" ]; then
 fi
 
 echo 'Linking .bashrc...'
-ln -sf "$(pwd)/bashrc" ~/.bashrc
+ln -s "$(pwd)/bashrc" ~/.bashrc
 
 echo 'Linking .tmux.conf...'
-ln -sf "$(pwd)/tmux.conf" ~/.tmux.conf
+ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 
 echo 'Linking .vimrc...'
-ln -sf "$(pwd)/vimrc" ~/.vimrc
+ln -s "$(pwd)/vimrc" ~/.vimrc
 
 echo 'Linking .inputrc...'
-ln -sf "$(pwd)/inputrc" ~/.inputrc
+ln -s "$(pwd)/inputrc" ~/.inputrc
 
 echo 'Setting up cmus config file...'
 mkdir -p ~/.config/cmus
-ln -sf "$(pwd)/cmusrc" ~/.config/cmus/rc
+ln -s "$(pwd)/cmusrc" ~/.config/cmus/rc
 
 # echo 'Setting up fish config file...'
 # mkdir -p ~/.config/fish
@@ -36,20 +36,25 @@ if [ "$(uname)" == "Darwin" ]; then
 	echo "Detected Mac OS"
 
 	echo 'linking .kwm/kwmrc'
-	ln -sf "$(pwd)/kwmrc" ~/.kwm/kwmrc
+	ln -s "$(pwd)/kwmrc" ~/.kwm/kwmrc
 
 	echo ' - Linking .bash_profile...'
-	ln -sf ~/.bashrc ~/.bash_profile
+	ln -s ~/.bashrc ~/.bash_profile
 
 	echo ' - Linking .pystartup.py...'
-	ln -sf "$(pwd)/pystartup-mac.py" ~/.pystartup.py
+	ln -s "$(pwd)/pystartup-mac.py" ~/.pystartup.py
 else
 	echo "Not Mac OS; assuming Linux"
 	echo ' - Linking .pystartup.py...'
-	ln -sf "$(pwd)/pystartup-linux.py" ~/.pystartup.py
+	ln -s "$(pwd)/pystartup-linux.py" ~/.pystartup.py
 
 	echo " - Linking i3config"
+	mkdir -p ~/.config/i3
 	ln -s $(pwd)/i3config ~/.config/i3/config
+
+	echo " - Linking i3blocks config"
+	mkdir -p ~/.config/i3blocks
+	ln -s $(pwd)/i3blocks ~/.config/i3blocks/config
 
 	echo " - Linking .xbindkeysrc..."
 	ln -s $(pwd)/xbindkeysrc ~/.xbindkeysrc

@@ -1,15 +1,16 @@
 #!/bin/bash
 
 factor='1.2'
+signal=12
 
 case $1 in
 	up)
 		light -S $(echo $(light) '*' $factor '+0.01' | bc -l)
-		light
+		pkill -RTMIN+$signal i3blocks
 		;;
 	down)
 		light -S $(echo $(light) '/' $factor | bc -l)
-		light
+		pkill -RTMIN+$signal i3blocks
 		;;
 	*)
 		echo light-wrapper: invalid command > /dev/stderr
