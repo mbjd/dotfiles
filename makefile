@@ -1,23 +1,31 @@
 # Little wrapper around GNU stow
 
+ALL_UNITS=$(shell find . -maxdepth 1 -mindepth 1 -type d -not -name '.git' | tr -d ./)
+STOW=stow
+UNSTOW=stow --delete
+
 default: linux
 
 .PHONY: base
 base:
-	stow bash
-	stow misc
-	stow scripts
-	stow tmux
-	stow vim
+	$(STOW) bash
+	$(STOW) misc
+	$(STOW) scripts
+	$(STOW) tmux
+	$(STOW) vim
 
 .PHONY: mac
 mac: base
-	stow cmus
-	stow fish
+	$(STOW) cmus
+	$(STOW) fish
 
 .PHONY: linux
 linux: base
-	stow i3
-	stow linux
-	stow ncmpcpp
-	stow st
+	$(STOW) i3
+	$(STOW) linux
+	$(STOW) ncmpcpp
+	$(STOW) st
+
+.PHONY: unstow
+unstow:
+	$(UNSTOW) $(ALL_UNITS)
