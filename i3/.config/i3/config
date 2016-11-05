@@ -27,6 +27,9 @@ exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
 exec_always killall xcape
 exec_always xcape -e '#66=Escape'
 
+exec_always killall unclutter
+exec_always unclutter -root  -grab &
+
 exec_always mpdcron --kill
 exec_always mpdcron
 
