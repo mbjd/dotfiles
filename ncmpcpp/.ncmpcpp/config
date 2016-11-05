@@ -1,0 +1,19 @@
+mpd_host                              = "127.0.0.1"
+mpd_port                              = "6600"
+mpd_music_dir                         = "/home/balduin/music"
+mpd_connection_timeout                = "5"
+
+visualizer_fifo_path                  = "/tmp/mpd.fifo"
+visualizer_output_name                = "Visualiter FIFO"
+visualizer_sync_interval              = "10"
+visualizer_in_stereo                  = "yes"
+visualizer_type                       = "ellipse"
+visualizer_look                       = "··"
+# visualizer_look                       = "++"
+# visualizer_look                       = "██"
+# visualizer_look                       = "=="
+
+user_interface                        = "alternative"
+
+display_volume_level                  = "yes"
+clock_display_seconds                 = "yes"

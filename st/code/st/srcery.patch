@@ -1,0 +1,82 @@
+diff --git a/config.def.h b/config.def.h
+index 7f465d1..f13a3c9 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char font[] = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char font[] = "InputMono-Regular:pixelsize=14:antialias=true:autohint=true";
+ static int borderpx = 2;
+
+ /*
+@@ -84,41 +84,39 @@ static unsigned int tabspaces = 8;
+
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+-
+-	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
+-
+-	[255] = 0,
+-
+-	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-};
+
++  /* 8 normal colors */
++  [0] = "#1c1b19", /* black   */
++  [1] = "#ff3128", /* red     */
++  [2] = "#519f50", /* green   */
++  [3] = "#fbb829", /* yellow  */
++  [4] = "#5573a3", /* blue    */
++  [5] = "#e02c6d", /* magenta */
++  [6] = "#0aaeb3", /* cyan    */
++  [7] = "#918175", /* white   */
++
++  /* 8 bright colors */
++  [8]  = "#2d2b28", /* black   */
++  [9]  = "#f75341", /* red     */
++  [10] = "#98bc37", /* green   */
++  [11] = "#fed06e", /* yellow  */
++  [12] = "#8eb2f7", /* blue    */
++  [13] = "#e35682", /* magenta */
++  [14] = "#53fde9", /* cyan    */
++  [15] = "#fce8c3", /* white   */
++
++  /* special colors */
++  [256] = "#1c1b19", /* background */
++  [257] = "#fce8c3", /* foreground */
++};
+
+ /*
+  * Default colors (colorname index)
+  * foreground, background, cursor, reverse cursor
+  */
+-static unsigned int defaultfg = 7;
+-static unsigned int defaultbg = 0;
+-static unsigned int defaultcs = 256;
++static unsigned int defaultfg = 257;
++static unsigned int defaultbg = 256;
++static unsigned int defaultcs = 257;
+ static unsigned int defaultrcs = 257;
+
+ /*

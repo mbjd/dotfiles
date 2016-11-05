@@ -1,0 +1,36 @@
+sw_volume: 63
+audio_device_state:1:ALSA output device
+audio_device_state:1:FIFO
+state: play
+current: 0
+time: 119.919000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Daft_Punk/TRON_Legacy/10_Adagio_For_Tron.mp3
+1:Emancipator/Safe_in_the_Steep_Cliffs/07_Nevergreen_1.mp3
+2:20syl/Motifs_EP/08_C.Y.D.T.T.-Phoenix_Troy_Edit-.mp3
+3:Kanye_West/My_Beautiful_Dark_Twisted_Fantasy/1-02_Gorgeous-feat._KiD_CuDi_and_Raekwon-.mp3
+4:Various_Artists/Mixtapes/Luftbahn_durch_die_Nacht.mp3
+5:The_Glitch_Mob/Love_Death_Immortality/08_Fly_By_Night_Only-feat._Yaarrohs-1.mp3
+6:The_Beatles/Rubber_Soul/05_Think_for_Yourself.mp3
+7:Jedi_Mind_Tricks/Servants_in_Heaven,_Kings_in_Hell/04_Uncommon_Valor_A_Vietnam_Story_1.mp3
+Prio: 50
+8:Jungmusik_KRT/Jahreskonzert_2015-Kulturen_and_Helden/13_Moon_River.mp3
+9:Else/Mirage/07_Paris-Bonus_Track-.mp3
+10:DJ_Jazzy_Jeff_and_The_Fresh_Prince/Homebase/04_This_Boy_Is_Smooth.mp3
+11:Parov_Stelar/The_Princess/1-14_The_Fog_1.mp3
+12:Bligg/0816/10_Signal_1.mp3
+13:chipzel/Spectra/12_The_Art_of_War_1.mp3
+14:weird_inside/as_we_know/wishing_well.mp3
+15:Parov_Stelar/The_Demon_Diaries/1-04_Clap_Your_Hands.mp3
+16:Twinz/Conversation/08_Conversation_#2.mp3
+17:Caravan_Palace/Caravan_Palace/07_Je_M_Amuse.mp3
+18:Milky_Chance/Sadnecessary/03_Becoming.mp3
+19:Milky_Chance/Sadnecessary/09_Sweet_Sun.mp3
+playlist_end
