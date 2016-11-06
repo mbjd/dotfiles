@@ -19,7 +19,7 @@ mac: base
 # $(STOW) i3 linux ncmpcpp st xbindkeys
 .PHONY: linux
 linux: base
-	$(STOW) i3 linux ncmpcpp st sxhkd
+	$(STOW) i3 linux mpd st sxhkd
 
 .PHONY: unstow
 unstow:
