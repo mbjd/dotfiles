@@ -13,6 +13,10 @@ export XDG_RUNTIME_DIR="$HOME/.config"
 export HISTCONTROL=ignoredups
 export PROMPT_COMMAND=
 
+# Tensorflow GPU dependencies
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
+export CUDA_HOME='/opt/cuda/'
+
 # Infinite history
 HISTSIZE=''
 HISTFILESIZE=''
