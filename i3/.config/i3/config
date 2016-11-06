@@ -20,7 +20,7 @@ set $up k
 exec_always xset r rate 200 65
 
 exec_always killall sxhkd
-exec_always nohup sxhkd &
+exec_always sxhkd &
 
 exec_always xset r rate 200 65
 exec_always setxkbmap -option 'caps:ctrl_modifier'
