@@ -3,8 +3,10 @@
 #######################
 
 # Volume control
-XF86Audio{Raise,Lower}Volume
-	amixer -q set Master {2dB+,2dB-} unmute
+XF86AudioRaiseVolume
+	/home/balduin/scripts/volume-wrapper 2dB+
+XF86AudioLowerVolume
+	/home/balduin/scripts/volume-wrapper 2dB-
 
 # Music player control
 XF86AudioPlay
@@ -24,6 +26,10 @@ XF86MonBrightnessDown
 XF86KbdBrightnessDown
 	/home/balduin/scripts/toggle-kbdlight.sh
 
-# Lock the screen with i3lock
+# Lock the screen
 XF86LaunchA
 	slock
+
+# Screenshot with F4
+XF86LaunchB
+	scrot -e 'mv $f /home/balduin/pics/scrot/'
