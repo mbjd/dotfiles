@@ -19,9 +19,6 @@ set $up k
 # Initialisation stuff
 exec_always xset r rate 200 65
 
-exec_always killall sxhkd
-exec_always sxhkd &
-
 exec_always xset r rate 200 65
 exec_always setxkbmap -option 'caps:ctrl_modifier'
 
@@ -38,7 +35,10 @@ exec_always mpdcron
 exec_always killall autocutsel
 exec_always autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
 
-# --- This is done in ~/.xbindkeysrc for now ---
+exec_always killall sxhkd
+exec_always sxhkd
+
+# --- This is done with sxhkd for now ---
 # Brightness keys
 # bindsym XF86MonBrightnessUp   exec /home/balduin/scripts/light-wrapper up
 # bindsym XF86MonBrightnessDown exec /home/balduin/scripts/light-wrapper down
