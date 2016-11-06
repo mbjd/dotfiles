@@ -17,22 +17,24 @@ set $down j
 set $up k
 
 # Initialisation stuff
+exec_always xset r rate 200 65
+
 exec_always killall sxhkd
-exec_always sxhkd
+exec_always nohup sxhkd &
 
 exec_always xset r rate 200 65
 exec_always setxkbmap -option 'caps:ctrl_modifier'
-exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
 
 exec_always killall xcape
 exec_always xcape -e '#66=Escape'
 
-exec_always killall unclutter
-exec_always unclutter -root  -grab &
+# Set background
+exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
 
 exec_always mpdcron --kill
 exec_always mpdcron
 
+# Synchronize clipboards
 exec_always killall autocutsel
 exec_always autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
 
