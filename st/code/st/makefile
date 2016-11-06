@@ -1,14 +1,14 @@
 # Build and patch configure st.
 
-default: patch-srcery
+default: patch-srcery patch-hide-cursor
 
 clone: st
 	git clone git://git.suckless.org/st
 
 # Apply any given patch file in the st directory
-patch-%: clone
-	cd st && git checkout -- . && patch < ../$*.patch
+patch-%:
+	cd ./st && patch < ../$*.patch
 	@echo "==> Patch to st applied, now make & install st"
 
 clean:
-	rm -rf st && mkdir st
+	cd st; git checkout -- .; git clean -f;

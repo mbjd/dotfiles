@@ -1,6 +1,6 @@
 scripts/scripts/deriv
 scripts/scripts/integ
-st/code/st/st/*
+st/code/st/st
 
 *.pid
 
