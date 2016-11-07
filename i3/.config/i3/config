@@ -158,7 +158,7 @@ mode "resize" {
 	bindsym $right resize grow   width  1 px or 1 ppt
 
 	bindsym i gaps inner all plus 2
-	bindsym minus gaps inner all minus 2
+	bindsym o gaps inner all minus 2
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -183,6 +183,7 @@ client.urgent            #FF0000 #111111 #00FF00 #FF0000
 
 # i3blocks bar
 bar {
+	position top
 	status_command i3blocks
 	# font pango:Input Mono Condensed 8
 	# font pango:monospace 8
