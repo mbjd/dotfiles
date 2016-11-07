@@ -299,7 +299,7 @@ export PATH=$(echo "$PATH" | tr ':' '\n' | awk 'length > 0 {print}' | sort | uni
 
 # Start the terminal at the bottom of the window
 clear_to_bottom () {
-	yes '' | head -$(tput lines)
+	clear; yes '' | head -$(tput lines)
 }
 
 # So that the whole terminal is cleared even when the window manager
