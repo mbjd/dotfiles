@@ -2,11 +2,11 @@
 
 default: patch-srcery patch-hide-cursor
 
-clone: st
+clone:
 	git clone git://git.suckless.org/st
 
 # Apply any given patch file in the st directory
-patch-%:
+patch-%: clone
 	cd ./st && patch < ../$*.patch
 	@echo "==> Patch to st applied, now make & install st"
 
