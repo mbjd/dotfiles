@@ -16,7 +16,7 @@ set $right l
 set $down j
 set $up k
 
-# Initialisation stuff
+# {{{ --- Initialisation stuff -----------------------------
 exec_always xset r rate 200 65
 
 exec_always xset r rate 200 65
@@ -40,24 +40,7 @@ exec_always autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
 exec_always killall xbindkeys
 exec_always xbindkeys
 
-# --- This is done with sxhkd for now ---
-# Brightness keys
-# bindsym XF86MonBrightnessUp   exec /home/balduin/scripts/light-wrapper up
-# bindsym XF86MonBrightnessDown exec /home/balduin/scripts/light-wrapper down
-
-# Toggle Keyboard brightness
-# bindsym XF86KbdBrightnessDown exec /home/balduin/scripts/toggle-kbdlight.sh
-
-# Volume Keys
-# bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-# bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-# bindsym XF86AudioMute exec amixer -q set Master toggle
-
-# cmus media keys
-# bindsym XF86AudioPlay exec cmus-remote --pause
-# bindsym XF86AudioNext exec cmus-remote --next
-# bindsym XF86AudioPrev exec cmus-remote --prev
-
+# ------------------------------------------------------ }}}
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -69,7 +52,7 @@ bindsym $mod+Return exec st
 # bindsym $mod+Return exec urxvt
 
 # kill focused window
-bindsym $mod+w kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+space exec dmenu_run -p run

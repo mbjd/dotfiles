@@ -173,6 +173,12 @@ else # Hope this is linux
 	log () {
 		< ~/misc/log python3 -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
 	}
+
+	fix-stuff () {
+		killall xbindkeys; xbindkeys;
+		killall xcape; xcape -e '#66=Escape'
+
+	}
 fi
 
 reset_permissions()
