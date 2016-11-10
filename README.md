@@ -43,7 +43,7 @@ scripts (called via xbindkeys -> only needed on linux):
 - `imagemagick`
 - `i3lock`
 
-... And probably some more that I forgot. Nothing too importa
+... And probably some more that I forgot. Nothing too important though.
 
 ### Installation
 
