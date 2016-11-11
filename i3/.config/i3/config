@@ -16,17 +16,19 @@ set $right l
 set $down j
 set $up k
 
+set $home /home/balduin
+
 # {{{ --- Initialisation stuff -----------------------------
 exec_always xset r rate 200 65
 
 exec_always xset r rate 200 65
-exec_always setxkbmap -option 'caps:ctrl_modifier'
+exec_always setxkbmap $home/eu-tweaked -option 'caps:ctrl_modifier'
 
 exec_always killall xcape
 exec_always xcape -e '#66=Escape'
 
 # Set background
-exec_always feh --bg-scale /home/balduin/pics/i3-desk.jpg
+exec_always feh --bg-scale $home/pics/i3-desk.jpg
 
 exec_always mpdcron --kill
 exec_always mpdcron
@@ -72,7 +74,7 @@ bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
 # split in horizontal orientation
-bindsym $mod+minus split v
+bindsym $mod+o split v
 
 # split in vertical orientation
 bindsym $mod+i split h
@@ -129,6 +131,9 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# dmenu nmcli frontend
+bindsym $mod+Shift+w exec nmcli_dmenu
 
 # sleep
 bindsym $mod+Shift+s exec systemctl hybrid-sleep
