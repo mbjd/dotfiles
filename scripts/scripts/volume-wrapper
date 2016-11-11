@@ -1,4 +1,0 @@
-#!/bin/sh
-
-amixer set Master "$1" unmute
-pkill -RTMIN+10 i3blocks

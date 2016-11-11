@@ -38,9 +38,8 @@ signal=11
 # ^ This signal is sent by ~/.mpdcron/hooks/player
 
 # Volume indicator
-[vol]
+[volume]
 label=♪
-command=amixer get Master | grep -Eo '\[.*%\]' | tr -d '[]'
 interval=5
 signal=10
 # ^ This signal is sent by ~/scripts/volume-wrapper
