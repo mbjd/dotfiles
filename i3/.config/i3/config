@@ -18,32 +18,6 @@ set $up k
 
 set $home /home/balduin
 
-# {{{ --- Initialisation stuff -----------------------------
-exec_always xset r rate 200 65
-
-exec_always xset r rate 200 65
-exec_always setxkbmap $home/eu-tweaked -option 'caps:ctrl_modifier'
-
-exec_always killall xcape
-exec_always xcape -e '#66=Escape'
-
-# Set background
-exec_always feh --bg-scale $home/pics/i3-desk.jpg
-
-exec_always mpdcron --kill
-exec_always mpdcron
-
-# Synchronize clipboards
-exec_always killall autocutsel
-exec_always autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
-
-# exec_always killall sxhkd
-# exec_always sxhkd
-exec_always killall xbindkeys
-exec_always xbindkeys
-
-# ------------------------------------------------------ }}}
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
