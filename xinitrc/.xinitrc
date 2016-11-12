@@ -9,7 +9,7 @@ xcape -e '#66=Escape'
 # }}}
 
 # Set background
-feh --bg-scale /home/balduin/pics/i3-desk.jpg
+feh --bg-scale /home/balduin/pics/desk.jpg
 
 # mpdcron --kill
 mpdcron

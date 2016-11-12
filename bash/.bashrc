@@ -179,6 +179,8 @@ else # Hope this is linux
 		killall xcape; xcape -e '#66=Escape'
 
 	}
+
+	alias bg='feh --bg-scale /home/balduin/pics/desk.jpg'
 fi
 
 reset_permissions()
