@@ -1,0 +1,44 @@
+# Documentation:
+# http://llvm.org/releases/3.6.0/tools/clang/docs/ClangFormatStyleOptions.html
+
+# C = C++ for clang-format
+Language: Cpp
+
+# Sort inlcude statements alphabetically
+SortIncludes: true
+
+# Opening braces on new line
+BreakBeforeBraces: Allman
+
+# Line break between function type and name
+AlwaysBreakAfterDefinitionReturnType: true
+
+ColumnLimit: 80
+
+# char* a; instead of char *a because the type is char* and not char, and
+# the name is a and not *a
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+# Horizontal alignment
+AlignOperands: true
+AlignConsecutiveAssignments: true
+AlignTrailingComments: true
+
+ReflowComments: true
+
+# Allow multiple arguments/parameters to be on
+# the same line if they can't all be on one line
+BinPackArguments: true
+BinPackParameters: true
+
+SpaceAfterCStyleCast: true
+AlignEscapedNewlinesLeft: true
+
+# Let's settle this forever
+UseTab: ForIndentation
+TabWidth: 4
+IndentWidth: 4
+
+# Indent labels in switch statement one level more than the switch itself
+IndentCaseLabels: true
