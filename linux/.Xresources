@@ -1,4 +1,5 @@
 ! ~~~ S R C E R Y   T H E M E ~~~
+! https://github.com/roosta/vim-srcery
 
 *.color0     : #1c1b19
 *.color1     : #ff3128
@@ -23,6 +24,7 @@
 *.cursorColor: #fce8c3
 
 ! ~~~~ C O L O R S ~~~~
+! No idea where these are from but they`re not mine
 
 ! *.color0     : #282a2e
 ! *.color1     : #a54242
@@ -49,4 +51,4 @@
 ! ~~~~ T E R M I N A L ~~~~
 
 xterm*font: 8x13
-! xterm*faceName:xft:InputMono-Regular:pixelsize=12:antialias=true:autohint=true
+! xterm*faceName:xft:InputMono-Regular:pixelsize=13:antialias=true:autohint=true

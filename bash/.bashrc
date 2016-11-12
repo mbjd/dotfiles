@@ -159,7 +159,7 @@ else # Hope this is linux
 
 	export GIT_EDITOR=vim
 
-    alias feh='feh --auto-zoom --scale-down -B black'
+    alias feh='feh --auto-zoom --scale-down -B black -Y'
 
     alias dl='cd ~/dl'
 
