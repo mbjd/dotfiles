@@ -1,7 +1,7 @@
 # Build and patch configure st.
 
 .NOTPARALLEL: default
-default: clean patch-font patch-srcery patch-hide-cursor
+default: clean patch-input-font patch-srcery patch-hide-cursor
 
 st:
 	git clone git://git.suckless.org/st
