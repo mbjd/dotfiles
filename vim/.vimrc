@@ -21,6 +21,10 @@ set autoindent
 set directory=$HOME/.vim/swp//
 set backupdir=$HOME/.vim/backups//
 
+" Keep history when closing vim
+set undofile
+set undodir=$HOME/.vim/undo
+
 " Make crontab work
 autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
 autocmd BufEnter /tmp/crontab.* setl backupcopy=yes

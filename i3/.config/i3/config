@@ -26,15 +26,15 @@ bindsym $mod+shift+Return exec i3-sensible-terminal
 
 # start a decent terminal
 # bindsym $mod+Return exec xterm
-bindsym $mod+Return exec st
+bindsym $mod+Return exec --no-startup-id st
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+space exec dmenu_run -p run
+bindsym $mod+space exec dmenu_run -p run
 # start rofi (a nice program launcher)
-bindsym $mod+space exec rofi -show run
+# bindsym $mod+space exec rofi -show run
 
 # change focus
 bindsym $mod+$left focus left
@@ -146,6 +146,7 @@ client.urgent            #FF0000 #111111 #00FF00 #FF0000
 
 # i3blocks bar
 bar {
+	# mode hide
 	status_command i3blocks
 	# font pango:Input Mono Condensed 8
 	# font pango:monospace 8
