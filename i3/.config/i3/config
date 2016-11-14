@@ -32,9 +32,9 @@ bindsym $mod+Return exec --no-startup-id st
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run -p run
+# bindsym $mod+space exec dmenu_run -p run
 # start rofi (a nice program launcher)
-# bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show run
 
 # change focus
 bindsym $mod+$left focus left
@@ -115,10 +115,10 @@ bindsym $mod+Shift+s exec systemctl hybrid-sleep
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	bindsym $left  resize shrink width  1 px or 1 ppt
-	bindsym $down  resize shrink height 1 px or 1 ppt
-	bindsym $up    resize grow   height 1 px or 1 ppt
-	bindsym $right resize grow   width  1 px or 1 ppt
+	bindsym $right resize grow   width  8 px or 1 ppt
+	bindsym $left  resize shrink width  8 px or 1 ppt
+	bindsym $down  resize grow   height 8 px or 1 ppt
+	bindsym $up    resize shrink height 8 px or 1 ppt
 
 	bindsym i gaps inner all plus 2
 	bindsym o gaps inner all minus 2
@@ -146,7 +146,6 @@ client.urgent            #FF0000 #111111 #00FF00 #FF0000
 
 # i3blocks bar
 bar {
-	# mode hide
 	status_command i3blocks
 	# font pango:Input Mono Condensed 8
 	# font pango:monospace 8
