@@ -150,23 +150,23 @@ if [ "$(uname)" = 'Darwin' ]; then
 
 else # Hope this is linux
 
-    alias vi=vim
+	alias vi=vim
 
 	alias c='xclip -selection clipboard -i'
 	alias p='xclip -selection clipboard -o'
 
-    alias o='xdg-open'
+	alias o='xdg-open'
 
 	export GIT_EDITOR=vim
 
-    alias feh='feh --auto-zoom --scale-down -B black -Y'
+	alias feh='feh --auto-zoom --scale-down -B black -Y'
 
-    alias dl='cd ~/dl'
+	alias dl='cd ~/dl'
 
-    trash ()
-    {
-        mv "$@" /home/balduin/.local/share/Trash
-    }
+	trash ()
+	{
+		mv "$@" /home/balduin/.local/share/Trash
+	}
 
 	alias i3conf='vim ~/.config/i3/config'
 
@@ -175,22 +175,22 @@ else # Hope this is linux
 	}
 
 	fix-stuff () {
-		killall xbindkeys; xbindkeys;
-		killall xcape; xcape -e '#66=Escape'
+	killall xbindkeys; xbindkeys;
+	killall xcape; xcape -e '#66=Escape'
 
-	}
+}
 
-	alias bg='feh --bg-scale /home/balduin/pics/desk.jpg'
+alias bg='feh --bg-scale /home/balduin/pics/desk.jpg'
 fi
 
 reset_permissions()
 {
-    echo chown -R balduin:users "$1"
-    chown -R balduin:users "$1"
-    echo find \"$1\" -type d -exec chmod 755 '{} \;'
-    find "$1" -type d -exec chmod 755 {} \;
-    echo find \"$1\" -type f -exec chmod 644 '{} \;'
-    find "$1" -type f -exec chmod 644 {} \;
+	echo chown -R balduin:users "$1"
+	chown -R balduin:users "$1"
+	echo find \"$1\" -type d -exec chmod 755 '{} \;'
+	find "$1" -type d -exec chmod 755 {} \;
+	echo find \"$1\" -type f -exec chmod 644 '{} \;'
+	find "$1" -type f -exec chmod 644 {} \;
 }
 
 rand()
@@ -229,11 +229,11 @@ weather() {
 }
 
 youtube-mp3() {
-	youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" $1
+youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" $1
 }
 
 youtube-wav() {
-	youtube-dl --extract-audio --audio-format wav -o "%(title)s.%(ext)s" $1
+youtube-dl --extract-audio --audio-format wav -o "%(title)s.%(ext)s" $1
 }
 
 # Convert mkv to mp4
@@ -289,7 +289,7 @@ man() {
 			LESS_TERMCAP_so=$(printf "\e[30;43m") \
 			LESS_TERMCAP_ue=$(printf "\e[0m") \
 			LESS_TERMCAP_us=$(printf "\e[32m") \
-					/usr/bin/man "$@"
+				/usr/bin/man "$@"
 	else
 		env \
 			LESS_TERMCAP_mb=$(printf "\e[1;34m") \
@@ -299,7 +299,7 @@ man() {
 			LESS_TERMCAP_so=$(printf "\e[30;43m") \
 			LESS_TERMCAP_ue=$(printf "\e[0m") \
 			LESS_TERMCAP_us=$(printf "\e[38;5;10m") \
-					/usr/bin/man "$@"
+				/usr/bin/man "$@"
 	fi
 }
 
