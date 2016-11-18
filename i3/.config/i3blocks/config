@@ -33,16 +33,16 @@ markup=none
 # ncmpcpp
 [music]
 command=/home/balduin/scripts/mpd-status.sh
-interval=60 # so it disappears if mpd is stopped
+interval=once # so it disappears if mpd is stopped
 signal=11
 # ^ This signal is sent by ~/.mpdcron/hooks/player
 
 # Volume indicator
 [volume]
 label=♪
-interval=5
+interval=once
 signal=10
-# ^ This signal is sent by ~/scripts/volume-wrapper
+# ^ This signal is sent by ~/.config/sxhkd/sxhkdrc
 
 # Brightness indicator
 [brightness]
@@ -64,11 +64,11 @@ interval=30
 [iface]
 #instance=wlan0
 color=#519F50
-interval=10
+interval=15
 
 # OpenVPN support
 [openvpn]
-interval=20
+interval=15
 
 # CPU usage
 #
@@ -94,5 +94,5 @@ interval=60
 
 # Date & Time
 [time]
-command=date '+%Y-%m-%d %H:%M:%S '
-interval=5
+command=date '+%Y-%m-%d %H:%M '
+interval=15

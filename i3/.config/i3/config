@@ -108,7 +108,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # dmenu nmcli frontend
-bindsym $mod+Shift+w exec nmcli_dmenu
+bindsym $mod+Shift+w exec --no-startup-id nmcli_dmenu
 
 # sleep
 bindsym $mod+Shift+s exec systemctl hybrid-sleep
@@ -132,7 +132,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # i3-gaps
-gaps inner 14
+gaps inner 19
 gaps outer 0
 
 # Disable title bar
