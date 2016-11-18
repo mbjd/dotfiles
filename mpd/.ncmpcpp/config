@@ -11,8 +11,8 @@ ignore_leading_the                    = "yes"
 display_bitrate                       = "yes"
 
 # Visualizer
-visualizer_fifo_path                  = "/tmp/mpd.fifo"
-visualizer_output_name                = "Visualiter FIFO"
+visualizer_fifo_path                  = "/tmp/audio.fifo"
+visualizer_output_name                = "Visualiser FIFO"
 visualizer_sync_interval              = "10"
 visualizer_in_stereo                  = "yes"
 visualizer_type                       = "ellipse"
@@ -20,4 +20,3 @@ visualizer_look                       = "oo"
 
 display_volume_level                  = "yes"
 clock_display_seconds                 = "yes"
-
