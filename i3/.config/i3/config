@@ -147,8 +147,6 @@ client.urgent            #FF0000 #111111 #00FF00 #FF0000
 # i3blocks bar
 bar {
 	status_command i3blocks
-	# font pango:Input Mono Condensed 8
-	# font pango:monospace 8
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 }
 
