@@ -11,7 +11,9 @@ export XDG_CONFIG="$HOME/.config"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_RUNTIME_DIR="$HOME/.config"
 export HISTCONTROL=ignoredups
-export PROMPT_COMMAND=
+
+# https://github.com/mbjd/diary
+export DIARY_DIR="$HOME/.diary"
 
 # Tensorflow GPU dependencies
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
