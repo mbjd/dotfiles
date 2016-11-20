@@ -230,14 +230,6 @@ weather() {
 	curl "wttr.in/${1-Zurich}"
 }
 
-youtube-mp3() {
-youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" $1
-}
-
-youtube-wav() {
-youtube-dl --extract-audio --audio-format wav -o "%(title)s.%(ext)s" $1
-}
-
 # Convert mkv to mp4
 mkv2mp4() {
 	name=$1
