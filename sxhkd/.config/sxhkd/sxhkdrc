@@ -8,7 +8,7 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	amixer -q set Master 2dB- unmute; pkill -RTMIN+10 i3blocks;
 XF86AudioMute
-	amixer -q set Master mute; pkill -RTMIN+10 i3blocks;
+	amixer -q set Master toggle; pkill -RTMIN+10 i3blocks;
 
 # Music player control
 XF86AudioPlay
@@ -27,6 +27,10 @@ XF86MonBrightnessDown
 # Keyboard backlight toggle
 XF86KbdBrightnessDown
 	/home/balduin/scripts/toggle-kbdlight.sh
+
+# Restart sxhkd
+XF86KbdBrightnessUp
+	pkill -USR1 -x sxhkd
 
 # Lock the screen
 XF86LaunchA

@@ -10,7 +10,7 @@ Humble dotfile repository. Featuring:
 Linux only:
 
 - `st` (suckless simple terminal)
-- `xbindkeys`
+- `xbindkeys`, `sxhkd`
 - `i3`, `i3blocks`
 - `mpd`, `ncmpcpp`, `mpdcron`
 

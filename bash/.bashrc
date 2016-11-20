@@ -170,7 +170,7 @@ else # Hope this is linux
 		mv "$@" /home/balduin/.local/share/Trash
 	}
 
-	alias i3conf='vim ~/.config/i3/config'
+	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 
 	log () {
 		< ~/misc/log python3 -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
@@ -187,12 +187,12 @@ fi
 
 reset_permissions()
 {
-	echo chown -R balduin:users "$1"
-	chown -R balduin:users "$1"
-	echo find \"$1\" -type d -exec chmod 755 '{} \;'
-	find "$1" -type d -exec chmod 755 {} \;
-	echo find \"$1\" -type f -exec chmod 644 '{} \;'
-	find "$1" -type f -exec chmod 644 {} \;
+	echo sudo chown -R balduin:users "$1"
+	sudo chown -R balduin:users "$1"
+	echo sudo find \"$1\" -type d -exec chmod 755 '{} \;'
+	sudo find "$1" -type d -exec chmod 755 {} \;
+	echo sudo find \"$1\" -type f -exec chmod 644 '{} \;'
+	sudo find "$1" -type f -exec chmod 644 {} \;
 }
 
 rand()
