@@ -139,10 +139,10 @@ gaps outer 0
 for_window [class="^.*"] border pixel 1
 
 #                        border  bg      text    indicator
-client.focused           #CCCCCC #CCCCCC #00FF00 #519F50
-client.focused_inactive  #333333 #333333 #00FF00 #333333
-client.unfocused         #333333 #333333 #00FF00 #333333
-client.urgent            #FF0000 #111111 #00FF00 #FF0000
+client.focused           #CCCCCC #CCCCCC #222222 #519F50
+client.focused_inactive  #333333 #333333 #CCCCCC #333333
+client.unfocused         #333333 #333333 #CCCCCC #333333
+client.urgent            #FF0000 #111111 #FF0000 #FF0000
 
 # i3blocks bar
 bar {
