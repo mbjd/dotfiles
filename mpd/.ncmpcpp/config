@@ -20,3 +20,5 @@ visualizer_look                       = "oo"
 
 display_volume_level                  = "yes"
 clock_display_seconds                 = "yes"
+
+user_interface                        = "alternative"
