@@ -56,6 +56,7 @@ alias vimrc="vim ~/.vimrc"
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
 alias gitlog="git log --format=oneline --abbrev-commit --graph"
 alias -- '-'='cd - > /dev/null'
+alias p8='ping 8.8.8.8'
 alias where='which -a'
 alias make='make -j'
 alias mkae='make'
