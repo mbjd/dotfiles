@@ -38,7 +38,7 @@ set numberwidth=4
 set ruler
 
 " leader = ,
-let mapleader=','
+let mapleader=' '
 
 " Rejustify paragraph without jumping to its end
 nnoremap <leader>f :set textwidth=75<CR>m`gqip``
