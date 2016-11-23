@@ -1,5 +1,6 @@
 scripts/scripts/deriv
 scripts/scripts/integ
+scripts/scripts/prompt_pwd
 st/code/st/st
 
 *.pid
