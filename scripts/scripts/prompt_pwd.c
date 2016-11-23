@@ -10,14 +10,14 @@
 
 int main(int argc, char** argv)
 {
-	if (argc > 2)
+	if (argc != 2)
 	{
-		fprintf(stderr, "prompt_pwd: Need 0 or 1 args (path to shorten)\n");
+		fprintf(stderr, "prompt_pwd: Need exactly 1 argument (path to shorten)\n");
 		exit(1);
 	}
 
 	char* home_dir = getenv("HOME");
-	if (home_dir == NULL)
+	if (home_dir == NULL || home_dir[0] == '\0')
 	{
 		fprintf(stderr, "prompt_pwd: $HOME unset\n");
 		exit(1);
