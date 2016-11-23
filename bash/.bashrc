@@ -31,7 +31,7 @@ PATH=$PATH:$GOPATH/bin
 bold=$(tput setaf 1; tput bold)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
-export PS1="\[$bold\]\u@\H:\$(/home/balduin/scripts/prompt_pwd \w) \$\[$reset\] "
+export PS1="\[$bold\]\u@\H:\$(/home/balduin/scripts/prompt_pwd.sh) \$\[$reset\] "
 
 export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
