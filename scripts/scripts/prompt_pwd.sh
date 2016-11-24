@@ -1,6 +1,6 @@
 #!/bin/sh
 
-short_length=1
+short_length=2
 
 rev_dirs=$(pwd | sed "s|$HOME|~|g" | tr / '\n' | tac)
 
