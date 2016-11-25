@@ -1,2 +1,6 @@
 #!/bin/sh
+# Signal to i3blocks so the song refreshes in the bar
 pkill -RTMIN+11 i3blocks
+
+# Put the album art in /tmp/albumart.jpg
+/home/balduin/scripts/refresh-albumart.sh
