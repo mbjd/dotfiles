@@ -35,7 +35,7 @@ export PS1="\[$bold\]\u@\H:\$(/home/balduin/scripts/prompt_pwd.sh) \$\[$reset\] 
 
 export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Basic aliases
 alias ls="ls -F --color=auto --time-style=long-iso"
@@ -51,7 +51,7 @@ alias dl='cd ~/downloads'
 alias docs='cd ~/documents'
 
 # Vimisms
-alias vimrc="vim ~/.vimrc"
+alias vimrc="nvim ~/.vimrc"
 
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
 alias gitlog="git log --format=oneline --abbrev-commit --graph"
@@ -153,7 +153,7 @@ if [ "$(uname)" = 'Darwin' ]; then
 
 else # Hope this is linux
 
-	alias vi=vim
+	alias vi='nvim'
 
 	alias c='xclip -selection clipboard -i'
 	alias p='xclip -selection clipboard -o'
