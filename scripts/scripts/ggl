@@ -1,4 +1,0 @@
-#!/bin/bash
-
-str="$@"
-chromium "https://www.google.ch/search?q=$str" > /dev/null &

@@ -1,5 +1,0 @@
-#!/bin/bash
-# Prints amount of free memory in bytes
-# only works on os x, use free on linux
-#          get free 4096b-blocks remove non-digits        * 4096 to get bytes
-echo $(( $(vm_stat | grep free | tr -C -d '[[:digit:]]' | sed 's/$/*4096/g') ))
