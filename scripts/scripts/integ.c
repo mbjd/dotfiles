@@ -11,13 +11,11 @@ main()
 
 	setbuf(stdout, NULL);
 
-	while (fgets(line, 64, stdin) != NULL)
-	{
+	while (fgets(line, 64, stdin) != NULL) {
 		// Replace first newline by null delimiter
 		line[strcspn(line, "\n")] = '\0';
 		ret = sscanf(line, "%lf\n", &current);
-		if (ret != 1)
-		{
+		if (ret != 1) {
 			fprintf(stderr, "integ: Could not convert '%s' to number\n", line);
 			continue;
 		}

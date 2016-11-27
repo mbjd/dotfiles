@@ -46,8 +46,7 @@ main(int argc, char** argv)
 			end = argv[2][0];
 		}
 		else {
-			fprintf(stderr, "%s: end argument is longer than 1 char\n",
-			        NAME);
+			fprintf(stderr, "%s: end argument is longer than 1 char\n", NAME);
 			return EINVAL;
 		}
 	}
@@ -71,7 +70,6 @@ main(int argc, char** argv)
 				continue;
 			}
 		}
-
 
 		// If the start delimiter has been given, skip it
 		// Otherwise print the first char too
