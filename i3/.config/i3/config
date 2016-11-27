@@ -26,7 +26,8 @@ bindsym $mod+shift+Return exec i3-sensible-terminal
 
 # start a decent terminal
 # bindsym $mod+Return exec xterm
-bindsym $mod+Return exec --no-startup-id st
+# bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+Return exec --no-startup-id xterm
 
 # kill focused window
 bindsym $mod+q kill

@@ -17,4 +17,6 @@ mpdcron
 # Synchronize clipboards
 autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
 
+xrdb .Xresources
+
 exec i3
