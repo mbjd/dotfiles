@@ -8,7 +8,7 @@ Language: Cpp
 SortIncludes: true
 
 # Opening braces on new line
-BreakBeforeBraces: Allman
+BreakBeforeBraces: Stroustrup
 
 # Line break between function type and name
 AlwaysBreakAfterDefinitionReturnType: true
