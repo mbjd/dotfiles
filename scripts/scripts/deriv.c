@@ -6,14 +6,15 @@ main()
 {
 	double old = 0, current = 0;
 	int counter = 0;
-	int ret = 0;
+	int ret     = 0;
 	char line[64];
 
 	setbuf(stdout, NULL);
 
 	while (fgets(line, 64, stdin) != NULL)
 	{
-		line[strcspn(line, "\n")] = '\0'; // Replace first newline by null delimiter
+		// Replace first newline by null delimiter
+		line[strcspn(line, "\n")] = '\0';
 		ret = sscanf(line, "%lf", &current); // Try to parse one float
 		if (ret == 0)
 		{

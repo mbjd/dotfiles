@@ -6,14 +6,15 @@ main()
 {
 	double sum     = 0;
 	double current = 0;
-	int ret = 0;
+	int ret        = 0;
 	char line[64];
 
 	setbuf(stdout, NULL);
 
 	while (fgets(line, 64, stdin) != NULL)
 	{
-		line[strcspn(line, "\n")] = '\0'; // Replace first newline by null delimiter
+		// Replace first newline by null delimiter
+		line[strcspn(line, "\n")] = '\0';
 		ret = sscanf(line, "%lf\n", &current);
 		if (ret != 1)
 		{
