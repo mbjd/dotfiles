@@ -9,7 +9,6 @@ set scroll-full-overlap 0.01
 
 # zoom settings
 set zoom-min 10
-set guioptions ""
 
 unmap f
 map f toggle_fullscreen

@@ -132,7 +132,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # i3-gaps
-gaps inner 19
+gaps inner 8
 gaps outer 0
 
 # Disable title bar
@@ -146,6 +146,7 @@ client.urgent            #FF0000 #111111 #FF0000 #FF0000
 
 # i3blocks bar
 bar {
+	position top
 	status_command i3blocks
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 }

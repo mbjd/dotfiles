@@ -12,7 +12,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_RUNTIME_DIR="$HOME/.config"
 export HISTCONTROL=ignoredups
 
-# https://github.com/mbjd/diary
+# https://github.com/in0rdr/diary/
 export DIARY_DIR="$HOME/.diary"
 
 # Tensorflow GPU dependencies
