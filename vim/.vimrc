@@ -112,10 +112,6 @@ nnoremap <C-T> Xp
 
 language en_US.UTF-8
 
-" " Some syntax options
-" autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
-" let g:tex_flavor='latex'
-
 " Textwidth of half a terminal window for prose heavy files
 autocmd BufNewFile,BufReadPost *.tex,*.md,*.markdown,*.txt set textwidth=75
 
