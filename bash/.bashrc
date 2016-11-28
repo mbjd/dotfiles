@@ -31,7 +31,8 @@ PATH=$PATH:$GOPATH/bin
 bold=$(tput setaf 1; tput bold)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
-export PS1="\[$bold\]\u@\H:\$(/home/balduin/scripts/prompt_pwd.sh) \$\[$reset\] "
+# export PS1="\[$bold\]\u@\H:\$(/home/balduin/scripts/prompt_pwd.sh) \$\[$reset\] "
+export PS1="\[$bold\]\u@\H:\w \$\[$reset\] "
 
 export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
@@ -154,36 +155,28 @@ if [ "$(uname)" = 'Darwin' ]; then
 else # Hope this is linux
 
 	alias vi='nvim'
+	export GIT_EDITOR=vim
 
 	alias c='xclip -selection clipboard -i'
 	alias p='xclip -selection clipboard -o'
-
-	alias o='xdg-open'
-
-	export GIT_EDITOR=vim
-
-	alias feh='feh --auto-zoom --scale-down -B black -Y'
-
-	alias dl='cd ~/dl'
-
-	trash ()
-	{
-		mv "$@" /home/balduin/.local/share/Trash
-	}
+	alias o='rifle'
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
+	alias feh='feh --auto-zoom --scale-down -B black -Y'
+	alias dl='cd ~/dl'
 
+	# Plot battery/temperature logs
 	log () {
-		< ~/misc/log python3 -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
+		< ~/misc/log python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
 	}
 
-	fix-stuff () {
-	killall xbindkeys; xbindkeys;
-	killall xcape; xcape -e '#66=Escape'
+	# cd to currently playing music
+	cdmus () {
+		file=$HOME/music/$(mpc --format '%file%' current)
+		cd $(dirname $file)
+	}
 
-}
-
-alias bg='feh --bg-scale /home/balduin/pics/desk.jpg'
+	alias bg='feh --bg-scale /home/balduin/pics/desk.jpg'
 fi
 
 reset_permissions()
