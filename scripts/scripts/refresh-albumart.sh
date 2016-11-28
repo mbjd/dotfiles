@@ -18,7 +18,11 @@ if [ -n "$song" ]; then
 		# Copy and exit if there is one
 		ln -sf "$cover" $target && exit
 	else
-		yes | ffmpeg -loglevel quiet -i "$file" $target > /dev/null 2> /dev/null && exit
+		# If it doesn't exist, try to extract it from the song
+		cover=$(dirname $file)/cover.jpg
+		yes | ffmpeg -loglevel quiet -i "$file" "$cover" > /dev/null 2> /dev/null
+		# If was successful, use that file, otherwise
+		[ $? -eq 0 ] && ln -sf "$cover" $target && exit
 	fi
 fi
 
