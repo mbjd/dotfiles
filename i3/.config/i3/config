@@ -32,7 +32,7 @@ bindsym $mod+Return exec --no-startup-id st
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+space exec dmenu_run -p run
+# bindsym $mod+space exec dmenu_run -nb \#1C1B19 -b -p run
 # start rofi (a nice program launcher)
 bindsym $mod+space exec rofi -show run
 
@@ -67,6 +67,9 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
+
+# Open a window in floating mode
+for_window [title="^floating$"] floating enable
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -146,7 +149,6 @@ client.urgent            #FF0000 #111111 #FF0000 #FF0000
 
 # i3blocks bar
 bar {
-	position top
 	status_command i3blocks
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 }
