@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Plays a video/audio link using mpv.
+
+link=$(xclip -selection clipboard -o)
+
+st -t floating -e mpv "$link"
