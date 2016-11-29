@@ -1,9 +1,9 @@
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
-PATH="$PATH:$HOME/bin"
+# PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/scripts"
 PATH="$PATH:$HOME/scripts/colorscripts"
-PATH="$PATH:/usr/local/bin"
+# PATH="$PATH:/usr/local/bin"
 
 export PYTHONSTARTUP="$HOME/.pystartup.py"
 export CLICOLOR=1
@@ -22,10 +22,6 @@ export CUDA_HOME='/opt/cuda/'
 # Infinite history
 HISTSIZE=''
 HISTFILESIZE=''
-
-# for go
-export GOPATH="$HOME/dev/go"
-PATH=$PATH:$GOPATH/bin
 
 # Fancy coloured PS1
 bold=$(tput setaf 1; tput bold)
