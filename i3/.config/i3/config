@@ -70,7 +70,7 @@ for_window [title="^floating$"] floating enable
 bindsym $mod+Shift+f exec --no-startup-id st -t floating
 
 # Launch a floating terminal with vim for quick notes
-bindsym $mod+Shift+n exec --no-startup-id st -t floating -e vim
+bindsym $mod+Shift+n exec --no-startup-id st -t floating -e nvim
 # }}}
 
 
