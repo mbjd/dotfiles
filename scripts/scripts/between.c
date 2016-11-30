@@ -1,3 +1,5 @@
+#!/usr/bin/tcc -run
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
