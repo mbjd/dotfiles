@@ -185,34 +185,10 @@ reset_permissions()
 	sudo find "$1" -type f -exec chmod 644 {} \;
 }
 
-rand()
-{
-	awk -v min="$1" -v max="$2" "BEGIN{srand($(gdate +%s%N)); print int(min+rand()*(max-min+1))}"
-}
-
 # open this file
 bashrc() {
 	$EDITOR ~/.bashrc
 	source ~/.bashrc
-}
-
-cl () {
-	cdf && ls
-}
-
-# Read before executing pasted code
-pp() {
-	# remember output, prevent different clipboard contents
-	# after choosing to execute
-	script=$(pbpaste)
-	echo "$script"
-	printf "\nExecute? (y/n): "
-	read execute
-	# only execute when 'y' was answered
-	# all other input is ignored
-	if [[ "$execute" == "y" ]]; then
-		eval "$script"
-	fi
 }
 
 # Display weather information ($1 = city)
