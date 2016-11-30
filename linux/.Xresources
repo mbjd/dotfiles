@@ -51,5 +51,5 @@
 ! ~~~~ T E R M I N A L ~~~~
 
 ! xterm*font: 8x13
-xterm*faceName:xft:InputMono-Regular:pixelsize=14:antialias=true:autohint=true
+xterm*faceName:xft:InputMono-Regular:pixelsize=13:antialias=true:autohint=true
 urxvt*faceName:xft:InputMono-Regular:pixelsize=14:antialias=true:autohint=true

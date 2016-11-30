@@ -172,7 +172,7 @@ else # Hope this is linux
 		cd $(dirname $file)
 	}
 
-	alias bg='feh --bg-scale /home/balduin/pics/desk.jpg'
+	alias bg='feh --bg-fill /home/balduin/pics/desk.jpg'
 fi
 
 reset_permissions()
