@@ -2,6 +2,7 @@
 
 .NOTPARALLEL: default
 default: clean patch-input-font patch-srcery patch-hide-cursor
+other: clean patch-envypn-font patch-blue patch-hide-cursor
 
 st:
 	git clone git://git.suckless.org/st
