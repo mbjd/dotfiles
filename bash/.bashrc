@@ -272,6 +272,6 @@ clear_to_bottom () {
 
 # So that the whole terminal is cleared even when the window manager
 # immediately enlarges it
-clear_to_bottom
+# clear_to_bottom
 
 bind -x '"\C-l": clear_to_bottom'
