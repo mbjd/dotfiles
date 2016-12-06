@@ -1,4 +1,6 @@
 # ---------------------------- I3 CONFIG FILE ----------------------------
+
+
 # BASICS {{{
 set $mod Mod4
 
@@ -103,6 +105,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 # }}}
 
+
 # VARIOUS SHORTCUTS {{{
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -119,6 +122,7 @@ bindsym $mod+Shift+w exec --no-startup-id nmcli_dmenu
 # sleep
 bindsym $mod+Shift+s exec systemctl hybrid-sleep
 # }}}
+
 
 # RESIZE MODE {{{
 mode "resize" {
@@ -139,6 +143,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 # }}}
 
+
 # GAPS & APPEARANCE {{{
 gaps inner 8
 gaps outer 0
@@ -152,6 +157,7 @@ client.focused_inactive  #333333 #333333 #CCCCCC #333333
 client.unfocused         #333333 #333333 #CCCCCC #333333
 client.urgent            #FF0000 #111111 #FF0000 #FF0000
 # }}}
+
 
 # i3blocks bar
 bar {
