@@ -149,7 +149,7 @@ elseif s:uname == "Linux"
 	set guioptions=""
 	set linespace=1
 	set cursorline
-	set guifont=DejaVu\ Sans\ Mono\ Bold\ 8
+	set guifont=DejaVu\ Sans\ Mono\ 10
 endif
 
 " Highlight different kinds of whitespace with symbols
