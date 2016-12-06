@@ -9,4 +9,5 @@ fi
 (
 	echo "$status" | awk 'NR==2 {print}' | sed 's/].*$//g;s/playing/>/g;s/paused/|/g;s/$/] /g'
 	echo "$status" | head -1
+	printf ' (%s)' $(echo "$status" | awk 'NR==2 {print $2}' | tr -d '#')
 ) | tr -d '\n'
