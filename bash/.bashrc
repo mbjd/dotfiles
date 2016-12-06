@@ -158,7 +158,6 @@ else # Hope this is linux
 	alias o='rifle'
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
-	alias feh='feh --auto-zoom --scale-down -B black -Y'
 	alias dl='cd ~/dl'
 
 	# Plot battery/temperature logs
