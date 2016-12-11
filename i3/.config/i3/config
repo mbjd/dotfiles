@@ -53,7 +53,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+w kill
 # }}}
 
 
@@ -152,7 +152,7 @@ gaps outer 0
 for_window [class="^.*"] border pixel 1
 
 #                        border  bg      text    indicator
-client.focused           #CCCCCC #CCCCCC #222222 #519F50
+client.focused           #CCCCCC #CCCCCC #222222 #6ABD86
 client.focused_inactive  #333333 #333333 #CCCCCC #333333
 client.unfocused         #333333 #333333 #CCCCCC #333333
 client.urgent            #FF0000 #111111 #FF0000 #FF0000
