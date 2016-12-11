@@ -1,0 +1,8 @@
+zoom_in        plus
+zoom_out       minus
+zoom_fit       equal
+
+scroll_left    h
+scroll_down    j
+scroll_up      k
+scroll_right   l
