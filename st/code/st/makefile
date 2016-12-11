@@ -1,9 +1,11 @@
 # Build and patch configure st.
 
-.NOTPARALLEL: default
-default: clean patch-input-font patch-srcery patch-hide-cursor
-other: clean patch-envypn-font patch-blue patch-hide-cursor
-third: clean patch-envypn-font patch-srcery patch-hide-cursor
+default: clean patch-input-font patch-srcery patch-hide-cursor compile
+other: clean patch-input-font patch-blue patch-hide-cursor compile
+hacker: clean patch-input-font patch-green patch-hide-cursor compile
+
+compile: st
+	cd st && make
 
 st:
 	git clone git://git.suckless.org/st

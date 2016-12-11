@@ -1,0 +1,43 @@
+diff --git a/config.def.h b/config.def.h
+index 32d107d..08abe2c 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -86,23 +86,23 @@ static unsigned int tabspaces = 8;
+ static const char *colorname[] = {
+ 	/* 8 normal colors */
+ 	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
++	"#00DD00",
++	"#00DD00",
++	"#00DD00",
++	"#00DD00",
++	"#00DD00",
++	"#00DD00",
++	"#00DD00",
+
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	"#00FF00",
++	"#00FF00",
++	"#00FF00",
++	"#00FF00",
++	"#00FF00",
++	"#00FF00",
++	"#00FF00",
++	"#00FF00",
+
+ 	[255] = 0,
+
