@@ -4,7 +4,7 @@
 xset r rate 180 70
 setxkbmap eu-tweaked -option 'caps:ctrl_modifier'
 
-sxhkd -r /dev/stdout | ts %.s >> /var/log/sxhkd.log &
+sxhkd
 xcape -e '#66=Escape'
 # }}}
 
