@@ -28,6 +28,10 @@ XF86MonBrightnessDown
 XF86KbdBrightnessDown
 	/home/balduin/scripts/toggle-kbdlight.sh
 
+# Launch st
+XF86KbdBrightnessUp
+	st
+
 # Restart sxhkd
 XF86KbdBrightnessUp
 	pkill -USR1 -x sxhkd
