@@ -9,7 +9,7 @@ set skip-completed-text on
 
 set visible-stats on
 set completion-query-items 1
-set show-all-if-ambiguous on
+set show-all-if-ambiguous off
 set show-all-if-unmodified on
 set skip-completed-text on
 
