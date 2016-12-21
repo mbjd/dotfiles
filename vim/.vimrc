@@ -58,6 +58,8 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 nnoremap <leader>x :x<CR>
 
+nnoremap <leader>s :stop<CR>
+
 " Easier folding
 nnoremap <leader>c zf%
 nnoremap <leader>a za
