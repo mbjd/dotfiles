@@ -1,1 +1,2 @@
 feh --auto-zoom --scale-down -B black
+view --auto-zoom --scale-down -B black --reload 0.2
