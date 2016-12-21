@@ -145,14 +145,14 @@ bindsym $mod+r mode "resize"
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 8
+gaps inner 32
 gaps outer 0
 
 # Disable title bar
 for_window [class="^.*"] border pixel 1
 
 #                        border  bg      text    indicator
-client.focused           #CCCCCC #CCCCCC #222222 #6ABD86
+client.focused           #CCCCCC #CCCCCC #222222 #519F50
 client.focused_inactive  #333333 #333333 #CCCCCC #333333
 client.unfocused         #333333 #333333 #CCCCCC #333333
 client.urgent            #FF0000 #111111 #FF0000 #FF0000
