@@ -18,5 +18,10 @@ st:
 patch-%: st
 	@ cd ./st && rm -f config.h && patch < ../$*.patch
 
+.PHONY: clean
 clean: st
 	cd st; git checkout -- .; git clean -f;
+
+.PHONY: install
+install:
+	cd st; make install
