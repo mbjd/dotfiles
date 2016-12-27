@@ -1,0 +1,11 @@
+[user]
+	email = balduindettling@gmail.com
+	name = Balduin Dettling
+[credential]
+	helper = cache --timeout=99999999999
+[alias]
+	c = clone
+	l = log --format=oneline --abbrev-commit --graph
+	times = log | grep '^Date' | awk '{print $5}' | awk -F':' '{print $1 * 3600 + $2 * 60 + $3}'
+	plot  = times | pyplot
+	peeps = ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD | grep "^author " | sort | uniq -c | sort -nr | sed 's/author //g' 2>/dev/null

@@ -52,7 +52,6 @@ alias docs='cd ~/documents'
 alias vimrc="nvim ~/.vimrc"
 
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
-alias gitlog="git log --format=oneline --abbrev-commit --graph"
 alias -- '-'='cd - > /dev/null'
 alias p8='ping 8.8.8.8'
 alias where='which -a'
@@ -158,6 +157,8 @@ else # Hope this is linux
 	alias p='xclip -selection clipboard -o'
 	alias o='rifle'
 
+	alias n='nmcli -c yes | head -1'
+
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 	alias dl='cd ~/dl'
 
@@ -172,7 +173,11 @@ else # Hope this is linux
 		cd $(dirname $file)
 	}
 
-	alias bg='feh --bg-fill /home/balduin/pics/desk.jpg'
+	function bg {
+		feh --bg-fill ${1:-/home/balduin/pics/desk.jpg}
+	}
+	# alias bg='feh --bg-fill /home/balduin/pics/desk.jpg'
+	# alias setbg='feh --bg-fill /home/balduin/pics/desk.jpg'
 fi
 
 reset_permissions()
