@@ -4,4 +4,4 @@
 
 link=$(xclip -selection clipboard -o)
 
-st -t floating -e mpv "$link"
+st -e mpv "$link"

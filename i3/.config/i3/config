@@ -145,7 +145,7 @@ bindsym $mod+r mode "resize"
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 32
+gaps inner 20
 gaps outer 0
 
 # Disable title bar
