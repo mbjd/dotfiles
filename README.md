@@ -1,33 +1,6 @@
 # dotfiles
 
-Humble dotfile repository. Featuring:
-
-- `bash`, `vim`, `tmux`, `python`
-
-Linux only:
-
-- `st` (suckless simple terminal), `xbindkeys`, `sxhkd`, `i3`, `i3blocks`, `mpd`, `ncmpcpp`, `mpdcron`
-
-Mac only:
-
-- `fish`, `cmus`
-
-Furthermore, these programs/packages don't have a config file per se, but
-are called somewhere in another config file:
-
-i3 config:
-
-- `xset`, `setxkbmap`, `xcape`
-
-scripts:
-
-- `moreutils`, `units`, `matplotlib`, `xev`, `chromium`
-
-scripts (called via xbindkeys -> only needed on linux):
-
-- `kbdlight`, `light` ([this one](https://github.com/haikarainen/light)), `imagemagick`, `i3lock`
-
-... And probably some more that I forgot. Nothing too important though.
+Humble dotfile repository.
 
 ### Installation
 
