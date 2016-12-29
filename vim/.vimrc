@@ -110,7 +110,7 @@ nnoremap J gT
 nnoremap K gt
 
 " Swap two characters like emacs
-nnoremap <C-T> Xp
+nnoremap <C-T> "xX"xp
 
 language en_US.UTF-8
 
