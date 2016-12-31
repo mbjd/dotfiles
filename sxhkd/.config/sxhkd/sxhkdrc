@@ -37,7 +37,7 @@ XF86KbdBrightnessUp
 	pkill -USR1 -x sxhkd
 
 # Lock the screen
-XF86LaunchA
+XF86Eject
 	slock
 
 # Screenshot with F4
