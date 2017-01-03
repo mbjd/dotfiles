@@ -1,0 +1,17 @@
+diff --git a/config.def.h b/config.def.h
+index a719e36..1ecf7c3 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -169,9 +169,9 @@ static Shortcut shortcuts[] = {
+ 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
+ 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
+ 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
+-	{ MODKEY|ShiftMask,     XK_Prior,       xzoom,          {.f = +1} },
+-	{ MODKEY|ShiftMask,     XK_Next,        xzoom,          {.f = -1} },
+-	{ MODKEY|ShiftMask,     XK_Home,        xzoomreset,     {.f =  0} },
++	{ MODKEY,               0x69, /* i */   xzoom,          {.f = +1} },
++	{ MODKEY,               0x6F, /* o */   xzoom,          {.f = -1} },
++	{ MODKEY,               0x3D, /* = */   xzoomreset,     {.f =  0} },
+ 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+ 	{ MODKEY|ShiftMask,     XK_Insert,      clippaste,      {.i =  0} },
+ 	{ MODKEY|ShiftMask,     XK_C,           clipcopy,       {.i =  0} },
