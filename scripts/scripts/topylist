@@ -4,15 +4,25 @@
 # Use -s to enclose each line in "double quotes" -> string
 # Use -t to enclose each line in (parentheses) -> tuple
 
+filter () {
+	awk 'length {print}'
+}
+
+escape () {
+	sed 's/"/\\"/g'
+}
+
+join_and_surround () {
+	tr '\n' ',' | sed 's/\(.*\)/[\1]/g'
+}
+
 if test "$1" = '-s'; then
 	shift
-	#        Remove empty lines         Escape double quotes                      Newline to commas
-	cat $@ | awk 'length > 0 {print}' | sed 's/"/\\"/g' | sed 's/\(.*\)/"\1"/g' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
-	#                                                     Surround with double quotes           Surround with []
+	cat $@ | filter | escape | sed 's/\(.*\)/"\1"/g' | join_and_surround
 elif test "$1" = '-t'; then
 	shift
-	cat $@ | awk 'length > 0 {print}' | sed 's/"/\\"/g' | sed 's/\(.*\)/(\1)/g' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+	cat $@ | filter | escape | sed 's/\(.*\)/(\1)/g' | join_and_surround
 else
 	# Same as above except no quote escaping
-	cat $@ | awk 'length > 0 {print}' | tr '\n' ',' | sed 's/^/[/g;s/,$/]/g'
+	cat $@ | filter | join_and_surround
 fi
