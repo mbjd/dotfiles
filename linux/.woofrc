@@ -1,0 +1,3 @@
+[main]
+port = 10313
+compressed = zip
