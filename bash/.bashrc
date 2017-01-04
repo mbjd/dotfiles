@@ -20,8 +20,8 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
 export CUDA_HOME='/opt/cuda/'
 
 # Infinite history
-HISTSIZE=''
-HISTFILESIZE=''
+HISTSIZE='9999999999'
+HISTFILESIZE='9999999999'
 
 # Fancy coloured PS1
 bold=$(tput setaf 1; tput bold)
@@ -155,6 +155,7 @@ else # Hope this is linux
 
 	alias c='xclip -selection clipboard -i'
 	alias p='xclip -selection clipboard -o'
+	alias matlab='octave-cli'
 	alias o='rifle'
 
 	alias n='nmcli -c yes | head -1'
