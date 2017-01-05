@@ -172,6 +172,7 @@ Plug('tpope/vim-repeat')
 Plug('dag/vim-fish')
 Plug('vim-scripts/netrw.vim')
 Plug('tpope/vim-commentary')
+Plug('lervag/vimtex')
 
 call plug#end()
 
