@@ -1,0 +1,3 @@
+#!/bin/bash
+
+firefox "https://www.google.ch/?q=$@" &
