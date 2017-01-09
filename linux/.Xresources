@@ -1,31 +1,31 @@
 ! ~~~ S R C E R Y   T H E M E ~~~
 ! https://github.com/roosta/vim-srcery
-
-*.color0     : #1c1b19
-*.color1     : #ff3128
-*.color2     : #519f50
-*.color3     : #fbb829
-*.color4     : #5573a3
-*.color5     : #e02c6d
-*.color6     : #0aaeb3
-*.color7     : #918175
-
-*.color8     : #2d2b28
-*.color9     : #f75341
-*.color10    : #98bc37
-*.color11    : #fed06e
-*.color12    : #8eb2f7
-*.color13    : #e35682
-*.color14    : #53fde9
-*.color15    : #fce8c3
-
-*.foreground : #fce8c3
-*.background : #1c1b19
-*.cursorColor: #fce8c3
+!
+! *.color0     : #1c1b19
+! *.color1     : #ff3128
+! *.color2     : #519f50
+! *.color3     : #fbb829
+! *.color4     : #5573a3
+! *.color5     : #e02c6d
+! *.color6     : #0aaeb3
+! *.color7     : #918175
+!
+! *.color8     : #2d2b28
+! *.color9     : #f75341
+! *.color10    : #98bc37
+! *.color11    : #fed06e
+! *.color12    : #8eb2f7
+! *.color13    : #e35682
+! *.color14    : #53fde9
+! *.color15    : #fce8c3
+!
+! *.foreground : #fce8c3
+! *.background : #1c1b19
+! *.cursorColor: #fce8c3
 
 ! ~~~~ C O L O R S ~~~~
 ! No idea where these are from but they`re not mine
-
+!
 ! *.color0     : #282a2e
 ! *.color1     : #a54242
 ! *.color2     : #8c9440
@@ -48,6 +48,50 @@
 ! *.background : #1d1f21
 ! *.cursorColor: #6abd86
 
+! -- Title:     prevail
+! -- Author:    dkeg
+! -- Created:   2015
+! -- Modified:  2016
+
+#define bg    #263139
+#define blk   #28343c
+#define fg    #c4c4b5
+#define bblk  #455867
+#define red   #f36f62
+#define grn   #c5e19c
+#define ylw   #ccb478
+#define blu   #4c7e89
+#define mag   #814d61
+#define cyn   #79a69d
+#define wht   #c4c4b5
+#define bred  #f36f62
+#define bgrn  #c5e19c
+#define bylw  #dac99d
+#define bblu  #4c7e89
+#define bmag  #814d61
+#define bcyn  #79a69d
+#define bwht  #dbdbd1
+
+! Colors
+*background:  bg
+*foreground:  fg
+
+*color0:      blk
+*color8:      bblk
+*color1:      red
+*color9:      bred
+*color2:      grn
+*color10:     bgrn
+*color3:      ylw
+*color11:     bylw
+*color4:      blu
+*color12:     bblu
+*color5:      mag
+*color13:     bmag
+*color6:      cyn
+*color14:     bcyn
+*color7:      wht
+*color15:     bwht
 ! ~~~~ T E R M I N A L ~~~~
 
 ! xterm*font: 8x13
