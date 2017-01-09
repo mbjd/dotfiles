@@ -155,10 +155,11 @@ else # Hope this is linux
 
 	alias c='xclip -selection clipboard -i'
 	alias p='xclip -selection clipboard -o'
-	alias matlab='octave-cli'
+	alias n='nmcli -c yes | head -1'
+	alias r='ranger'
 	alias o='rifle'
 
-	alias n='nmcli -c yes | head -1'
+	alias matlab='octave-cli'
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 	alias dl='cd ~/dl'
