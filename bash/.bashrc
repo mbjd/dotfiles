@@ -154,12 +154,11 @@ else # Hope this is linux
 	export GIT_EDITOR=vim
 
 	alias c='xclip -selection clipboard -i'
-	alias p='xclip -selection clipboard -o'
 	alias n='nmcli -c yes | head -1'
-	alias r='ranger'
 	alias o='rifle'
-
-	alias matlab='octave-cli'
+	alias p='xclip -selection clipboard -o'
+	alias r='ranger'
+	alias z='zathura'
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 	alias dl='cd ~/dl'
