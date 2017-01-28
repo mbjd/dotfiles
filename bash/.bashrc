@@ -170,8 +170,8 @@ else # Hope this is linux
 
 	# cd to currently playing music
 	cdmus () {
-		file=$HOME/music/$(mpc --format '%file%' current)
-		cd $(dirname $file)
+		file="$HOME/music/$(mpc --format '%file%' current)"
+		cd "$(dirname "$file")"
 	}
 
 	function bg {
