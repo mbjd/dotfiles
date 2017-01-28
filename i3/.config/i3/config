@@ -148,7 +148,7 @@ bindsym $mod+r mode "resize"
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 20
+gaps inner 10
 gaps outer 0
 
 # Disable title bar
@@ -168,4 +168,3 @@ bar {
 	status_command i3blocks
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 }
-
