@@ -22,14 +22,13 @@
 // If the start character isn't in the line, nothing is printed;
 // if the end one isn't, it will print until the end of the line.
 
-#define NAME "between"
 #define LINE_LENGTH 512
 
 int
 main(int argc, char** argv)
 {
 	if (argc != 3) {
-		fprintf(stderr, "%s: Need two arguments\n", NAME);
+		fprintf(stderr, "%s: Need two arguments\n", argv[0]);
 		return EINVAL;
 	}
 
@@ -40,7 +39,7 @@ main(int argc, char** argv)
 			start = argv[1][0];
 		}
 		else {
-			fprintf(stderr, "%s: start argument is longer than 1 char\n", NAME);
+			fprintf(stderr, "%s: start argument is longer than 1 char\n", argv[0]);
 			return EINVAL;
 		}
 
@@ -48,7 +47,7 @@ main(int argc, char** argv)
 			end = argv[2][0];
 		}
 		else {
-			fprintf(stderr, "%s: end argument is longer than 1 char\n", NAME);
+			fprintf(stderr, "%s: end argument is longer than 1 char\n", argv[0]);
 			return EINVAL;
 		}
 	}
