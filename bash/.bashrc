@@ -153,6 +153,7 @@ else # Hope this is linux
 	alias vi='nvim'
 	export GIT_EDITOR=vim
 
+	alias b='bc -l'
 	alias c='xclip -selection clipboard -i'
 	alias n='nmcli -c yes | head -1'
 	alias o='rifle'
@@ -162,6 +163,8 @@ else # Hope this is linux
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 	alias dl='cd ~/dl'
+
+	alias topdf='libreoffice --headless --convert-to pdf'
 
 	# Plot battery/temperature logs
 	log () {
@@ -179,6 +182,21 @@ else # Hope this is linux
 	}
 	# alias bg='feh --bg-fill /home/balduin/pics/desk.jpg'
 	# alias setbg='feh --bg-fill /home/balduin/pics/desk.jpg'
+
+
+	cdp () {
+		if [ -z "$1" ]; then
+			echo "cdp: No process name given" > /dev/stderr
+			return 1
+		fi
+		pid=$(pgrep "$1" | head -1)
+		if [ -z "$pid" ]; then
+			echo "cdp: $1: No such process"
+			return 1
+		fi
+		echo cd /proc/$pid
+		cd /proc/$pid
+	}
 fi
 
 reset_permissions()
