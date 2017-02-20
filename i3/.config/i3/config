@@ -71,11 +71,14 @@ bindsym $mod+space exec rofi -show run
 # Any window called 'floating' will float
 for_window [title="^floating$"] floating enable
 
-# Launch a floating terminal
-bindsym $mod+Shift+f exec --no-startup-id st -t floating
+# Launch a ranger window
+bindsym $mod+Shift+f exec --no-startup-id st -e ranger
 
 # Launch a floating terminal with vim for quick notes
 bindsym $mod+Shift+n exec --no-startup-id st -t floating -e nvim
+
+# dmenu nmcli frontend
+bindsym $mod+n exec --no-startup-id nmcli_dmenu
 # }}}
 
 
@@ -119,9 +122,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# dmenu nmcli frontend
-bindsym $mod+Shift+w exec --no-startup-id nmcli_dmenu
-
 # sleep
 bindsym $mod+Shift+s exec systemctl hybrid-sleep
 # }}}
@@ -164,7 +164,8 @@ client.urgent            #FF0000 #111111 #FF0000 #FF0000
 
 # i3blocks bar
 bar {
-	# mode hide
+	mode hide
+	position bottom
 	status_command i3blocks
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 }
