@@ -1,0 +1,18 @@
+#!/bin/bash
+
+track_id=$1
+client_id=$(cat ~/.soundcloud-api-key)
+
+re='^[0-9]+$'
+
+if [ -z "$track_id" ]; then
+	track_id=$(mpc -f '%file%' | head -1 | rev | cut -d- -f1 | rev | cut -d. -f1)
+	if ! [[ $track_id =~ $re ]] ; then
+		echo Could not find soundcloud ID of current track > /dev/stderr
+		exit 1
+	fi
+fi
+
+url="http://api.soundcloud.com/tracks/$track_id.json?client_id=$client_id"
+
+curl -s "$url" | jq -r .permalink_url
