@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Finds the file name of the currently playing song and if it's named
+# <name>-<soundcloud id>.mp3 (like youtube-dl does it) it gets that id
+# and finds out more using the soundcloud api
+
 client_id=$(cat ~/.soundcloud-api-key)
 
 re='^[0-9]+$'
@@ -11,6 +15,12 @@ if ! [[ $track_id =~ $re ]] ; then
 fi
 
 url="http://api.soundcloud.com/tracks/$track_id.json?client_id=$client_id"
+
+# Print API request url
+if [ "$1" = -u ] || [ "$1" = -p ]; then
+	echo "$url"
+	exit
+fi
 
 # Print all info
 if [ "$1" = -a ]; then
@@ -27,6 +37,12 @@ fi
 # Show cover with feh
 if [ "$1" = -f ]; then
 	feh $(curl -s "$url" | jq -r .artwork_url | sed 's/large/t500x500/g') &
+	exit
+fi
+
+# Open soundcloud page
+if [ "$1" = -o ]; then
+	xdg-open $(curl -s "$url" | jq -r .permalink_url)
 	exit
 fi
 
