@@ -197,6 +197,11 @@ else # Hope this is linux
 		echo cd /proc/$pid
 		cd /proc/$pid
 	}
+
+	g () {
+		url=$(head -1 "$1")
+		xdg-open "$url"
+	}
 fi
 
 reset_permissions()
