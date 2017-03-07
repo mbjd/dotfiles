@@ -36,7 +36,7 @@ fi
 
 # Show cover with feh
 if [ "$1" = -f ]; then
-	feh $(curl -s "$url" | jq -r .artwork_url | sed 's/large/t500x500/g') &
+	feh -Z. $(curl -s "$url" | jq -r .artwork_url | sed 's/large/t500x500/g') &
 	exit
 fi
 
