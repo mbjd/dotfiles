@@ -42,4 +42,4 @@ XF86Eject
 
 # Screenshot with F4
 XF86LaunchB
-	scrot -e 'mv $f /home/balduin/pics/scrot/'
+	scrot 'screenshot-%Y-%m-%d_$wx$h.png' -e 'mv $f ~'
