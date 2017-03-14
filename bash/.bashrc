@@ -49,7 +49,7 @@ alias dl='cd ~/downloads'
 alias docs='cd ~/documents'
 
 # Vimisms
-alias vimrc="nvim ~/.vimrc"
+alias vimrc="$EDITOR ~/.vimrc"
 
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
 alias -- '-'='cd - > /dev/null'
@@ -72,9 +72,9 @@ if [ "$(uname)" = 'Darwin' ]; then
 	alias dev='cd ~/dev'
 	alias eth='cd ~/eth'
 
-	alias v='nvim'
-	alias vi='nvim'
-	alias vim='nvim'
+	alias v="$EDITOR"
+	alias vi="$EDITOR"
+	alias vim="$EDITOR"
 	alias mvim="open -a MacVim"
 
 	alias qt="open -a 'QuickTime Player'"
@@ -150,8 +150,8 @@ if [ "$(uname)" = 'Darwin' ]; then
 
 else # Hope this is linux
 
-	alias vi='nvim'
-	export GIT_EDITOR=vim
+	alias vi="$EDITOR"
+	export GIT_EDITOR=$EDITOR
 
 	alias b='bc -l'
 	alias c='xclip -selection clipboard -i'
@@ -180,9 +180,6 @@ else # Hope this is linux
 	function bg {
 		feh --bg-fill ${1:-/home/balduin/pics/desk.jpg}
 	}
-	# alias bg='feh --bg-fill /home/balduin/pics/desk.jpg'
-	# alias setbg='feh --bg-fill /home/balduin/pics/desk.jpg'
-
 
 	cdp () {
 		if [ -z "$1" ]; then
