@@ -176,3 +176,4 @@ Plug('lervag/vimtex')
 call plug#end()
 
 autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd Filetype haskell setlocal expandtab
