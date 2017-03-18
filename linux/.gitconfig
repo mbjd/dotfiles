@@ -4,6 +4,10 @@
 [credential]
 	helper = cache --timeout=99999999999
 [alias]
+	c = commit
+	s = status
+	p = push
+	d = diff
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 	l = log --format=oneline --abbrev-commit --graph
 	times = log | grep '^Date' | awk '{print $5}' | awk -F':' '{print $1 * 3600 + $2 * 60 + $3}'
