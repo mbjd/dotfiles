@@ -16,11 +16,6 @@ def_key "K"
 def_key "J"
 	move_end
 
-def_command "w": [deferred]
-	save_tag_changes
-def_command "q": [deferred]
-	save_tag_changes
-
 def_key "right"
 	seek_forward
 def_key "left"

@@ -16,7 +16,7 @@ visualizer_output_name                = "Visualiser FIFO"
 visualizer_sync_interval              = "10"
 visualizer_in_stereo                  = "yes"
 visualizer_type                       = "ellipse"
-visualizer_look                       = "oo"
+visualizer_look                       = "◆│"
 
 display_volume_level                  = "yes"
 clock_display_seconds                 = "yes"
