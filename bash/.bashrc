@@ -153,6 +153,8 @@ else # Hope this is linux
 	alias vi="$EDITOR"
 	export GIT_EDITOR=$EDITOR
 
+	alias grep='grep --colour=auto'
+
 	alias b='bc -l'
 	alias c='xclip -selection clipboard -i'
 	alias n='nmcli -c yes | head -1'
