@@ -1,6 +1,7 @@
 # Build and patch configure st.
 
 default: clean patch-input-font patch-srcery patch-hide-cursor patch-keys compile
+transparent: clean patch-input-font patch-alpha patch-srcery patch-hide-cursor patch-keys compile
 other: clean patch-input-font patch-blue patch-hide-cursor patch-keys compile
 hacker: clean patch-input-font patch-green patch-hide-cursor patch-keys compile
 
