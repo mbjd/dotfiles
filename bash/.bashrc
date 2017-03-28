@@ -154,6 +154,7 @@ else # Hope this is linux
 	export GIT_EDITOR=$EDITOR
 
 	alias grep='grep --colour=auto'
+	alias cal='cal -m'
 
 	alias b='bc -l'
 	alias c='xclip -selection clipboard -i'
