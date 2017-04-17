@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Filter a stream of lines by only
+# printing every $1-th line
+
+if [ -z "$1" ] ; then
+	echo $0: '$1' should be an integer representing the stride length
+	exit 1
+fi
+
+awk "NR%$1 == 0 {print}"
