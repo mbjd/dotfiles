@@ -157,12 +157,15 @@ else # Hope this is linux
 	alias cal='cal -m'
 
 	alias b='bc -l'
+	alias d='(echo 30k; cat) | dc'
 	alias c='xclip -selection clipboard -i'
 	alias n='nmcli -c yes | head -1'
 	alias o='rifle'
 	alias p='xclip -selection clipboard -o'
 	alias r='ranger'
 	alias z='zathura'
+
+	alias np='nmcli -c yes | head -1; ping 8.8.8.8'
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 	alias dl='cd ~/dl'
