@@ -6,12 +6,21 @@
 
 client_id=$(cat ~/.soundcloud-api-key)
 
-re='^[0-9]+$'
+if [ "$1" == -id ]; then
+	track_id="$2"
+	shift 2
+	if ! [[ $track_id =~ $re ]]; then
+		echo Track id '$1'=$1 is not a number > /dev/stderr
+		exit 1
+	fi
+else
+	re='^[0-9]+$'
 
-track_id=$(mpc -f '%file%' | head -1 | rev | cut -d- -f1 | rev | cut -d. -f1)
-if ! [[ $track_id =~ $re ]] ; then
-	echo Could not find soundcloud ID of current track > /dev/stderr
-	exit 1
+	track_id=$(mpc -f '%file%' | head -1 | rev | cut -d- -f1 | rev | cut -d. -f1)
+	if ! [[ $track_id =~ $re ]] ; then
+		echo Could not find soundcloud ID of current track > /dev/stderr
+		exit 1
+	fi
 fi
 
 url="http://api.soundcloud.com/tracks/$track_id.json?client_id=$client_id"
