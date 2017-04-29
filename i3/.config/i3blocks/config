@@ -52,11 +52,6 @@ interval=once
 signal=12
 # ^ This signal is sent by ~/scripts/light-wrapper
 
-# Memory usage
-# [memory]
-# label=MEM
-# interval=30
-
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -79,6 +74,12 @@ label=CPU
 interval=10
 min_width=CPU:
 # separator=false
+
+# Memory usage
+[memory]
+label=MEM
+interval=30
+
 
 # Battery indicator
 [battery]
