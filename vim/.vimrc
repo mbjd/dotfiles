@@ -162,14 +162,14 @@ highlight NonText ctermfg=239 guifg=#4e4e4e
 highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " Get some plugins
 filetype plugin on
@@ -182,7 +182,7 @@ Plug('dag/vim-fish')
 Plug('vim-scripts/netrw.vim')
 Plug('tpope/vim-commentary')
 Plug('lervag/vimtex')
-Plug('vim-syntastic/syntastic')
+" Plug('vim-syntastic/syntastic')
 
 call plug#end()
 
