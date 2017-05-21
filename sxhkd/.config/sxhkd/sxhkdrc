@@ -32,10 +32,6 @@ XF86KbdBrightnessDown
 XF86KbdBrightnessUp
 	st
 
-# Restart sxhkd
-XF86KbdBrightnessUp
-	pkill -USR1 -x sxhkd
-
 # Lock the screen
 XF86Eject
 	slock
