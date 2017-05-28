@@ -65,6 +65,10 @@ bindsym $mod+Return exec --no-startup-id st
 # Octave shortcut
 bindsym $mod+Shift+o exec --no-startup-id st -e octave-cli -q
 
+# bc shortcut
+bindsym $mod+Shift+b exec --no-startup-id st -e bc -l
+bindsym $mod+Shift+d exec --no-startup-id st -e dc
+
 # bindsym $mod+space exec dmenu_run -nb \#1C1B19 -b -p run
 bindsym $mod+space exec rofi -show run
 
@@ -148,7 +152,7 @@ bindsym $mod+r mode "resize"
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 10
+gaps inner 15
 gaps outer 0
 
 # Disable title bar
