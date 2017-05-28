@@ -1,3 +1,3 @@
 #!/bin/bash
 
-feh --auto-zoom --scale-down --reload 0.2 /tmp/albumart.jpg &
+feh --auto-zoom --scale-down --reload 0.5 /tmp/albumart.jpg &
