@@ -13,13 +13,13 @@ if [ -n "$song" ]; then
 	file="/home/balduin/music/$song"
 
 	# Look for an image file in the folder of the current song
-	cover=$(find $(dirname $file) -type f -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' | head -1)
+	cover=$(find $(dirname "$file") -type f -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' | head -1)
 	if [ -n "$cover" ]; then
 		# Copy and exit if there is one
 		ln -sf "$cover" $target && exit
 	else
 		# If it doesn't exist, try to extract it from the song
-		cover=$(dirname $file)/cover.jpg
+		cover=$(dirname "$file")/cover.jpg
 		yes | ffmpeg -loglevel quiet -i "$file" "$cover" > /dev/null 2> /dev/null
 		# If was successful, use that file, otherwise
 		[ $? -eq 0 ] && ln -sf "$cover" $target && exit
@@ -27,4 +27,8 @@ if [ -n "$song" ]; then
 fi
 
 # On failure, fall back to an 'empty album art' image
-ln -sf /home/balduin/pics/misc/no-albumart.jpg $target
+if [ -e $target ]; then
+	ln -sf /home/balduin/pics/misc/no-albumart.jpg $target
+else
+	rm -f $target
+fi
