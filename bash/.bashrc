@@ -166,6 +166,7 @@ else # Hope this is linux
 	alias z='zathura'
 
 	alias np='nmcli -c yes | head -1; ping 8.8.8.8'
+	alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8; sleep 1; done'
 
 	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 	alias dl='cd ~/dl'
@@ -183,9 +184,11 @@ else # Hope this is linux
 		cd "$(dirname "$file")"
 	}
 
-	function bg {
+	function set_background {
 		feh --bg-fill ${1:-/home/balduin/pics/desk.jpg}
 	}
+
+	alias bg=set_background
 
 	cdp () {
 		if [ -z "$1" ]; then
@@ -199,11 +202,6 @@ else # Hope this is linux
 		fi
 		echo cd /proc/$pid
 		cd /proc/$pid
-	}
-
-	g () {
-		url=$(head -1 "$1")
-		xdg-open "$url"
 	}
 fi
 
@@ -234,6 +232,11 @@ mkv2mp4() {
 	ffmpeg -i $name -vcodec copy -acodec copy ${name%.mkv}".mp4"
 }
 
+# edit an executable
+vw () {
+	vi $(which "$1")
+}
+
 # replacement for cd ..
 # $ up -> cd ..
 # $ up 3 -> cd ../../..
@@ -259,6 +262,11 @@ alias u8='up 8'
 
 randcommit() {
 	curl -s "http://whatthecommit.com/index.txt"
+}
+
+randseq() {
+	limit=$1
+	yes | awk -v seed=$RANDOM "BEGIN {srand(seed);} {print int($limit * rand())}"
 }
 
 # simple digital clock
