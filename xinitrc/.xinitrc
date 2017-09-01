@@ -16,7 +16,8 @@ mpdcron
 mpd &
 
 # Synchronize clipboards
-autocutsel -selection CLIPBOARD -fork 2> /dev/null > /dev/null &
+autocutsel &
+autocutsel -s PRIMARY &
 
 nm-applet &
 
