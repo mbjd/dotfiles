@@ -21,7 +21,10 @@ patch-%: st
 
 .PHONY: clean
 clean: st
-	cd st; git checkout -- .; git clean -f;
+	# cd st; git checkout -- .; git clean -f;
+	# this is really ugly but it didn't work with the latest commit
+	# and the old one was fine so let's not bother fixing stuff
+	cd st; git checkout c63a87cd; git clean -f;
 
 .PHONY: install
 install:
