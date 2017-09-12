@@ -30,7 +30,7 @@ XF86KbdBrightnessDown
 
 # Launch st
 XF86KbdBrightnessUp
-	st
+	i3-sensible-terminal
 
 # Lock the screen
 XF86Eject
@@ -38,4 +38,4 @@ XF86Eject
 
 # Screenshot with F4
 XF86LaunchB
-	scrot '%Y-%m-%dT%H:%M:%S.png' -e 'mv $f ~'
+	scrot '%Y-%m-%dT%H:%M:%S.png'
