@@ -82,7 +82,7 @@ bindsym $mod+Shift+f exec --no-startup-id st -e ranger
 bindsym $mod+Shift+n exec --no-startup-id st -t floating -e nvim
 
 # dmenu nmcli frontend
-bindsym $mod+n exec --no-startup-id nmcli_dmenu
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 # }}}
 
 
@@ -152,7 +152,7 @@ bindsym $mod+r mode "resize"
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 15
+gaps inner 10
 gaps outer 0
 
 # Disable title bar
