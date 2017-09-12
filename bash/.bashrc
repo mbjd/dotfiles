@@ -11,6 +11,7 @@ export XDG_CONFIG="$HOME/.config"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_RUNTIME_DIR="$HOME/.config"
 export HISTCONTROL=ignoredups
+export GTK_THEME=arc-gtk-theme
 
 # https://github.com/in0rdr/diary/
 export DIARY_DIR="$HOME/.diary"
@@ -33,7 +34,7 @@ export PS1="\[$bold\]\u@\H:\w ――――\[$reset\] "
 
 export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Basic aliases
 alias ls="ls -F --color=auto --time-style=long-iso"
