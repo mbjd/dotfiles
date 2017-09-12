@@ -2,15 +2,18 @@
 
 # --- Keyboard mappings etc ------------------------------------- {{{
 xset r rate 180 70
-setxkbmap eu-tweaked -option 'caps:ctrl_modifier'
+setxkbmap eu -option 'caps:ctrl_modifier'
 
-sxhkd
+sxhkd &
 xcape -e '#66=Escape'
 # }}}
 
-# Set background
+# Set background & start redshift {{{
 feh --bg-fill /home/balduin/pics/desk.jpg
+redshift &
+# }}}
 
+# other stuff {{{
 # mpdcron --kill
 mpdcron
 mpd &
@@ -22,5 +25,6 @@ autocutsel -s PRIMARY &
 nm-applet &
 
 xrdb .Xresources
+# }}}
 
 exec i3
