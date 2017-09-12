@@ -9,7 +9,7 @@ default: linux
 
 .PHONY: base
 base:
-	$(STOW) bash misc qutebrowser scripts tmux vim vimperator
+	$(STOW) bash misc scripts tmux vim vimperator
 
 .PHONY: mac
 mac: base
