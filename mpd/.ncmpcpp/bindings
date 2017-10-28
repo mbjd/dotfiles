@@ -11,6 +11,14 @@ def_key "l"
 def_key "h"
 	previous_column
 
+# selection
+def_key "alt-k"
+	select_item
+	scroll_up
+def_key "alt-j"
+	select_item
+	scroll_down
+
 def_key "K"
 	move_home
 def_key "J"
