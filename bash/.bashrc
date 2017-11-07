@@ -36,57 +36,45 @@ export LANG='en_US.UTF-8'
 export LESS='-Ri -x4'
 export EDITOR='nvim'
 
-# Basic aliases
+# aliases
+
 alias ls="ls -F --color=auto --time-style=long-iso"
-alias l="ls"
+alias lal="ll -a"
 alias ll="ls -l"
 alias la="ls -a"
-alias lal="ll -a"
+alias l="ls"
 
-alias newest="command ls -t | head -1"
-
-alias desk='cd ~/desktop'
-alias dl='cd ~/downloads'
-alias docs='cd ~/documents'
 
 # Vimisms
-alias vimrc="$EDITOR ~/.vimrc"
 
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
+alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8; sleep 1; done'
+alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
+alias topdf='libreoffice --headless --convert-to pdf'
+alias np='nmcli -c yes | head -1; ping 8.8.8.8'
+alias p='xclip -selection clipboard -o'
+alias c='xclip -selection clipboard -i'
+alias newest='command ls -t | head -1'
+alias n='nmcli -c yes | head -1'
 alias -- '-'='cd - > /dev/null'
+alias d='(echo 30k; cat) | dc'
+alias vimrc="$EDITOR ~/.vimrc"
+alias oc='octave-cli -q'
 alias p8='ping 8.8.8.8'
 alias where='which -a'
 alias make='make -j'
-alias mkae='make'
+alias z='zathura'
+alias r='ranger'
 alias :t='type'
 alias :h='help'
 alias :q='exit'
+alias o='rifle'
+alias b='bc -l'
 alias m='make'
 alias q='exit'
 
 alias vi="$EDITOR"
 export GIT_EDITOR=$EDITOR
-
-alias grep='grep --colour=auto'
-alias cal='cal -m'
-
-alias p='xclip -selection clipboard -o'
-alias c='xclip -selection clipboard -i'
-alias n='nmcli -c yes | head -1'
-alias d='(echo 30k; cat) | dc'
-alias oc='octave-cli -q'
-alias z='zathura'
-alias r='ranger'
-alias o='rifle'
-alias b='bc -l'
-
-alias np='nmcli -c yes | head -1; ping 8.8.8.8'
-alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8; sleep 1; done'
-
-alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
-alias dl='cd ~/dl'
-
-alias topdf='libreoffice --headless --convert-to pdf'
 
 # Plot battery/temperature logs
 log () {
