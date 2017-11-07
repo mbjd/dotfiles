@@ -12,6 +12,9 @@ set scrolloff=5
 set relativenumber number
 syntax on
 
+set rtp+=~/.vim/autoload
+set rtp+=~/.vim/colors
+
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -127,31 +130,13 @@ autocmd Filetype tex inoremap Ü {\"U}
 
 let s:uname = substitute(system('uname'), "\n", "", "")
 
-if s:uname == "Darwin"
-	syntax on
-	set background=dark
+" https://github.com/roosta/vim-srcery
+colorscheme srcery
 
-	" let g:sierra_Twilight = 1
-	let g:sierra_Midnight = 1
-	" let g:sierra_Pitch = 1
-	colorscheme sierra
-	set cursorline
-
-	set guioptions=gmiM
-	set linespace=3
-	set guifont=Input\ Mono:h13
-
-	set mouse=
-elseif s:uname == "Linux"
-
-	" https://github.com/roosta/vim-srcery
-	colorscheme srcery
-
-	set guioptions=""
-	set linespace=1
-	set cursorline
-	set guifont=DejaVu\ Sans\ Mono\ 8
-endif
+set guioptions=""
+set linespace=1
+set cursorline
+set guifont=DejaVu\ Sans\ Mono\ 8
 
 " Highlight different kinds of whitespace with symbols
 set list

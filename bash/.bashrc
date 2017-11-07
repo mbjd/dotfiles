@@ -64,147 +64,58 @@ alias :q='exit'
 alias m='make'
 alias q='exit'
 
-if [ "$(uname)" = 'Darwin' ]; then
+alias vi="$EDITOR"
+export GIT_EDITOR=$EDITOR
 
-	alias dots='cd ~/config'
-	alias drive='cd ~/drive'
-	alias code='cd ~/code'
-	alias misc='cd ~/misc'
-	alias dev='cd ~/dev'
-	alias eth='cd ~/eth'
+alias grep='grep --colour=auto'
+alias cal='cal -m'
 
-	alias v="$EDITOR"
-	alias vi="$EDITOR"
-	alias vim="$EDITOR"
-	alias mvim="open -a MacVim"
+alias p='xclip -selection clipboard -o'
+alias c='xclip -selection clipboard -i'
+alias n='nmcli -c yes | head -1'
+alias d='(echo 30k; cat) | dc'
+alias oc='octave-cli -q'
+alias z='zathura'
+alias r='ranger'
+alias o='rifle'
+alias b='bc -l'
 
-	alias qt="open -a 'QuickTime Player'"
-	alias prefs="open -a 'System Preferences'"
-	alias clip='pbpaste | vipe | pbcopy'
-	alias subl="open -a 'Sublime Text'"
-	alias units='/usr/local/bin/units'
-	alias grep='ggrep --color=auto'
-	alias sha256sum='shasum -a 256'
-	alias vtop='vtop --theme brew'
-	alias typora='open -a Typora'
-	alias mvim="open -a MacVim"
-	alias md='open -a MacDown'
-	alias objdump='otool -tV'
-	alias vlc='open -a VLC'
-	alias top='top -o cpu'
-	alias sha1sum='shasum'
-	alias rgrep='grep -r'
-	alias hd='hexdump -C'
-	alias finder='open .'
-	alias p='pbpaste'
-	alias c='pbcopy'
-	alias o='open'
-	alias du='gdu'
+alias np='nmcli -c yes | head -1; ping 8.8.8.8'
+alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8; sleep 1; done'
 
-	# Bash completion
-	# if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	#	. $(brew --prefix)/etc/bash_completion
-	# fi
+alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
+alias dl='cd ~/dl'
 
-	# Trash cmus's stderr so that the error message won't clog up the UI
-	alias cmus="cmus 2> /dev/null"
+alias topdf='libreoffice --headless --convert-to pdf'
 
-	export GIT_EDITOR=nvim
-	export BROWSER='open -a Google\ Chrome'
+# Plot battery/temperature logs
+log () {
+	< ~/misc/log python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
+}
 
-	# cd to frontmost finder window
-	cdf() {
-		target=$(osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)')
-		if [ "$target" != "" ] ;
-		then
-			cd "$target";
-		else
-			echo 'No Finder window found' > /dev/stderr;
-		fi
-	}
+# cd to currently playing music
+cdmus () {
+	file="$HOME/music/$(mpc --format '%file%' current)"
+	cd "$(dirname "$file")"
+}
 
-	cdp() {
-		cd $(pbpaste)
-	}
+function bg {
+	feh --bg-fill ${1:-/home/balduin/pics/desk.jpg}
+}
 
-	log () {
-		< ~/misc/log.csv python3 -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
-	}
-
-	trash () {
-		mv "$@" ~/.Trash;
-	}
-
-	restart_kwm () {
-		brew services restart kwm
-	}
-
-	kwmrc () {
-		$EDITOR ~/.kwm/kwmrc
-		kwmc config reload
-	}
-
-	# Preview a file or folder in Quicklook
-	ql() {
-		qlmanage -p "$1" &> /dev/null &
-	}
-
-else # Hope this is linux
-
-	alias vi="$EDITOR"
-	export GIT_EDITOR=$EDITOR
-
-	alias grep='grep --colour=auto'
-	alias cal='cal -m'
-
-	alias b='bc -l'
-	alias d='(echo 30k; cat) | dc'
-	alias c='xclip -selection clipboard -i'
-	alias n='nmcli -c yes | head -1'
-	alias o='rifle'
-	alias p='xclip -selection clipboard -o'
-	alias r='ranger'
-	alias z='zathura'
-
-	alias np='nmcli -c yes | head -1; ping 8.8.8.8'
-	alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8; sleep 1; done'
-
-	alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
-	alias dl='cd ~/dl'
-
-	alias topdf='libreoffice --headless --convert-to pdf'
-
-	# Plot battery/temperature logs
-	log () {
-		< ~/misc/log python -c 'import matplotlib.pyplot as pl; import sys; data=[map(float, i.split(",")) for i in sys.stdin.readlines()]; times, batt, temp = zip(*data); pl.plot(times, batt); pl.plot(times, temp); pl.show();'
-	}
-
-	# cd to currently playing music
-	cdmus () {
-		file="$HOME/music/$(mpc --format '%file%' current)"
-		cd "$(dirname "$file")"
-	}
-
-	function set_background {
-		feh --bg-fill ${1:-/home/balduin/pics/desk.jpg}
-	}
-
-	alias bg=set_background
-
-	cdp () {
-		if [ -z "$1" ]; then
-			echo "cdp: No process name given" > /dev/stderr
-			return 1
-		fi
-		pid=$(pgrep "$1" | head -1)
-		if [ -z "$pid" ]; then
-			echo "cdp: $1: No such process"
-			return 1
-		fi
-		echo cd /proc/$pid
-		cd /proc/$pid
-	}
-fi
+cdp () {
+	if [ -z "$1" ]; then
+		echo "cdp: No process name given" > /dev/stderr
+		return 1
+	fi
+	pid=$(pgrep "$1" | head -1)
+	if [ -z "$pid" ]; then
+		echo "cdp: $1: No such process"
+		return 1
+	fi
+	echo cd /proc/$pid
+	cd /proc/$pid
+}
 
 reset_permissions()
 {
@@ -263,6 +174,13 @@ alias u8='up 8'
 
 randcommit() {
 	curl -s "http://whatthecommit.com/index.txt"
+}
+
+repeat () {
+	keys=$1
+	interval=${2-10}
+	echo Repeating "$keys" every "$interval" seconds
+	while true; do sleep $interval; xdotool key "$keys"; echo "$keys"; done
 }
 
 randseq() {
