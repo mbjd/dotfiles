@@ -1,2 +1,0 @@
-#!/bin/bash
-topylist | python -c 'import matplotlib.pyplot as pl; from scipy.signal import detrend; import sys; data = eval(sys.stdin.readlines()[0]); pl.specgram(data, detrend=detrend); pl.show()'
