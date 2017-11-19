@@ -75,18 +75,11 @@ interval=10
 min_width=CPU:
 # separator=false
 
-# Memory usage
-[memory]
-label=MEM
-interval=30
-
-
 # Battery indicator
 [battery]
 label=BAT
 # instance=1
 interval=60
-
 
 # Temperature
 [temperature]
