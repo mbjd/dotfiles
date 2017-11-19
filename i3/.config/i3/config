@@ -78,8 +78,8 @@ for_window [title="^floating$"] floating enable
 # Launch a ranger window
 bindsym $mod+Shift+f exec --no-startup-id st -e ranger
 
-# Launch a floating terminal with vim for quick notes
-bindsym $mod+Shift+n exec --no-startup-id st -t floating -e nvim
+# Launch a floating terminal
+bindsym $mod+Shift+n exec --no-startup-id st -t floating
 
 # dmenu nmcli frontend
 bindsym $mod+n exec --no-startup-id networkmanager_dmenu
