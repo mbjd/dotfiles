@@ -73,6 +73,8 @@ alias b='bc -l'
 alias m='make'
 alias q='exit'
 
+alias cal='cal -m'
+
 alias vi="$EDITOR"
 export GIT_EDITOR=$EDITOR
 
