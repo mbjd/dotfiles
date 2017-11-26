@@ -11,12 +11,6 @@ def_key "l"
 def_key "h"
 	previous_column
 
-# vim search
-def_key "n"
-	next_found_item
-def_key "N"
-	previous_found_item
-
 # selection
 def_key "alt-k"
 	select_item
