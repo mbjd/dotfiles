@@ -13,7 +13,7 @@ case $1 in
 		pkill -RTMIN+$signal i3blocks
 		;;
 	*)
-		echo light-wrapper: invalid command > /dev/stderr
+		echo light-wrapper: invalid command \'$1\' > /dev/stderr
 		exit 1
 		;;
 esac
