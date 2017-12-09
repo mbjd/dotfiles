@@ -1,4 +1,4 @@
 #!/bin/sh
 
-(cd ~/.diary; find . -type f -name '*-*-*' | sort | xargs -n1 -I{} sh -c "printf '\n ------------------------------- {} ------------------------------- \n\n' | tr -d ./ ; cat {}" | nl | less)
+(cd ~/.diary; find . -type f -name '*-*-*' -not -name '*\.*' | less | sort | xargs -n1 -I{} sh -c "printf '\n ------------------------------- {} ------------------------------- \n\n' | tr -d ./ ; cat {}" | nl | less)
 
