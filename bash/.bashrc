@@ -89,10 +89,6 @@ cdmus () {
 	cd "$(dirname "$file")"
 }
 
-function bg {
-	feh --bg-fill ${1:-/home/balduin/pics/desk.jpg}
-}
-
 cdp () {
 	if [ -z "$1" ]; then
 		echo "cdp: No process name given" > /dev/stderr
