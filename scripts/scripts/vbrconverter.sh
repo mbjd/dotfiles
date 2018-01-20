@@ -15,6 +15,11 @@
 # 85	70-105	-q:a 8
 # 65	45-85	-q:a 9
 
+if [ ! -e "$1" ]; then
+	echo File "'$1'" doesn\'t exist.
+	exit
+fi
+
 echo Starting "$1"...
 tmp=$(mktemp --dry-run --tmpdir XXXXXXXXXXXX.mp3)
 
