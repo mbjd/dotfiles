@@ -4,16 +4,16 @@
 # and copies it to /tmp/albumart.jpg so it can be displayed and stuff
 
 target='/tmp/albumart.jpg'
+empty_albumart='/home/balduin/pics/misc/no-albumart.jpg'
 
 # Extract the album art of the current song & write to $target
-# song=$(mpc --format %file% current)
-song=$MPD_SONG_URI
+song=$(mpc --format %file% current)
 if [ -n "$song" ]; then
 
 	file="/home/balduin/music/$song"
 
 	# Look for an image file in the folder of the current song
-	cover=$(find $(dirname "$file") -type f -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' | head -1)
+	cover="$(find "$(dirname "$file")" -type f -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' | head -1)"
 	if [ -n "$cover" ]; then
 		# Copy and exit if there is one
 		ln -sf "$cover" $target && exit
@@ -23,12 +23,13 @@ if [ -n "$song" ]; then
 		yes | ffmpeg -loglevel quiet -i "$file" "$cover" > /dev/null 2> /dev/null
 		# If was successful, use that file, otherwise
 		[ $? -eq 0 ] && ln -sf "$cover" $target && exit
+		ln -sf $empty_albumart $target; exit
 	fi
 fi
 
 # On failure, fall back to an 'empty album art' image
 if [ -e $target ]; then
-	ln -sf /home/balduin/pics/misc/no-albumart.jpg $target
+	ln -sf $empty_albumart $target
 else
 	rm -f $target
 fi
