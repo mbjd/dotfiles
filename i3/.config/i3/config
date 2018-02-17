@@ -131,7 +131,7 @@ bindsym $mod+Shift+s exec systemctl hybrid-sleep
 # }}}
 
 
-# RESIZE MODE {{{
+# MODES {{{
 mode "resize" {
 	bindsym $right resize grow   width  8 px or 1 ppt
 	bindsym $left  resize shrink width  8 px or 1 ppt
@@ -148,11 +148,29 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+mode "mouse" {
+	bindsym $right exec xdotool mousemove_relative -- 10 0
+	bindsym $left exec xdotool mousemove_relative -- -10 0
+	bindsym $down exec xdotool mousemove_relative -- 0 10
+	bindsym $up exec xdotool mousemove_relative -- 0 -10
+
+	bindsym Return exec xdotool click 1
+	bindsym Shift+Return exec xdotool click 3
+
+	bindsym $mod+d exec xdotool mousedown 1
+	bindsym $mod+u exec xdotool mouseup 1
+
+	bindsym Escape mode "default"
+	bindsym $mod+m mode "default"
+}
+
+bindsym $mod+m mode "mouse"
 # }}}
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 10
+gaps inner 16
 gaps outer 0
 
 # Disable title bar
@@ -168,7 +186,7 @@ client.urgent            #FF0000 #111111 #FF0000 #FF0000
 
 # i3blocks bar
 bar {
-	mode hide
+	# mode hide
 	position bottom
 	status_command i3blocks
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
