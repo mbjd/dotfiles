@@ -24,7 +24,7 @@ main(int argc, char* argv)
 		}
 
 		if (counter) {
-			printf("%lf\n", current - old);
+			printf("%.15lf\n", current - old);
 		}
 		old = current;
 		counter++;
