@@ -150,14 +150,21 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "mouse" {
+	# move the mouse with vim arrow keys
 	bindsym $right exec xdotool mousemove_relative -- 10 0
 	bindsym $left exec xdotool mousemove_relative -- -10 0
 	bindsym $down exec xdotool mousemove_relative -- 0 10
 	bindsym $up exec xdotool mousemove_relative -- 0 -10
 
+	# click with return
 	bindsym Return exec xdotool click 1
 	bindsym Shift+Return exec xdotool click 3
 
+	# scrolling with regular arrows up and down
+	bindsym Up exec xdotool click 4
+	bindsym Down exec xdotool click 5
+
+	# drag & drop
 	bindsym $mod+d exec xdotool mousedown 1
 	bindsym $mod+u exec xdotool mouseup 1
 
@@ -186,7 +193,7 @@ client.urgent            #FF0000 #111111 #FF0000 #FF0000
 
 # i3blocks bar
 bar {
-	# mode hide
+	mode hide
 	position bottom
 	status_command i3blocks
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
