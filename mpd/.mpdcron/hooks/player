@@ -4,3 +4,13 @@ pkill -RTMIN+11 i3blocks
 
 # Put the album art in /tmp/albumart.jpg
 /home/balduin/scripts/refresh-albumart.sh
+
+# TODO finish this
+# this should write a song to the log if it has changed, and
+# write the last song to lastsong.txt
+# diff ~/.mpdcron/lastsong.txt <(echo $MPD_SONG_URI) && exit
+lastsong="$(tail -1 ~/.mpdcron/logs/log-$(date +'%Y-%m-%d').csv | cut -d, -f2-)"
+
+if [ "$lastsong" != "$MPD_SONG_URI" ]; then
+	printf '%s,%s\n' $(date +%s) "$MPD_SONG_URI" >> ~/.mpdcron/logs/log-$(date +'%Y-%m-%d').csv
+fi
