@@ -7,7 +7,7 @@ target='/tmp/albumart.jpg'
 empty_albumart='/home/balduin/pics/misc/no-albumart.jpg'
 
 # Extract the album art of the current song & write to $target
-song=$(mpc --format %file% current)
+song="$(mpc --format %file% current)"
 if [ -n "$song" ]; then
 
 	file="/home/balduin/music/$song"
