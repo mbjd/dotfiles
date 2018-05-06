@@ -16,7 +16,7 @@ visualizer_output_name                = "Visualiser FIFO"
 visualizer_sync_interval              = "10"
 visualizer_in_stereo                  = "yes"
 visualizer_type                       = "ellipse"
-visualizer_look                       = "◆◆"
+visualizer_look                       = "-0"
 
 display_volume_level                  = "yes"
 clock_display_seconds                 = "yes"
@@ -25,3 +25,5 @@ user_interface                        = "alternative"
 
 mouse_list_scroll_whole_page          = "no"
 lines_scrolled                        = "1"
+
+browser_sort_format                   = "%n %t"

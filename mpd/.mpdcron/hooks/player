@@ -6,8 +6,14 @@ pkill -RTMIN+11 i3blocks
 # Put the album art in /tmp/albumart.jpg
 /home/balduin/scripts/refresh-albumart.sh
 
-lastsong="$(tail -1 ~/.mpdcron/logs/log-$(date +'%Y-%m-%d').csv | cut -d, -f2-)"
+logfile="/home/balduin/.mpdcron/logs/log-$(date +'%Y-%m-%d').csv"
+outfile=~/testfifo
+# echo $logfile > $outfile
 
-if [ "$lastsong" != "$MPD_SONG_URI" -a "$MPD_SONG_URI" ]; then
-	printf '%s,%s\n' $(date +%s) "$MPD_SONG_URI" >> ~/.mpdcron/logs/log-$(date +'%Y-%m-%d').csv
+# printenv | nl >> $outfile
+
+if [ "$MPD_STATUS_STATE" != 'play' ]; then
+	printf '%s,status:::%s\n' $(date +%s) "$MPD_STATUS_STATE" >> "$logfile"
+else
+	printf '%s,%s\n' $(date +%s) "$MPD_SONG_URI" >> "$logfile"
 fi

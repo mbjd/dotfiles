@@ -1,3 +1,4 @@
+
 " General stuff
 set undofile                   " Save undo's after file closes
 set undodir=$HOME/.vim/undo    " where to save undo histories
@@ -155,6 +156,9 @@ highlight SpecialKey ctermfg=239 guifg=#4e4e4e
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+
+" Interrobang digraph
+silent! digraphs ?! 8253
 
 " Get some plugins
 filetype plugin on

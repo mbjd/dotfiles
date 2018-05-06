@@ -177,7 +177,7 @@ bindsym $mod+m mode "mouse"
 
 
 # GAPS & APPEARANCE {{{
-gaps inner 16
+gaps inner 6
 gaps outer 0
 
 # Disable title bar
