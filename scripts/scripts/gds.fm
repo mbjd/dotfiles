@@ -1,0 +1,2 @@
+#!/bin/bash
+mpv http://gdsfm.out.airtime.pro:8000/gdsfm_a --force-seekable
