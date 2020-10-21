@@ -3,6 +3,3 @@
 
 # stop at page boundries
 # set scroll-page-aware "true"
-
-# Non-shitty scrolling
-set smooth-scroll "true"

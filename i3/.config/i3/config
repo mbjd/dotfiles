@@ -66,8 +66,7 @@ bindsym $mod+Return exec --no-startup-id st
 bindsym $mod+Shift+o exec --no-startup-id st -e octave-cli -q
 
 # bc shortcut
-bindsym $mod+Shift+b exec --no-startup-id st -e bc -l
-bindsym $mod+Shift+d exec --no-startup-id st -e dc
+bindsym $mod+Shift+b exec --no-startup-id st -t floating -e bc -l
 
 # bindsym $mod+space exec dmenu_run -nb \#1C1B19 -b -p run
 bindsym $mod+space exec rofi -show run
@@ -195,6 +194,6 @@ client.urgent            #FF0000 #111111 #FF0000 #FF0000
 bar {
 	mode hide
 	position bottom
-	status_command i3blocks
+	status_command i3status
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 }

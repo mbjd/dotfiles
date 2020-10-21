@@ -26,4 +26,5 @@ user_interface                        = "alternative"
 mouse_list_scroll_whole_page          = "no"
 lines_scrolled                        = "1"
 
+browser_sort_mode                     = "format"
 browser_sort_format                   = "%n %t"

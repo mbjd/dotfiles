@@ -1,4 +1,10 @@
 #!/bin/sh
 
-(cd ~/.diary; find . -type f -name '*-*-*' -not -name '*\.*' | sort | xargs -n1 -I{} sh -c "printf '\n ------------------------------- {} ------------------------------- \n\n' | tr -d ./ ; cat {}" | nl | less)
+# mit header + nl
+# (cd ~/.diary; find . -type f -name '*-*-*' -not -name '*\.*' | sort | xargs -n1 -I{} sh -c "printf '\n ------------------------------- {} ------------------------------- \n\n' | tr -d ./ ; cat {}" | nl | less)
 
+# mit nur header
+(cd ~/.diary; find . -type f -name '*-*-*' -not -name '*\.*' | sort | xargs -n1 -I{} sh -c "printf '\n ------------------------------- {} ------------------------------- \n\n' | tr -d ./ ; cat {}" | less)
+
+# weder header noch nl
+# (cd ~/.diary; find . -type f -name '*-*-*' -not -name '*\.*' | sort | xargs -n1 -I{} sh -c "cat {}" | less)

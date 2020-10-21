@@ -1,0 +1,55 @@
+sw_volume: 99
+audio_device_state:1:ALSA output device
+audio_device_state:1:Pipe
+state: pause
+current: 14
+time: 385.891000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:smloadr/hubris/Apocryphal Gravity (Album)/01 Intro.mp3
+1:smloadr/hubris/Apocryphal Gravity (Album)/02 Beyond Styx Pt. 1.mp3
+2:smloadr/hubris/Apocryphal Gravity (Album)/03 Beyond Styx Pt. 2.mp3
+3:smloadr/hubris/Apocryphal Gravity (Album)/04 Aphrodite Terra.mp3
+4:smloadr/hubris/Apocryphal Gravity (Album)/05 Doom Mons.mp3
+5:smloadr/hubris/Apocryphal Gravity (Album)/06 Delmos To Phobos Pt. 1.mp3
+6:smloadr/hubris/Apocryphal Gravity (Album)/07 Delmos To Phobos Pt. 2.mp3
+7:smloadr/hubris/Emersion (EP)/01 Emersion.mp3
+8:smloadr/hubris/Emersion (EP)/02 Satyre.mp3
+9:smloadr/hubris/Emersion (EP)/03 Kå.mp3
+10:smloadr/hubris/Emersion (EP)/04 Gold Drizzle.mp3
+11:smloadr/hubris/Emersion (EP)/05 Apollo.mp3
+12:smloadr/hubris/Emersion (EP)/06 Aves.mp3
+13:smloadr/hubris/Metempsychosis (Album)/01 Hepius.mp3
+14:smloadr/hubris/Metempsychosis (Album)/02 Dionysus.mp3
+15:smloadr/hubris/Metempsychosis (Album)/03 Adonis.mp3
+16:smloadr/hubris/Metempsychosis (Album)/04 Icarus.mp3
+17:smloadr/hubris/Metempsychosis (Album)/05 Dedalus.mp3
+18:smloadr/hubris/Metempsychosis (Album)/06 Heracles.mp3
+19:smloadr/Human Factor/Let Nature Take Its Course (Album)/01 Longyear.mp3
+20:smloadr/Human Factor/Let Nature Take Its Course (Album)/02 A.L.F.mp3
+21:smloadr/Human Factor/Let Nature Take Its Course (Album)/03 1816.mp3
+22:smloadr/Human Factor/Let Nature Take Its Course (Album)/04 Lake of Solitude.mp3
+23:smloadr/Human Factor/Let Nature Take Its Course (Album)/05 Touch of Chicxulub.mp3
+24:smloadr/Human Factor/Let Nature Take Its Course (Album)/06 Alarm #1202.mp3
+25:smloadr/Human Factor/Let Nature Take Its Course (Album)/07 Red Shift.mp3
+26:smloadr/Human Factor/Let Nature Take Its Course (Album)/08 Nubo Vetera Promesas Pluvon.mp3
+27:crescendo/weihnachtsoratorium/Nr01.mp3
+28:crescendo/weihnachtsoratorium/Nr02.mp3
+29:crescendo/weihnachtsoratorium/Nr03.mp3
+30:crescendo/weihnachtsoratorium/Nr04.mp3
+31:crescendo/weihnachtsoratorium/Nr05.mp3
+32:crescendo/weihnachtsoratorium/Nr06.mp3
+33:crescendo/weihnachtsoratorium/Nr07.mp3
+34:crescendo/weihnachtsoratorium/Nr08.mp3
+35:crescendo/weihnachtsoratorium/Nr09.mp3
+36:crescendo/weihnachtsoratorium/Nr10.mp3
+37:crescendo/weihnachtsoratorium/Nr11.mp3
+38:crescendo/weihnachtsoratorium/Nr11a.mp3
+39:crescendo/weihnachtsoratorium/Nr12.mp3
+playlist_end

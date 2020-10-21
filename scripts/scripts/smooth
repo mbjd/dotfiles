@@ -2,60 +2,42 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 // 0: pad zeros
 // 1: pad first value
 static int INIT = 0;
-static int DEFAULT_BUFLEN = 32;
+static float DEFAULT_TAU = 5;
 
-// Moving average filter for newline-delimited streams of numbers
-// using a circular buffer of length $1
-
+// exponential smoothing
 int main(int argc, char** argv) {
 
-	// Determine buffer length
-	int buf_len = DEFAULT_BUFLEN;
-	if (argc > 1) {
-		// If $1 is an integer, set buf_len to that
-		if (sscanf(argv[1], "%d", &buf_len) <  1) buf_len = DEFAULT_BUFLEN;
-	}
-	// fprintf(stderr, "buffer length = %d\n", buf_len);
-
-	int iteration = 0;
 	float current_in = 0;
-	double* buffer = calloc(buf_len, sizeof(double));
+	float current = 0;
 
-	float sum = 0;
-	float average;
+	// in units of samples
+	float tau = DEFAULT_TAU;
+	if (argc > 1) {
+		if (sscanf(argv[1], "%f", &tau) < 1) tau = DEFAULT_TAU;
+	}
+
+
+	float alpha = exp(-1./tau);
+	fprintf(stderr, "tau=%f, alpha=%f\n", tau, alpha);
 
 	setbuf(stdout, NULL);
 
+	int iteration = 0;
+
 	while ((fscanf(stdin, "%f\n", &current_in) != EOF)) {
 		if (iteration == 0 && (INIT == 1)) {
-			for (int i = 0; i < buf_len; i++) {
-				buffer[i] = current_in;
-			}
-		}
-
-		// circular buffer type thing
-		int buf_pos = iteration % buf_len;
-
-		// efficiently calculate the new sum of the values in the buffer
-		sum -= buffer[buf_pos];
-		buffer[buf_pos] = current_in;
-		sum += buffer[buf_pos];
-
-		// Every now and then calculate the actual sum to avoid numerical errors
-		if (buf_pos == 0) {
-			sum = 0;
-			for (int i = 0; i < buf_len; i++) {
-				sum += buffer[i];
-			}
+			current = current_in;
+		} else {
+			current = alpha * current + (1 - alpha) * current_in;
 		}
 
 		// Output
-		average = sum / buf_len;
-		printf("%.15f\n", average);
+		printf("%.10f\n", current);
 
 		iteration++;
 	}

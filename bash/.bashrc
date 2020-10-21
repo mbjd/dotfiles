@@ -45,10 +45,14 @@ alias la="ls -a"
 alias l="ls"
 
 
-# Vimisms
+update_renaissance_brass() {
+	cd ~/music/renaissance_baroque_brass/
+	youtube-dl --extract-audio --audio-format mp3 -i --add-metadata --download-archive downloaded.txt 'https://www.youtube.com/playlist?list=PLQ9wrApItMg5hy2zgRIUIgqu2HhZ7ZoZU'
+	cd -
+}
 
 alias fancy-wget="wget --mirror --no-parent --adjust-extension --no-host-directories --convert-links --continue --timestamping --no-check-certificate -e robots=off --random-wait --reject=\'index.html*\'" # use with --cut-dirs=<n>
-alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8; sleep 1; done'
+alias nr='while true; do nmcli -c yes | head -1; ping 8.8.8.8 -w 10; sleep 1; done'
 alias i3conf="$EDITOR ~/.config/i3/config; i3-msg reload"
 alias topdf='libreoffice --headless --convert-to pdf'
 alias np='nmcli -c yes | head -1; ping 8.8.8.8'

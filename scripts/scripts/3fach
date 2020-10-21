@@ -1,0 +1,2 @@
+#!/bin/bash
+mpv http://stream01.3fach.ch:8001/live --force-seekable
